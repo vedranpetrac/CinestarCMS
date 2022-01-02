@@ -9,5 +9,7 @@ package hr.cinestar.model;
  * @author vedran
  */
 public class Director {
+
+   
     
 }
