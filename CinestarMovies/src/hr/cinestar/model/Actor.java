@@ -9,5 +9,38 @@ package hr.cinestar.model;
  * @author vedran
  */
 public class Actor {
-    
+
+    private int id;
+    private String FirstName;
+    private String LastName;
+
+    public Actor(int id, String FirstName, String LastName) {
+        this.id = id;
+        this.FirstName = FirstName;
+        this.LastName = LastName;
+    }
+
+    public Actor() {
+        
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return FirstName;
+    }
+
+    public void setFirstName(String FirstName) {
+        this.FirstName = FirstName;
+    }
+
+    public String getLastName() {
+        return LastName;
+    }
+
+    public void setLastName(String LastName) {
+        this.LastName = LastName;
+    }
 }
