@@ -18,8 +18,8 @@ import javax.swing.ImageIcon;
  */
 public class IconUtils {
     
-    public static ImageIcon createIcon(File file, int width, int height) throws IOException {
-        BufferedImage bufferedImage = ImageIO.read(file);
+    public static ImageIcon createIcon(String path, int width, int height) throws IOException {
+        BufferedImage bufferedImage = ImageIO.read(new File(path));
         Image image = bufferedImage.getScaledInstance(width, height,Image.SCALE_SMOOTH);
         return new ImageIcon(image);
     }

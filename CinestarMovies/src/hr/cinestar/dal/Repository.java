@@ -16,53 +16,104 @@ import java.util.Optional;
  * @author Vedran
  */
 public interface Repository {
-    /*
-    int createArticle(Article article) throws Exception;
-    void createArticles(List<Article> articles) throws Exception;
-    void updateArticle(int id, Article data) throws Exception;
-    void deleteArticle(int id) throws Exception;
-    Optional<Article> selectArticle(int id) throws Exception;
-    List<Article> selectArticles() throws Exception;   
-    */
+
+    /**
+     * ******* ACCOUNT ********
+     */
     
-    /********* MOVIE *********/
+    int checkAccountData(String username, String pass) throws Exception;
+    
+    /**
+     * ******* MOVIE ********
+     */
     Optional<Movie> selectMovie(int id) throws Exception;
-    List<Movie> selectMovies() throws Exception;   
-    int createMovie(Movie movie);
-    void createMovies(List<Movie> movies);
-    void updateMovie(int id, Movie data);
-    void deleteMovie(int id);
-    
-    /********* DIRECTOR *********/
+
+    List<Movie> selectMovies() throws Exception;
+
+    int createMovie(Movie movie) throws Exception;
+
+    void createMovies(List<Movie> movies) throws Exception;
+
+    void updateMovie(int id, Movie data) throws Exception;
+
+    void deleteMovie(int id) throws Exception;
+
+    /**
+     * ******* DIRECTOR ********
+     */
     Optional<Director> selectDirector(int id) throws Exception;
-    List<Director> selectDirectors() throws Exception;   
-    int createDirector (Director movie);
-    void createDirectors (List<Director> directors);
-    void updateDirector(int id, Movie data);
-    void deleteDirector(int id);
-    
-    /********* ACTOR *********/
+
+    List<Director> selectDirectors() throws Exception;
+
+    int createDirector(Director director) throws Exception;
+
+    void createDirectors(List<Director> directors) throws Exception;
+
+    void updateDirector(int id, Director director) throws Exception;
+
+    void deleteDirector(int id) throws Exception;
+
+    /**
+     * ******* ACTOR ********
+     */
     Optional<Actor> selectActor(int id) throws Exception;
-    List<Actor> selectActors() throws Exception;   
-    int createActor (Actor actor);
-    void createActors (List<Actor> actors);
-    void updateActor(int id, Actor data);
-    void deleteActor(int id);
-    
-    /********* GENRE *********/
+
+    List<Actor> selectActors() throws Exception;
+
+    int createActor(Actor actor) throws Exception;
+
+    void createActors(List<Actor> actors) throws Exception;
+
+    void updateActor(int id, Actor data) throws Exception;
+
+    void deleteActor(int id) throws Exception;
+
+    /**
+     * ******* GENRE ********
+     */
     Optional<Genre> selectGenre(int id) throws Exception;
-    List<Genre> selectGenres() throws Exception;   
-    int createGenre (Genre genre);
-    void createGenres (List<Genre> genres);
-    void updateGenre(int id, Genre data);
-    void deleteGenre(int id);
-    
-    /********* DIRECTOR -> MOVIE *********/
-    
-    
-    /********* ACTOR -> MOVIE *********/
-    
-    
-     /********* GENRE -> MOVIE *********/
-    
+
+    List<Genre> selectGenres() throws Exception;
+
+    int createGenre(Genre genre) throws Exception;
+
+    void createGenres(List<Genre> genres) throws Exception;
+
+    void updateGenre(int id, Genre data) throws Exception;
+
+    void deleteGenre(int id) throws Exception;
+
+    /**
+     * ******* DIRECTOR -> MOVIE ********
+     */
+    //Optional<Genre> selectDirectorMovie(int id) throws Exception;
+    List<Director> selectMovieDirectors(Movie movie) throws Exception;
+
+    int createMovieDirectorConn(Director director, Movie movie) throws Exception;
+
+    //void createMovieDirectors(List<Director> directors, Movie movie) throws Exception;
+
+    void deleteMovieDirectorConn(int id) throws Exception;
+
+    /**
+     * ******* ACTOR -> MOVIE ********
+     */
+    List<Actor> selectActorsMovie(Movie movie) throws Exception;
+
+    int createMovieActorConn(Actor actor, Movie movie) throws Exception;
+
+    //void createMovieActors(List<Actor> actors, Movie movie) throws Exception;
+
+    void deleteMovieActorConn(int id) throws Exception;
+
+    /**
+     * ******* GENRE -> MOVIE ********
+     */
+    List<Genre> selectMovieGenres(Movie movie) throws Exception;
+
+    int createMovieGenreConn(Genre genre, Movie movie) throws Exception;
+
+    //void createMovieGenres(List<Genre> genres, Movie movie) throws Exception;
+
+    void deleteMovieGenreConn(int id) throws Exception;
 }

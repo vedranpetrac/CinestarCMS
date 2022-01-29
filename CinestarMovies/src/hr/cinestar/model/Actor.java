@@ -4,14 +4,22 @@
  */
 package hr.cinestar.model;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+
 /**
  *
  * @author vedran
  */
-public class Actor {
-
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Actor implements Comparable<Actor>{
+    @XmlAttribute 
     private int id;
+    @XmlElement(name = "firstname")
     private String FirstName;
+    @XmlElement(name = "lastname")
     private String LastName;
 
     public Actor(int id, String FirstName, String LastName) {
@@ -19,6 +27,13 @@ public class Actor {
         this.FirstName = FirstName;
         this.LastName = LastName;
     }
+
+    public Actor(String FirstName, String LastName) {
+        this.FirstName = FirstName;
+        this.LastName = LastName;
+    }
+    
+    
 
     public Actor() {
         
@@ -42,5 +57,14 @@ public class Actor {
 
     public void setLastName(String LastName) {
         this.LastName = LastName;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public int compareTo(Actor a) {
+        return Integer.toString(id).compareTo(Integer.toString(a.id));
     }
 }

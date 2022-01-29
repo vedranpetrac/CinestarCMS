@@ -1,0 +1,2692 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<moviearchive>
+    <movies>
+        <movie id="1609">
+            <title>Cinema Book Club: Ulica noćnih mora</title>
+            <originalTitle>Nightmare Alley</originalTitle>
+            <Description>Mračna priča prati ambicioznog putujućeg mentalista koji ima talent manipulacije ljudima kroz nekoliko dobro odabranih riječi. 
+U vjeri da će sam postići svjetski uspjeh, upušta se u vezu s dr. Lilith Ritter, psihijatricom koja je još opasnija od njega. 
+Stvari tada postaju sve čudnije.
+Početak prikazivanja: 27.1.2022</Description>
+            <Duration>150</Duration>
+            <picturePath>assets\3cc000db-92b6-4716-9516-4034e55bb290.jpg</picturePath>
+            <actors>
+                <actor id="1626">
+                    <firstname>Bradley</firstname>
+                    <lastname>Cooper</lastname>
+                </actor>
+                <actor id="1627">
+                    <firstname> Cate</firstname>
+                    <lastname>Blanchett</lastname>
+                </actor>
+                <actor id="1628">
+                    <firstname> Willem</firstname>
+                    <lastname>Dafoe</lastname>
+                </actor>
+                <actor id="1629">
+                    <firstname> Toni</firstname>
+                    <lastname>Collette</lastname>
+                </actor>
+                <actor id="1630">
+                    <firstname> Richard</firstname>
+                    <lastname>Jenkins</lastname>
+                </actor>
+                <actor id="1631">
+                    <firstname> Ron</firstname>
+                    <lastname>Perlman</lastname>
+                </actor>
+                <actor id="1632">
+                    <firstname> Rooney</firstname>
+                    <lastname>Mara</lastname>
+                </actor>
+                <actor id="1633">
+                    <firstname> Holt</firstname>
+                    <lastname>McCallany</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="430">
+                    <FirstName>Guillermo del</FirstName>
+                    <LastName>Toro</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="691">
+                    <Name>krimi</Name>
+                </genre>
+                <genre id="692">
+                    <Name> drama</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1610">
+            <title>Moja čudovišna obitelj 2 - sink</title>
+            <originalTitle>Happy Family 2</originalTitle>
+            <Description>Godinu dana nakon njihove čudovišne avanture, obitelj Wishbone ponovno živi svojim normalnim, ljudskim životima, koji su ispunjeni svim uobičajenim svađama, stresovima i svakodnevnim ludilom koje obiteljski život nosi.
+Iznenadni susret s Milom Starr označava početak nove avanture zbog koje svi njihovi normalni problemi nestaju. Kako bi oslobodili Babu Jagu i Renfielda iz kandži Lovca na čudovišta, obitelj Wishbone se ponovno pretvara u vampira, Frankensteinovo čudovište, mumiju i vukodlaka. Zajedno sa svoja tri kućna ljubimca, naša obitelj ponovno proputuje cijeli svijet kako bi spasila svoje prijatelje, stekla nova čudovišna poznanstva i konačno shvatila da nitko nije savršen – i kako čak i oni s manama mogu pronaći sreću.
+
+ 
+Početak prikazivanja: 27.1.2022</Description>
+            <Duration>103</Duration>
+            <picturePath>assets\8458c042-2615-4a9d-825a-0462ec7819ca.jpg</picturePath>
+            <actors>
+                <actor id="1634">
+                    <firstname>Tin</firstname>
+                    <lastname>Rožman</lastname>
+                </actor>
+                <actor id="1635">
+                    <firstname> Lana</firstname>
+                    <lastname>Blaće</lastname>
+                </actor>
+                <actor id="1636">
+                    <firstname> Judita</firstname>
+                    <lastname>Franković</lastname>
+                </actor>
+                <actor id="1637">
+                    <firstname> Dijana</firstname>
+                    <lastname>Vidušin</lastname>
+                </actor>
+                <actor id="1638">
+                    <firstname> Živko</firstname>
+                    <lastname>Anočić</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="431">
+                    <FirstName>Holger</FirstName>
+                    <LastName>Tappe</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="693">
+                    <Name>animirani</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1611">
+            <title>Ulica noćnih mora</title>
+            <originalTitle>Nightmare Alley</originalTitle>
+            <Description>Mračna priča prati ambicioznog putujućeg mentalista koji ima talent manipulacije ljudima kroz nekoliko dobro odabranih riječi. 
+U vjeri da će sam postići svjetski uspjeh, upušta se u vezu s dr. Lilith Ritter, psihijatricom koja je još opasnija od njega. 
+Stvari tada postaju sve čudnije.
+Početak prikazivanja: 27.1.2022</Description>
+            <Duration>150</Duration>
+            <picturePath>assets\ab2cf912-ef0f-40a3-b0a6-d67e9f7b200a.jpg</picturePath>
+            <actors>
+                <actor id="1639">
+                    <firstname>Bradley</firstname>
+                    <lastname>Cooper</lastname>
+                </actor>
+                <actor id="1640">
+                    <firstname> Cate</firstname>
+                    <lastname>Blanchett</lastname>
+                </actor>
+                <actor id="1641">
+                    <firstname> Willem</firstname>
+                    <lastname>Dafoe</lastname>
+                </actor>
+                <actor id="1642">
+                    <firstname> Toni</firstname>
+                    <lastname>Collette</lastname>
+                </actor>
+                <actor id="1643">
+                    <firstname> Richard</firstname>
+                    <lastname>Jenkins</lastname>
+                </actor>
+                <actor id="1644">
+                    <firstname> Ron</firstname>
+                    <lastname>Perlman</lastname>
+                </actor>
+                <actor id="1645">
+                    <firstname> Rooney</firstname>
+                    <lastname>Mara</lastname>
+                </actor>
+                <actor id="1646">
+                    <firstname> Holt</firstname>
+                    <lastname>McCallany</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="432">
+                    <FirstName>Guillermo del</FirstName>
+                    <LastName>Toro</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="694">
+                    <Name>krimi</Name>
+                </genre>
+                <genre id="695">
+                    <Name> drama</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1612">
+            <title>Visoka moda</title>
+            <originalTitle>Haute couture</originalTitle>
+            <Description>Moda je više od same odeće. Ona je važan deo naših života, nekada upravo pokazuje ono što jesmo, a nekada skriva kako se osećamo. 
+
+Ester se nalazi na kraju svoje karijere u ateljeu kuće Dior, jedne od najznačajnijih i najuticajnijih francuskih modnih kuća. Jednog dana joj vrlo mlada devojka Žad u javnom prevozu ukrade torbicu. Umesto da pozove policiju, Ester se odlučuje da se pobrine za nju jer u njoj vidi priliku da joj prenese svoje veštine, krojački zanat i svoje bogatstvo. U frenetičnom svetu visoke mode, Ester će Žad omogućiti da dosegne svoj puni potencijal. 
+
+ 
+Početak prikazivanja: 27.1.2022</Description>
+            <Duration>100</Duration>
+            <picturePath>assets\3fd11953-722b-450b-8b0d-aca78824f64d.jpg</picturePath>
+            <actors>
+                <actor id="1647">
+                    <firstname>Nathalie</firstname>
+                    <lastname>Baye</lastname>
+                </actor>
+                <actor id="1648">
+                    <firstname> Lyna</firstname>
+                    <lastname>Khoudri</lastname>
+                </actor>
+                <actor id="1649">
+                    <firstname> Pascale</firstname>
+                    <lastname>Arbillot</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="433">
+                    <FirstName>Sylvie</FirstName>
+                    <LastName>Ohayon</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="696">
+                    <Name>drama</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1613">
+            <title>Knjiga ljubavi</title>
+            <originalTitle>Book of Love</originalTitle>
+            <Description>Poslednji roman mladog, uštogljenog engleskog autora Henrija stvarni je neuspeh. Henri je međutim oduševljen kad sazna da je njegova knjiga iznenađujući veliki hit u Meksiku! 
+Odlazi tamo na promociju i ubrzo otkriva o čemu se zapravo radi: prevodilac Maria prevela je njegovu dosadnu knjigu kao vrući erotski roman. 
+Henri je besan, a njegov izdavač insistira da Maria i on zajedno krenu na promotivnu turneju po Meksiku. Tamo će oboje otkriti kako se suprotnosti zapravo privlače…
+
+ 
+Početak prikazivanja: 3.2.2022</Description>
+            <Duration>106</Duration>
+            <picturePath>assets\ce76b218-49ba-44dc-88a3-cb1e73e2870b.jpg</picturePath>
+            <actors>
+                <actor id="1650">
+                    <firstname>Sam</firstname>
+                    <lastname>Claflin</lastname>
+                </actor>
+                <actor id="1651">
+                    <firstname> Verónica</firstname>
+                    <lastname>Echegui</lastname>
+                </actor>
+                <actor id="1652">
+                    <firstname> Antonia</firstname>
+                    <lastname>Clarke</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="434">
+                    <FirstName>Analeine Cal y</FirstName>
+                    <LastName>Mayor</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="697">
+                    <Name>romantična komedija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1614">
+            <title>Knjiga ljubavi</title>
+            <originalTitle>Book of Love</originalTitle>
+            <Description>Zadnji roman mladog, uštogljenog engleskog autora Henryja stvarni je neuspjeh. Henry je međutim oduševljen kad sazna da je njegova knjiga iznenađujući veliki hit u Meksiku! 
+Odlazi tamo na promociju i ubrzo otkriva o čemu se zapravo radi: prevoditeljica Maria prevela je njegovu dosadnu knjigu kao vrući erotski roman. 
+Henry je bijesan, a njegov izdavač inzistira da Maria i on zajedno krenu na promotivnu turneju po Meksiku. Tamo će oboje otkriti kako se suprotnosti zapravo privlače…
+
+ 
+Početak prikazivanja: 3.2.2022</Description>
+            <Duration>106</Duration>
+            <picturePath>assets\1542436f-ab36-42aa-b72b-d0eaa85f34c0.jpg</picturePath>
+            <actors>
+                <actor id="1653">
+                    <firstname>Sam</firstname>
+                    <lastname>Claflin</lastname>
+                </actor>
+                <actor id="1654">
+                    <firstname> Antonia</firstname>
+                    <lastname>Clarke</lastname>
+                </actor>
+                <actor id="1655">
+                    <firstname> Verónica</firstname>
+                    <lastname>Echegui</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="435">
+                    <FirstName>Analeine Cal y</FirstName>
+                    <LastName>Mayor</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="698">
+                    <Name>romantična komedija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1615">
+            <title>Mesečev pad</title>
+            <originalTitle>Moonfall</originalTitle>
+            <Description>Tajanstvena sila izbacuje Mesec iz orbite oko Zemlje i šalje ga u sudar sa životom kakav poznajemo. Sa samo nekoliko nedelja pre udara i svetom na ivici uništenja, izvršna direktorka NASA-e i bivša astronautkinja Džo Fauler uverena je da ima ključ za spasavanje svih nas – ali samo astronaut iz njene prošlosti, Brajan Harper (Patrik Vilson) i teoretičar zavere KC Houseman joj veruju. Ovi neverovatni heroji će krenuti u nemoguću poslednju misiju u svemir, ostavljajući iza sebe sve koje vole, samo da bi otkrili da naš Mesec nije ono što mi mislimo da jeste.
+Početak prikazivanja: 3.2.2022</Description>
+            <Duration>130</Duration>
+            <picturePath>assets\c3ac4686-9d27-41d7-9203-287f14dfa78c.jpg</picturePath>
+            <actors>
+                <actor id="1656">
+                    <firstname>Halle</firstname>
+                    <lastname>Berry</lastname>
+                </actor>
+                <actor id="1657">
+                    <firstname> Patrick</firstname>
+                    <lastname>Wilson</lastname>
+                </actor>
+                <actor id="1658">
+                    <firstname> John</firstname>
+                    <lastname>Bradley</lastname>
+                </actor>
+                <actor id="1659">
+                    <firstname> Michael</firstname>
+                    <lastname>Pena</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="436">
+                    <FirstName>Roland</FirstName>
+                    <LastName>Emmerich</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="699">
+                    <Name>SF</Name>
+                </genre>
+                <genre id="700">
+                    <Name> akcija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1616">
+            <title>Mesečev pad 4DX</title>
+            <originalTitle>Moonfall 4DX</originalTitle>
+            <Description>Tajanstvena sila izbacuje Mesec iz orbite oko Zemlje i šalje ga u sudar sa životom kakav poznajemo. Sa samo nekoliko nedelja pre udara i svetom na ivici uništenja, izvršna direktorka NASA-e i bivša astronautkinja Džo Fauler uverena je da ima ključ za spasavanje svih nas – ali samo astronaut iz njene prošlosti, Brajan Harper (Patrik Vilson) i teoretičar zavere KC Houseman joj veruju. Ovi neverovatni heroji će krenuti u nemoguću poslednju misiju u svemir, ostavljajući iza sebe sve koje vole, samo da bi otkrili da naš Mesec nije ono što mi mislimo da jeste.
+Početak prikazivanja: 3.2.2022</Description>
+            <Duration>130</Duration>
+            <picturePath>assets\75c68cbd-b318-4363-98f8-df03196a4044.jpg</picturePath>
+            <actors>
+                <actor id="1660">
+                    <firstname>Halle</firstname>
+                    <lastname>Berry</lastname>
+                </actor>
+                <actor id="1661">
+                    <firstname> Patrick</firstname>
+                    <lastname>Wilson</lastname>
+                </actor>
+                <actor id="1662">
+                    <firstname> John</firstname>
+                    <lastname>Bradley</lastname>
+                </actor>
+                <actor id="1663">
+                    <firstname> Michael</firstname>
+                    <lastname>Pena</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="437">
+                    <FirstName>Roland</FirstName>
+                    <LastName>Emmerich</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="701">
+                    <Name>SF</Name>
+                </genre>
+                <genre id="702">
+                    <Name> akcija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1617">
+            <title>Moonfall</title>
+            <originalTitle>Moonfall</originalTitle>
+            <Description>Tajanstvena sila izbacuje Mjesec iz Zemljine orbite i šalje ga da ravno u sudar sa životom kakav poznajemo. Svega nekoliko tjedana prije udara i sa svijetom na rubu uništenja, izvršna direktorica NASA-e i bivša astronautkinja Jo Fowler (Halle Berry) uvjerena je da ima ključ spasa. Bivši kolega astronaut, Brian Harper (Patrick Wilson) i teoretičar zavjere K.C. Houseman (John Bradley) jedini su koji joj vjeruju. Ovi će heroji krenuti u nemoguću posljednju misiju u svemir,  ali tamo otkrivaju da naš Mjesec nije baš ono što mislimo da jest.
+Početak prikazivanja: 3.2.2022</Description>
+            <Duration>130</Duration>
+            <picturePath>assets\83f30eb8-4f23-4505-bba5-a3c9863eb3c5.jpg</picturePath>
+            <actors>
+                <actor id="1664">
+                    <firstname>Halle</firstname>
+                    <lastname>Berry</lastname>
+                </actor>
+                <actor id="1665">
+                    <firstname> Patrick</firstname>
+                    <lastname>Wilson</lastname>
+                </actor>
+                <actor id="1666">
+                    <firstname> John</firstname>
+                    <lastname>Bradley</lastname>
+                </actor>
+                <actor id="1667">
+                    <firstname> Michael</firstname>
+                    <lastname>Pena</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="438">
+                    <FirstName>Roland</FirstName>
+                    <LastName>Emmerich</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="703">
+                    <Name>SF</Name>
+                </genre>
+                <genre id="704">
+                    <Name> akcija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1618">
+            <title>Moonfall 4DX</title>
+            <originalTitle>Moonfall 4DX</originalTitle>
+            <Description>Tajanstvena sila izbacuje Mjesec iz Zemljine orbite i šalje ga da ravno u sudar sa životom kakav poznajemo. Svega nekoliko tjedana prije udara i sa svijetom na rubu uništenja, izvršna direktorica NASA-e i bivša astronautkinja Jo Fowler (Halle Berry) uvjerena je da ima ključ spasa. Bivši kolega astronaut, Brian Harper (Patrick Wilson) i teoretičar zavjere K.C. Houseman (John Bradley) jedini su koji joj vjeruju. Ovi će heroji krenuti u nemoguću posljednju misiju u svemir,  ali tamo otkrivaju da naš Mjesec nije baš ono što mislimo da jest.
+Početak prikazivanja: 3.2.2022</Description>
+            <Duration>130</Duration>
+            <picturePath>assets\31d5ab77-bddc-4e07-a936-2ed0f98fa780.jpg</picturePath>
+            <actors>
+                <actor id="1668">
+                    <firstname>Halle</firstname>
+                    <lastname>Berry</lastname>
+                </actor>
+                <actor id="1669">
+                    <firstname> Patrick</firstname>
+                    <lastname>Wilson</lastname>
+                </actor>
+                <actor id="1670">
+                    <firstname> John</firstname>
+                    <lastname>Bradley</lastname>
+                </actor>
+                <actor id="1671">
+                    <firstname> Michael</firstname>
+                    <lastname>Pena</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="439">
+                    <FirstName>Roland</FirstName>
+                    <LastName>Emmerich</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="705">
+                    <Name>SF</Name>
+                </genre>
+                <genre id="706">
+                    <Name> akcija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1619">
+            <title>Moonfall IMAX</title>
+            <originalTitle>Moonfall IMAX</originalTitle>
+            <Description>Tajanstvena sila izbacuje Mjesec iz Zemljine orbite i šalje ga da ravno u sudar sa životom kakav poznajemo. Svega nekoliko tjedana prije udara i sa svijetom na rubu uništenja, izvršna direktorica NASA-e i bivša astronautkinja Jo Fowler (Halle Berry) uvjerena je da ima ključ spasa. Bivši kolega astronaut, Brian Harper (Patrick Wilson) i teoretičar zavjere K.C. Houseman (John Bradley) jedini su koji joj vjeruju. Ovi će heroji krenuti u nemoguću posljednju misiju u svemir,  ali tamo otkrivaju da naš Mjesec nije baš ono što mislimo da jest.
+Početak prikazivanja: 3.2.2022</Description>
+            <Duration>130</Duration>
+            <picturePath>assets\3742cf85-559d-4c3a-9ef7-ae8f1154250d.jpg</picturePath>
+            <actors>
+                <actor id="1672">
+                    <firstname>Halle</firstname>
+                    <lastname>Berry</lastname>
+                </actor>
+                <actor id="1673">
+                    <firstname> Patrick</firstname>
+                    <lastname>Wilson</lastname>
+                </actor>
+                <actor id="1674">
+                    <firstname> John</firstname>
+                    <lastname>Bradley</lastname>
+                </actor>
+                <actor id="1675">
+                    <firstname> Michael</firstname>
+                    <lastname>Pena</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="440">
+                    <FirstName>Roland</FirstName>
+                    <LastName>Emmerich</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="707">
+                    <Name>SF</Name>
+                </genre>
+                <genre id="708">
+                    <Name> akcija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1620">
+            <title>Benedetta</title>
+            <originalTitle>Benedetta</originalTitle>
+            <Description>U drugoj polovici sedamnaestog stoljeća dok kuga razara zemlju, Benedetta Carlini pridružuje se samostanu u Pesciji (Toskani) kao sestra početnica. Od ranog djetinjstva sposobna izvoditi čuda, Benedettin snažan utjecaj na zajednicu instantan je gotovo jednako koliko i važan, ali i šokantan…
+Početak prikazivanja: 10.2.2022</Description>
+            <Duration>131</Duration>
+            <picturePath>assets\6d503767-3727-459e-bbaa-c420fb98ab27.jpg</picturePath>
+            <actors>
+                <actor id="1676">
+                    <firstname>Virginie</firstname>
+                    <lastname>Efira</lastname>
+                </actor>
+                <actor id="1677">
+                    <firstname> Daphne</firstname>
+                    <lastname>Patakia</lastname>
+                </actor>
+                <actor id="1678">
+                    <firstname> Charlotte</firstname>
+                    <lastname>Rampling</lastname>
+                </actor>
+                <actor id="1679">
+                    <firstname> Lambert</firstname>
+                    <lastname>Wilson</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="441">
+                    <FirstName>Paul</FirstName>
+                    <LastName>Verhoeven</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="709">
+                    <Name>biografski</Name>
+                </genre>
+                <genre id="710">
+                    <Name> drama</Name>
+                </genre>
+                <genre id="711">
+                    <Name> povijesni</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1621">
+            <title>Bilo jednom u Srbiji</title>
+            <originalTitle>Bilo jednom u Srbiji</originalTitle>
+            <Description>Tokom i posle Prvog svetskog rata, dva mladića i dve devojke iz Leskovca: Cone i Dine, i Zorka i Ružica imali su različite sudbine. Dineta su saveznici odveli do Pariza, gde je naučio sve o lepotama života i svetlima metropole. Cone je, posle ranjavanja i amnezije, završio u Mančesteru, tadašnjoj prestonici industrijskog razvoja, gde je načio kako se samo kroz crni fabrički dim i težak rad stiže do uspeha.
+ 
+Opijeni pobedom u ratu i nepovratno inficirani „duhom slobode i napretka” koji su osetili u „velikom svetu”, dva mladića vraćaju se u svoj oronuli Leskovac. Dine u svoj mali, sada već nepostojeći bioskop, a Cone svojoj verenici Zorki, koja posle pet godina čekanja, nevoljno daje pristanak da je otac uda za ratnog liferanta. Cone će pokušati svoju staru ljubav da vrati, a Dine da svoju novu ljubav pronađe.
+ 
+I tako počinje borba „starog” i „novog”, u svakom smislu. Za velika dela potr</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\e0f51792-3ab1-48c8-8c98-ef4fae6d6398.jpg</picturePath>
+            <actors>
+                <actor id="1680">
+                    <firstname>Viktor</firstname>
+                    <lastname>Savić</lastname>
+                </actor>
+                <actor id="1681">
+                    <firstname> Nemanja</firstname>
+                    <lastname>Oliverić</lastname>
+                </actor>
+                <actor id="1682">
+                    <firstname> Teodora</firstname>
+                    <lastname>Ristovski</lastname>
+                </actor>
+                <actor id="1683">
+                    <firstname> Sloboda</firstname>
+                    <lastname>Mićalović</lastname>
+                </actor>
+                <actor id="1684">
+                    <firstname> Radovan</firstname>
+                    <lastname>Vujović</lastname>
+                </actor>
+                <actor id="1685">
+                    <firstname> Zoran</firstname>
+                    <lastname>Cvijanović</lastname>
+                </actor>
+                <actor id="1686">
+                    <firstname> Predrag Miki</firstname>
+                    <lastname>Manojlović</lastname>
+                </actor>
+                <actor id="1687">
+                    <firstname> Ivan</firstname>
+                    <lastname>Bekjarev</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="442">
+                    <FirstName>Petar</FirstName>
+                    <LastName>Ristovski</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="712">
+                    <Name>drama</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1622">
+            <title>Blacklight</title>
+            <originalTitle>Blacklight</originalTitle>
+            <Description>Scenarista i reditelj Mark Villijams, inače izvršni producent popularne serije Ozark, nakon velikog bioskopskog uspeha filma Pokajnik ponovno udružuje snage sa Liamom Nisonom.
+
+Problematični Travis Blok je vladin operativac koji je zadužen za izvlačenje tajnih agenata iz opasnih situacija. Kada otkrije zaveru usmjerenu na američke građane, Blok se nađe na nišanu ljudi za koje radi. On tada mora ne samo da uđe u trag agentu, već i da sazna istinu.
+Istinu koja bi mogla da optereti čak i njegov upitni moralni kodeks. 
+
+Početak prikazivanja: 10.2.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\df4046c8-045b-43ca-90fa-03fe4d218822.jpg</picturePath>
+            <actors>
+                <actor id="1688">
+                    <firstname>Liam</firstname>
+                    <lastname>Neeson</lastname>
+                </actor>
+                <actor id="1689">
+                    <firstname> Taylor John</firstname>
+                    <lastname>Smith</lastname>
+                </actor>
+                <actor id="1690">
+                    <firstname> Aidan</firstname>
+                    <lastname>Quinn</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="443">
+                    <FirstName>Mark</FirstName>
+                    <LastName>Williams</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="713">
+                    <Name>akcija</Name>
+                </genre>
+                <genre id="714">
+                    <Name> triler</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1623">
+            <title>Jahač zmaja - sinh</title>
+            <originalTitle>Dragon Rider</originalTitle>
+            <Description>Jahač zmaja je nastao prema nemačkom dečjem romanu autorke Kornelije Funke. Mladi srebrni zmaj i njegov novi prijatelj kreću u potragu za poslednjim utočištem srebrnih zmajeva. Pred njima je niz neverovatnih pustolovina i neobičnih susreta od kojih će jedan biti presudan - susret sa bezdušnim čudovištem iz prošlosti čiji je jedini cilj uništenje poslednjeg zmaja.
+
+&amp;nbsp;
+
+&amp;nbsp;
+Početak prikazivanja: 10.2.2022</Description>
+            <Duration>91</Duration>
+            <picturePath>assets\01bd2223-de8e-4066-ace6-16066e205373.jpg</picturePath>
+            <actors/>
+            <directors>
+                <director id="444">
+                    <FirstName>Tomer</FirstName>
+                    <LastName>Eshed</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="715">
+                    <Name>animirani</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1624">
+            <title>Smrt na Nilu</title>
+            <originalTitle>Death on the Nile</originalTitle>
+            <Description>Putovanje po Egiptu na glamuroznom parobrodu za belgijskog detektiva Herkula Poaroa pretvara se u zastrašujuću potragu za ubicom, u trenucima kada se idilični medeni mesec savršenog para tragično završava. Nasuprot pejzažima pustinje i veličanstvenih piramida u Gizi, ova priča o neobuzdanoj strasti i ljubomori prikazuje besprekorno odevene putnike, ali i nemilosrdne zaplete koji će publiku do kraja ostaviti u nagađanjima, do šokantnog raspleta.
+
+ 
+Početak prikazivanja: 10.2.2022</Description>
+            <Duration>127</Duration>
+            <picturePath>assets\afb11a19-8978-4a3b-870d-37beed04184a.jpg</picturePath>
+            <actors>
+                <actor id="1691">
+                    <firstname>Kenneth</firstname>
+                    <lastname>Branagh</lastname>
+                </actor>
+                <actor id="1692">
+                    <firstname> Gal</firstname>
+                    <lastname>Gadot</lastname>
+                </actor>
+                <actor id="1693">
+                    <firstname> Armie</firstname>
+                    <lastname>Hammer</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="445">
+                    <FirstName>Kenneth</FirstName>
+                    <LastName>Branagh</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="716">
+                    <Name>Krimi</Name>
+                </genre>
+                <genre id="717">
+                    <Name> drama</Name>
+                </genre>
+                <genre id="718">
+                    <Name> misterija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1625">
+            <title>Ti si taj</title>
+            <originalTitle>Marry Me</originalTitle>
+            <Description>Prepun originalnih pesama Dženifer Lopez i globalne latino muzičke zvezde Malume, TI SI TAJ predstavlja Lopezovu u ulozi muzičke superzvezde Ket Valdez i Ovena Vilsona kao Čarlija Gilberta, nastavnika matematike – dvoje potpunih stranaca koji pristaju da se venčaju, a tek potom se zbližavaju. Nesvakidašnja romansa o dvoje različitih ljudi koji traže nešto stvarno u svetu gde se vrednost zasniva na lajkovima i pratiocima, TI SI TAJ je moderna ljubavna priča o slavnim ličnostima, braku i društvenim mrežama.
+ 
+Ket Valdez (Lopez) i nova vrela muzička zvezda Bastijan (Maluma, koji se prvi put pojavljuje u igranom filmu) su najseksipilniji moćni slavni par na Zemlji. Dok se njihov zajednički neizbežni hit singl, „Ti si taj“, penje na vrhove top-lista, oni planiraju da se venčaju pred svojim obožavaocima na ceremoniji koju će emitovati više platformi.
+ 
+Čarlija Gilberta (Oven Vilson), razvedeno</Description>
+            <Duration>112</Duration>
+            <picturePath>assets\79d3da85-fa69-4d12-b254-0f815987eae5.jpg</picturePath>
+            <actors>
+                <actor id="1694">
+                    <firstname>Jennifer</firstname>
+                    <lastname>Lopez</lastname>
+                </actor>
+                <actor id="1695">
+                    <firstname> John</firstname>
+                    <lastname>Bradley</lastname>
+                </actor>
+                <actor id="1696">
+                    <firstname></firstname>
+                    <lastname>Maluma</lastname>
+                </actor>
+                <actor id="1697">
+                    <firstname> Owen</firstname>
+                    <lastname>Wilson</lastname>
+                </actor>
+                <actor id="1698">
+                    <firstname> Sarah</firstname>
+                    <lastname>Silverman</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="446">
+                    <FirstName>Kat</FirstName>
+                    <LastName>Coiro</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="719">
+                    <Name>romantična komedija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1626">
+            <title>Ti si taj</title>
+            <originalTitle>Marry Me</originalTitle>
+            <Description>Najseksi slavni par na svijetu Kat Valdez (Lopez) i nova glazbena zvijezda Bastian (Maluma) odluči se vjenčati pred publikom povodom uspješnog hit singla “Marry Me”. Ceremonija će biti dio koncerta i prenosit će se uživo preko društvenih platformi.
+Charliea Gilberta (Wilson), razvedenog profesora matematike, na taj su koncert odvukle kći Lou (Chloe Coleman) i njegova najbolja prijateljica (Sarah Silverman). Nekoliko sekundi prije početka ceremonije Kat sazna da ju je Bastian prevario s njezinom asistenticom. Njezin svijet se ruši i ona se slomi na pozornici preispitujući ljubav, istinu i odanost. Najednom, ugleda stranca u gomili i njihovi pogledi se spoje. U tom trenutku izgubljenosti i ludila, Kat se odluči udati za tog stranca, a taj stranac je Charlie. Ako vas ono poznato iznevjeri, onda je možda ono nepoznato pravi odgovor. Ovdje započinje priča filma Ti si Taj, priča o impulzivnom </Description>
+            <Duration>112</Duration>
+            <picturePath>assets\ed1e4df3-66f1-4845-935b-4acb5cd37119.jpg</picturePath>
+            <actors>
+                <actor id="1699">
+                    <firstname>Jennifer</firstname>
+                    <lastname>Lopez</lastname>
+                </actor>
+                <actor id="1700">
+                    <firstname> John</firstname>
+                    <lastname>Bradley</lastname>
+                </actor>
+                <actor id="1701">
+                    <firstname></firstname>
+                    <lastname>Maluma</lastname>
+                </actor>
+                <actor id="1702">
+                    <firstname> Owen</firstname>
+                    <lastname>Wilson</lastname>
+                </actor>
+                <actor id="1703">
+                    <firstname> Sarah</firstname>
+                    <lastname>Silverman</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="447">
+                    <FirstName>Kat</FirstName>
+                    <LastName>Coiro</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="720">
+                    <Name>romantična komedija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1627">
+            <title>Romeo i Julija</title>
+            <originalTitle>Romeo and Juliet</originalTitle>
+            <Description>Najpoznatiji Šekspirovi ljubavnici doživljavaju strast i tragediju u baletskom remek -delu 20. veka. Romeo i Julija je postao klasik baleta ROH repertoara od kako ga je kreirao direktor Kraljevskog baleta Kenet Makmilan, premijerno izveden 1965. U ovoj secijalnoj projekciji za Dan zaljubljenih, ukleti ljubavnici pokušavaju da pronađu put kroz živopisnu renesansnu veronu. Na užurbanoj pijaci izbija borba mačevima, a porodična svađa dovodi do tragedije i za porodice Monteki i Kapuleti.Početak prikazivanja: 14.2.2022</Description>
+            <Duration>205</Duration>
+            <picturePath>assets\1e304046-0089-4306-978c-9a757762cd4e.jpg</picturePath>
+            <actors/>
+            <directors/>
+            <genres>
+                <genre id="721">
+                    <Name>balet</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1628">
+            <title>Romeo i Julija</title>
+            <originalTitle>Romeo and Juliet</originalTitle>
+            <Description>Shakespeareovi najpoznatiji ljubavnici doživljavaju strast i tragediju u baletnom remek-djelu 20. stoljeća.
+Romeo i Julija postao je baletni klasik ROH repertoara otkako ga je stvorio ravnatelj Kraljevskog baleta Kenneth MacMillan; premijerno je izveden 1965. U ovoj posebnoj projekciji na Valentinovo, ukleti ljubavnici pokušavaju pronaći svoj put kroz slikovitu  renesansnu Veronu. Na užurbanoj tržnici izbija borba mačevima, a obiteljska svađa dovodi do tragedije i za obitelj Montecchi i Capuletti.
+Početak prikazivanja: 14.2.2022</Description>
+            <Duration>205</Duration>
+            <picturePath>assets\9c37fa97-ceac-4a1d-af95-fadbf9040691.jpg</picturePath>
+            <actors/>
+            <directors/>
+            <genres>
+                <genre id="722">
+                    <Name>balet</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1629">
+            <title>Pas</title>
+            <originalTitle>Dog</originalTitle>
+            <Description>Osim što tumači glavnu ulogu, Čejning Tatum je ujedno i koreditelj filma u kom mu se u glavnoj ulozi pridružuje simpatični belgijski ovčar.
+
+Bivšem vojnom rendžeru Brigsu je dodeljeno da se brine o vojno obučenom psu palog vojnika. Njegova misija je  transportovati psa na drugi kraj zemlje kako bi prisustvovali vojničkoj sahrani. Njihovo putovanje nateralo ih je na jedan poseban suživot u kom definitivno ne ide u prilog izvanredno ponašanje „dlakavog demona” koji je u tom periodu izazvao nekoliko neverovatnih situacija. Upravo to Bridžisa je gurnulo do njegovih krajnjih granica, ali i nateralo da malo preispita sebe i novi odnos sa svojim psećim saputnikom.
+Početak prikazivanja: 17.2.2022</Description>
+            <Duration>90</Duration>
+            <picturePath>assets\210891b0-dc8a-4c13-91dc-70465a6972a8.jpg</picturePath>
+            <actors>
+                <actor id="1704">
+                    <firstname>Channing</firstname>
+                    <lastname>Tatum</lastname>
+                </actor>
+                <actor id="1705">
+                    <firstname> Aqueela</firstname>
+                    <lastname>Zoll</lastname>
+                </actor>
+                <actor id="1706">
+                    <firstname> Qorianka</firstname>
+                    <lastname>Kilcher</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="448">
+                    <FirstName>Reid</FirstName>
+                    <LastName>Carolin</LastName>
+                </director>
+                <director id="449">
+                    <FirstName> Channing</FirstName>
+                    <LastName>Tatum</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="723">
+                    <Name>komedija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1630">
+            <title>Smrt na Nilu</title>
+            <originalTitle>Death on the Nile</originalTitle>
+            <Description>Mlada, bogata i lijepa Linnet Ridgeway ima gotovo sve. Ono što nema, uzme. Na primjer, zaručnika svoje najbolje prijateljice Jackie. Kad se Linnet i njezin novi dragi otpute na medeni mjesec krstareći Nilom, ništa ne može sačuvati Jackie od njezinih demona. I nitko - čak ni čuveni detektiv Hercule Poirot - ne može spriječiti zločin iz strasti.
+
+ 
+Početak prikazivanja: 17.2.2022</Description>
+            <Duration>127</Duration>
+            <picturePath>assets\ab14c40a-7d3f-4441-9e48-2e8df313e70a.jpg</picturePath>
+            <actors>
+                <actor id="1707">
+                    <firstname>Kenneth</firstname>
+                    <lastname>Branagh</lastname>
+                </actor>
+                <actor id="1708">
+                    <firstname> Gal</firstname>
+                    <lastname>Gadot</lastname>
+                </actor>
+                <actor id="1709">
+                    <firstname> Armie</firstname>
+                    <lastname>Hammer</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="450">
+                    <FirstName>Kenneth</FirstName>
+                    <LastName>Branagh</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="724">
+                    <Name>misterija</Name>
+                </genre>
+                <genre id="725">
+                    <Name> drama</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1631">
+            <title>Smrt na Nilu IMAX</title>
+            <originalTitle>Death on the Nile IMAX</originalTitle>
+            <Description>Mlada, bogata i lijepa Linnet Ridgeway ima gotovo sve. Ono što nema, uzme. Na primjer, zaručnika svoje najbolje prijateljice Jackie. Kad se Linnet i njezin novi dragi otpute na medeni mjesec krstareći Nilom, ništa ne može sačuvati Jackie od njezinih demona. I nitko - čak ni čuveni detektiv Hercule Poirot - ne može spriječiti zločin iz strasti.
+
+ 
+Početak prikazivanja: 17.2.2022</Description>
+            <Duration>127</Duration>
+            <picturePath>assets\fde0b581-37da-4481-b62a-4cac064db623.jpg</picturePath>
+            <actors>
+                <actor id="1710">
+                    <firstname>Kenneth</firstname>
+                    <lastname>Branagh</lastname>
+                </actor>
+                <actor id="1711">
+                    <firstname> Gal</firstname>
+                    <lastname>Gadot</lastname>
+                </actor>
+                <actor id="1712">
+                    <firstname> Armie</firstname>
+                    <lastname>Hammer</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="451">
+                    <FirstName>Kenneth</FirstName>
+                    <LastName>Branagh</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="726">
+                    <Name>misterija</Name>
+                </genre>
+                <genre id="727">
+                    <Name> drama</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1632">
+            <title>Uncharted</title>
+            <originalTitle>Uncharted</originalTitle>
+            <Description>U filmu Uncharted upoznajemo Nathana Drakea (Tom Holland) tijekom njegove prvu avanture u potrazi za blagom s dosjetljivim partnerom Victorom “Sullyjem” Sullivanom (Mark Wahlberg). Inspiriran hvaljenom serijom videoigara, ovaj akcijsko-avanturistički spektakl čija se radnja događa širom cijelog svijeta prati Natea i Sullyja dok se upuštaju u opasnu potragu za "najvećim blagom koje nikada nije pronađeno", također prateći tragove koji bi mogli dovesti do Nateovog davno izgubljenog brata.Početak prikazivanja: 17.2.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\23e2261a-6b3f-414a-854a-7f4c122f7aac.jpg</picturePath>
+            <actors>
+                <actor id="1713">
+                    <firstname>Tom</firstname>
+                    <lastname>Holland</lastname>
+                </actor>
+                <actor id="1714">
+                    <firstname> Mark</firstname>
+                    <lastname>Wahlberg</lastname>
+                </actor>
+                <actor id="1715">
+                    <firstname> Sophia</firstname>
+                    <lastname>Ali</lastname>
+                </actor>
+                <actor id="1716">
+                    <firstname> Tati</firstname>
+                    <lastname>Gabrielle</lastname>
+                </actor>
+                <actor id="1717">
+                    <firstname> Antonio</firstname>
+                    <lastname>Banderas</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="452">
+                    <FirstName>Ruben</FirstName>
+                    <LastName>Fleischer</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="728">
+                    <Name>akcija</Name>
+                </genre>
+                <genre id="729">
+                    <Name> avantura</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1633">
+            <title>Uncharted</title>
+            <originalTitle>Uncharted</originalTitle>
+            <Description>Uncharted upoznaje publiku sa momkom uličnog vaspitanja, Nejtanom Drejkom (Tom Holand) i prikazuje njegovu prvu avanturu u potrazi za blagom sa mudrim partnerom Viktorom Salijem (Mark Volberg). Inspirisan hvaljenim serijalom video igara, ovaj akciono-avanturistički ep je poznat širom sveta i prati Nejta i Salija dok se upuštaju u opasnu potragu za ,,najvećim blagom koje nikada nije pronađeno”, usput prateći tragove koji bi mogli dovesti do Nejtovog davno izgubljenog brata.
+Početak prikazivanja: 17.2.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\01236a5b-6148-46c1-84c8-8684487837ed.jpg</picturePath>
+            <actors>
+                <actor id="1718">
+                    <firstname>Tom</firstname>
+                    <lastname>Holland</lastname>
+                </actor>
+                <actor id="1719">
+                    <firstname> Mark</firstname>
+                    <lastname>Wahlberg</lastname>
+                </actor>
+                <actor id="1720">
+                    <firstname> Sophia</firstname>
+                    <lastname>Ali</lastname>
+                </actor>
+                <actor id="1721">
+                    <firstname> Tati</firstname>
+                    <lastname>Gabrielle</lastname>
+                </actor>
+                <actor id="1722">
+                    <firstname> Antonio</firstname>
+                    <lastname>Banderas</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="453">
+                    <FirstName>Ruben</FirstName>
+                    <LastName>Fleischer</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="730">
+                    <Name>akcija</Name>
+                </genre>
+                <genre id="731">
+                    <Name> avantura</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1634">
+            <title>Uncharted 4DX</title>
+            <originalTitle>Uncharted 4DX</originalTitle>
+            <Description>Uncharted upoznaje publiku sa momkom uličnog vaspitanja, Nejtanom Drejkom (Tom Holand) i prikazuje njegovu prvu avanturu u potrazi za blagom sa mudrim partnerom Viktorom Salijem (Mark Volberg). Inspirisan hvaljenim serijalom video igara, ovaj akciono-avanturistički ep je poznat širom sveta i prati Nejta i Salija dok se upuštaju u opasnu potragu za ,,najvećim blagom koje nikada nije pronađeno”, usput prateći tragove koji bi mogli dovesti do Nejtovog davno izgubljenog brata.
+Početak prikazivanja: 17.2.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\6f77d071-cae8-49b3-86fb-385e08546742.jpg</picturePath>
+            <actors>
+                <actor id="1723">
+                    <firstname>Tom</firstname>
+                    <lastname>Holland</lastname>
+                </actor>
+                <actor id="1724">
+                    <firstname> Mark</firstname>
+                    <lastname>Wahlberg</lastname>
+                </actor>
+                <actor id="1725">
+                    <firstname> Sophia</firstname>
+                    <lastname>Ali</lastname>
+                </actor>
+                <actor id="1726">
+                    <firstname> Tati</firstname>
+                    <lastname>Gabrielle</lastname>
+                </actor>
+                <actor id="1727">
+                    <firstname> Antonio</firstname>
+                    <lastname>Banderas</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="454">
+                    <FirstName>Ruben</FirstName>
+                    <LastName>Fleischer</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="732">
+                    <Name>akcija</Name>
+                </genre>
+                <genre id="733">
+                    <Name> avantura</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1635">
+            <title>Uncharted 4DX</title>
+            <originalTitle>Uncharted 4DX</originalTitle>
+            <Description>U filmu Uncharted upoznajemo Nathana Drakea (Tom Holland) tijekom njegove prvu avanture u potrazi za blagom s dosjetljivim partnerom Victorom “Sullyjem” Sullivanom (Mark Wahlberg). Inspiriran hvaljenom serijom videoigara, ovaj akcijsko-avanturistički spektakl čija se radnja događa širom cijelog svijeta prati Natea i Sullyja dok se upuštaju u opasnu potragu za "najvećim blagom koje nikada nije pronađeno", također prateći tragove koji bi mogli dovesti do Nateovog davno izgubljenog brata.Početak prikazivanja: 17.2.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\f84c91a9-0325-4362-a53f-337483088fa7.jpg</picturePath>
+            <actors>
+                <actor id="1728">
+                    <firstname>Tom</firstname>
+                    <lastname>Holland</lastname>
+                </actor>
+                <actor id="1729">
+                    <firstname> Mark</firstname>
+                    <lastname>Wahlberg</lastname>
+                </actor>
+                <actor id="1730">
+                    <firstname> Sophia</firstname>
+                    <lastname>Ali</lastname>
+                </actor>
+                <actor id="1731">
+                    <firstname> Tati</firstname>
+                    <lastname>Gabrielle</lastname>
+                </actor>
+                <actor id="1732">
+                    <firstname> Antonio</firstname>
+                    <lastname>Banderas</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="455">
+                    <FirstName>Ruben</FirstName>
+                    <LastName>Fleischer</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="734">
+                    <Name>akcija</Name>
+                </genre>
+                <genre id="735">
+                    <Name> avantura</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1636">
+            <title>Uncharted IMAX</title>
+            <originalTitle>Uncharted IMAX</originalTitle>
+            <Description>U filmu Uncharted upoznajemo Nathana Drakea (Tom Holland) tijekom njegove prvu avanture u potrazi za blagom s dosjetljivim partnerom Victorom “Sullyjem” Sullivanom (Mark Wahlberg). Inspiriran hvaljenom serijom videoigara, ovaj akcijsko-avanturistički spektakl čija se radnja događa širom cijelog svijeta prati Natea i Sullyja dok se upuštaju u opasnu potragu za "najvećim blagom koje nikada nije pronađeno", također prateći tragove koji bi mogli dovesti do Nateovog davno izgubljenog brata.Početak prikazivanja: 17.2.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\2b69bf92-de58-4602-bca6-e855e2147931.jpg</picturePath>
+            <actors>
+                <actor id="1733">
+                    <firstname>Tom</firstname>
+                    <lastname>Holland</lastname>
+                </actor>
+                <actor id="1734">
+                    <firstname> Mark</firstname>
+                    <lastname>Wahlberg</lastname>
+                </actor>
+                <actor id="1735">
+                    <firstname> Sophia</firstname>
+                    <lastname>Ali</lastname>
+                </actor>
+                <actor id="1736">
+                    <firstname> Tati</firstname>
+                    <lastname>Gabrielle</lastname>
+                </actor>
+                <actor id="1737">
+                    <firstname> Antonio</firstname>
+                    <lastname>Banderas</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="456">
+                    <FirstName>Ruben</FirstName>
+                    <LastName>Fleischer</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="736">
+                    <Name>akcija</Name>
+                </genre>
+                <genre id="737">
+                    <Name> avantura</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1637">
+            <title>Čudovišta iz moje porodice 2 - sinh</title>
+            <originalTitle>Happy family 2</originalTitle>
+            <Description>Nastavak velikog animiranog hita iz 2017.godine. ČUDOVIŠTA IZ MOJE PORODICE  je adaptacija istoimenog bestselera Emmy-em ovekovečenog autora Davida Saflera (Berlin, Berlin), koji je preveden na 18 jezika i objavljen u preko 40  zemalja.
+
+Kako bi oslobodili Babu Jagu i Renfilda iz kandži lovca na čudovišta, porodica  Višbon se još jednom pretvara u neodoljivog vampira, Frankenštajnovo  čudovište, mumiju i vukodlaka. Naša porodica uz pomoć svoja tri kućna ljubimaca ponovno obilazi svet kako bi spasili prijatelje, stekli nova  monstruozna poznanstva i konačno shvatili da niko nije savršen – i da čak i oni sa manama mogu pronaći sreću.
+
+ 
+Početak prikazivanja: 24.2.2022</Description>
+            <Duration>103</Duration>
+            <picturePath>assets\9fd64cb0-e3bb-4e5e-911f-1d5f48dc44af.png</picturePath>
+            <actors/>
+            <directors>
+                <director id="457">
+                    <FirstName>Holger</FirstName>
+                    <LastName>Tappe</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="738">
+                    <Name>animirani</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1638">
+            <title>Pas</title>
+            <originalTitle>Dog</originalTitle>
+            <Description>Bivšem vojnom rendžeru Briggsu je dodijeljeno da se brine o vojno obučenom psu palog vojnika. Njegova je misija transportirati psa na drugi kraj zemlje kako bi prisustvovali vojničkom sprovodu. Njihovo putovanje natjeralo ih je na jedan poseban suživot kojem definitivno ne ide u prilog izvanredno ponašanje „dlakavog demona” koji je u tom periodu izazvao nekoliko nevjerojatnih situacija. Upravo to Briggsa je gurnulo do njegovih krajnjih granica, ali i natjeralo da malo preispita sebe i novi odnos sa svojim psećim suputnikom. 
+Početak prikazivanja: 24.2.2022</Description>
+            <Duration>90</Duration>
+            <picturePath>assets\4460cde9-aff4-48e2-82c6-eae62084eec0.jpg</picturePath>
+            <actors>
+                <actor id="1738">
+                    <firstname>Channing</firstname>
+                    <lastname>Tatum</lastname>
+                </actor>
+                <actor id="1739">
+                    <firstname> Aqueela</firstname>
+                    <lastname>Zoll</lastname>
+                </actor>
+                <actor id="1740">
+                    <firstname> Qorianka</firstname>
+                    <lastname>Kilcher</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="458">
+                    <FirstName>Reid</FirstName>
+                    <LastName>Carolin</LastName>
+                </director>
+                <director id="459">
+                    <FirstName> Channing</FirstName>
+                    <LastName>Tatum</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="739">
+                    <Name>komedija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1639">
+            <title>Sat očaja</title>
+            <originalTitle>The Desperate Hour</originalTitle>
+            <Description>Amy Carr je na svom jutarnjem treningu kada je prijateljica nazove sa zastrašujućom vijestima: policija je u potrazi za naoružanim napadačem koji je pucao iz vatrenog oružja u srednjoj školi. U istoj školi u koji ide i njezin sin Noah. Duboko usred šumskih staza koje okružuju njezin dom, miljama od grada i potpuno obuzeta panikom, Amy očajnički pokušava što prije doći do škole kako bi se uvjerila da  je njezin sin preživio taj bezumni napad.  
+Početak prikazivanja: 24.2.2022</Description>
+            <Duration>84</Duration>
+            <picturePath>assets\067ce582-38e9-4c53-84f1-ea73c11727f9.jpg</picturePath>
+            <actors>
+                <actor id="1741">
+                    <firstname>Naomi</firstname>
+                    <lastname>Watts</lastname>
+                </actor>
+                <actor id="1742">
+                    <firstname> Colton</firstname>
+                    <lastname>Gobbo</lastname>
+                </actor>
+                <actor id="1743">
+                    <firstname> Sierra</firstname>
+                    <lastname>Maltby</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="460">
+                    <FirstName>Phillip</FirstName>
+                    <LastName>Noyce</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="740">
+                    <Name>triler</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1640">
+            <title>Sat očaja</title>
+            <originalTitle>The Desperate Hour</originalTitle>
+            <Description>Za Oskara nominovana Naomi Vots u ulozi majke koja se nalazi u napetoj očajničkoj trci s vremenom.
+
+Ejmi Kar je na svom jutarnjem treningu kada je prijateljica nazove sa zastrašujućim vestima: policija je u potrazi za naoružanim napadačem koji je pucao iz vatrenog oružja u srednjoj školi. U istoj školi u koji ide i njen sin Noa. Duboko usred šumskih staza koje okružuju njen dom, miljama od grada i potpuno obuzeta panikom, Ejmi očajnički pokušava što pre da dođe do škole kako bi se uverila da &amp;nbsp;je njen sin preživeo taj bezumni napad. &amp;nbsp;
+Početak prikazivanja: 24.2.2022</Description>
+            <Duration>84</Duration>
+            <picturePath>assets\abf3b123-40a4-4e95-94ad-1899f3fbb274.jpg</picturePath>
+            <actors>
+                <actor id="1744">
+                    <firstname>Naomi</firstname>
+                    <lastname>Watts</lastname>
+                </actor>
+                <actor id="1745">
+                    <firstname> Colton</firstname>
+                    <lastname>Gobbo</lastname>
+                </actor>
+                <actor id="1746">
+                    <firstname> Sierra</firstname>
+                    <lastname>Maltby</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="461">
+                    <FirstName>Phillip</FirstName>
+                    <LastName>Noyce</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="741">
+                    <Name>triler</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1641">
+            <title>Betmen</title>
+            <originalTitle>The Batman</originalTitle>
+            <Description>U režiji velikog Meta Rivsa, novi film donosi brojne poznate negativce koji dobijaju mračni novi izgled. Paul Dano glumi Ridlera, Zoe Kravic je Žena mačka, a neprepoznatljiv Kolin Farrel pojavljuje se u ulozi zloglasnog Pingvina.
+Nakon godina lutanja ulicama Gotama, i sa tek nekoliko pouzdanih saveznika - usamljeni osvetnik postaje jedino utelovljenje pravde među svojim sugrađanima.
+Kada Gotamovu elitu napadne sadistički ubica, niz zagonetnih tragova vodi najvećeg istražitelja podzemlja u najmračniju avanturu do sada.
+Početak prikazivanja: 3.3.2022</Description>
+            <Duration>176</Duration>
+            <picturePath>assets\8928a6e6-1ae6-4804-b667-9f5dc1d8a191.jpg</picturePath>
+            <actors>
+                <actor id="1747">
+                    <firstname>Robert</firstname>
+                    <lastname>Pattinson</lastname>
+                </actor>
+                <actor id="1748">
+                    <firstname> Zoë</firstname>
+                    <lastname>Kravitz</lastname>
+                </actor>
+                <actor id="1749">
+                    <firstname> Paul</firstname>
+                    <lastname>Dano</lastname>
+                </actor>
+                <actor id="1750">
+                    <firstname> Jeffrey</firstname>
+                    <lastname>Wright</lastname>
+                </actor>
+                <actor id="1751">
+                    <firstname> Peter</firstname>
+                    <lastname>Sarsgaard</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="462">
+                    <FirstName>Matt</FirstName>
+                    <LastName>Reeves</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="742">
+                    <Name>akcija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1642">
+            <title>Betmen 4DX</title>
+            <originalTitle>The Batman 4DX</originalTitle>
+            <Description>U režiji velikog Meta Rivsa, novi film donosi brojne poznate negativce koji dobijaju mračni novi izgled. Paul Dano glumi Ridlera, Zoe Kravic je Žena mačka, a neprepoznatljiv Kolin Farrel pojavljuje se u ulozi zloglasnog Pingvina.
+Nakon godina lutanja ulicama Gotama, i sa tek nekoliko pouzdanih saveznika - usamljeni osvetnik postaje jedino utelovljenje pravde među svojim sugrađanima.
+Kada Gotamovu elitu napadne sadistički ubica, niz zagonetnih tragova vodi najvećeg istražitelja podzemlja u najmračniju avanturu do sada.
+Početak prikazivanja: 3.3.2022</Description>
+            <Duration>176</Duration>
+            <picturePath>assets\d7c3e7fb-da0e-4cfc-82f8-6e3ae6fa4d6e.jpg</picturePath>
+            <actors>
+                <actor id="1752">
+                    <firstname>Robert</firstname>
+                    <lastname>Pattinson</lastname>
+                </actor>
+                <actor id="1753">
+                    <firstname> Zoë</firstname>
+                    <lastname>Kravitz</lastname>
+                </actor>
+                <actor id="1754">
+                    <firstname> Paul</firstname>
+                    <lastname>Dano</lastname>
+                </actor>
+                <actor id="1755">
+                    <firstname> Jeffrey</firstname>
+                    <lastname>Wright</lastname>
+                </actor>
+                <actor id="1756">
+                    <firstname> Peter</firstname>
+                    <lastname>Sarsgaard</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="463">
+                    <FirstName>Matt</FirstName>
+                    <LastName>Reeves</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="743">
+                    <Name>akcija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1643">
+            <title>Cyrano</title>
+            <originalTitle>Cyrano</originalTitle>
+            <Description>Cyrano je bezvremenska priča Joea Wrighta, nagrađivanog redatalja (Ponos i predrasude, 2005.), o ljubavnom trokutu uz pregršt emocija i lijepu glazbu. Bazirana je na kazališnoj predstavi s kraja 19. stoljeća o Cyranu de Bergeracu (Peter Dinklage), francuskom pjesniku koji je živio i stvarao u 17. stoljeću.
+Cyrano je čovjek ispred svog vremena, koji zadivljuje igrom riječi na verbalnom natjecanju i briljantnim mačevanjem u dvoboju. Nesiguran u svoj fizički izgled, Cyrano je uvjeren kako nije dostojan ljubavi odane prijateljice, blistave Roxanne (Haley Bennett). Cyrano tek treba izjaviti svoje osjećaje prema Roxanne, a ona se na prvi pogled zaljubljuje u Christiana (Kelvin Harrison, Jr.).
+Film ilustrira nekoliko tema &amp;ndash; moć jezika, prevaru te kompleksnost odnosa u ljubavnom trokutu i unutarnju borbu u kojem se sučeljavaju vanjski izgled i unutarnja vrijednost. Po riječima redatelja Wr</Description>
+            <Duration>124</Duration>
+            <picturePath>assets\41835fc7-3c0c-44e1-a83d-df90f8aa1771.jpg</picturePath>
+            <actors>
+                <actor id="1757">
+                    <firstname>Peter</firstname>
+                    <lastname>Dinklage</lastname>
+                </actor>
+                <actor id="1758">
+                    <firstname> Haley</firstname>
+                    <lastname>Bennett</lastname>
+                </actor>
+                <actor id="1759">
+                    <firstname> Kelvin Harrison</firstname>
+                    <lastname>Jr.</lastname>
+                </actor>
+                <actor id="1760">
+                    <firstname> Bashir</firstname>
+                    <lastname>Salahuddin</lastname>
+                </actor>
+                <actor id="1761">
+                    <firstname> Ben</firstname>
+                    <lastname>Mendelsohn</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="464">
+                    <FirstName>Joe</FirstName>
+                    <LastName>Wright</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="744">
+                    <Name>drama</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1644">
+            <title>Sirano</title>
+            <originalTitle>Cyrano</originalTitle>
+            <Description>Nagrađivani režiser Džo Rajt privlači bioskopske gledaoce kroz simfoniju emocija, muzikom, romansom i lepotom u filmu SIRANO, ponovo predstavljajući vanvremensku priču o ljubavnom trouglu koji slama srce.
+Čovek ispred svog vremena, Sirano de Beržerak (Piter Dinklidž) zaslepljuje istovremeno žestokom igrom reči i sjajnim mačevanjem u dvoboju. Ali, ubeđen da ga njegov izgled čini nedostojnim ljubavi prema odanoj prijateljici, sjajnoj Roksani (Hejli Benet), Sirano tek treba da joj otkrije svoja osećanja. Ali, Roksana se zaljubljuje na prvi pogled u Kristijana (Kelvin Harison Džunior).
+Početak prikazivanja: 3.3.2022</Description>
+            <Duration>124</Duration>
+            <picturePath>assets\36caff06-c5e8-489a-9e8c-694a31740b21.jpg</picturePath>
+            <actors>
+                <actor id="1762">
+                    <firstname>Peter</firstname>
+                    <lastname>Dinklage</lastname>
+                </actor>
+                <actor id="1763">
+                    <firstname> Haley</firstname>
+                    <lastname>Bennett</lastname>
+                </actor>
+                <actor id="1764">
+                    <firstname> Kelvin Harrison</firstname>
+                    <lastname>Jr.</lastname>
+                </actor>
+                <actor id="1765">
+                    <firstname> Bashir</firstname>
+                    <lastname>Salahuddin</lastname>
+                </actor>
+                <actor id="1766">
+                    <firstname> Ben</firstname>
+                    <lastname>Mendelsohn</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="465">
+                    <FirstName>Joe</FirstName>
+                    <LastName>Wright</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="745">
+                    <Name>drama</Name>
+                </genre>
+                <genre id="746">
+                    <Name> mjuzikl</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1645">
+            <title>Škola čarobnih životinja - sink</title>
+            <originalTitle>The School of Magical Animals</originalTitle>
+            <Description>Škola čarobnih životinja šarena je vesela akcijska pustolovina prema istoimenoj knjizi nagrađivane dječje autorice Margit Auer o neobičnoj školi u kojoj djeca dobivaju čarobnu životinju za prijatelja.
+Priča prati novu djevojku u gradu - Idu (Emilia Maier). Ida se morala doseliti u novi grad i sada je učenica škole Winterstein. Teško joj je u novom razredu i ne uspijeva sklopiti prijateljstva, pa joj na prvi dan škole pripadne mjesto uz autsajdera Bennija (Leonard Conrads). Jednog dana njezina učiteljica upoznaje djecu s Mortimerom Morrisonom, koji putuje svijetom tražeći "čarobne životinje". Svaka od ovih životinja je predodređena da postane srodna duša jednom od učenika. Od svih njih, pridošlica Ida i autsajder Benni prvi su u razredu koji dobiju čarobne prijatelje. Otad Benni uz sebe ima drevnu, mudru kornjaču Henriettu, a Ida ima lukavu lisicu Rabbat.
+Nova učenica Ida ubrzo će postati</Description>
+            <Duration>93</Duration>
+            <picturePath>assets\858fc4dc-6844-469f-b5fb-49978d000cb9.jpg</picturePath>
+            <actors/>
+            <directors>
+                <director id="466">
+                    <FirstName>Gregor</FirstName>
+                    <LastName>Schnitzler</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="747">
+                    <Name>avantura</Name>
+                </genre>
+                <genre id="748">
+                    <Name> obiteljski</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1646">
+            <title>The Batman</title>
+            <originalTitle>The Batman</originalTitle>
+            <Description>Nakon godina lutanja ulicama Gothama, i sa tek nekoliko pouzdanih saveznika - usamljeni osvetnik postaje jedino utjelovljenje pravde među svojim sugrađanima.
+Kada Gothamovu elitu napadne sadistički ubojica, niz zagonetnih tragova vodi najvećeg istražitelja podzemlja u najmračniju avanturu do sada. 
+Početak prikazivanja: 3.3.2022</Description>
+            <Duration>176</Duration>
+            <picturePath>assets\bead8336-c367-417a-a076-98ae7621aafd.jpg</picturePath>
+            <actors>
+                <actor id="1767">
+                    <firstname>Robert</firstname>
+                    <lastname>Pattinson</lastname>
+                </actor>
+                <actor id="1768">
+                    <firstname> Zoë</firstname>
+                    <lastname>Kravitz</lastname>
+                </actor>
+                <actor id="1769">
+                    <firstname> Paul</firstname>
+                    <lastname>Dano</lastname>
+                </actor>
+                <actor id="1770">
+                    <firstname> Jeffrey</firstname>
+                    <lastname>Wright</lastname>
+                </actor>
+                <actor id="1771">
+                    <firstname> Peter</firstname>
+                    <lastname>Sarsgaard</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="467">
+                    <FirstName>Matt</FirstName>
+                    <LastName>Reeves</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="749">
+                    <Name>akcija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1647">
+            <title>The Batman 4DX</title>
+            <originalTitle>The Batman 4DX</originalTitle>
+            <Description>Nakon godina lutanja ulicama Gothama, i sa tek nekoliko pouzdanih saveznika - usamljeni osvetnik postaje jedino utjelovljenje pravde među svojim sugrađanima.
+Kada Gothamovu elitu napadne sadistički ubojica, niz zagonetnih tragova vodi najvećeg istražitelja podzemlja u najmračniju avanturu do sada. 
+Početak prikazivanja: 3.3.2022</Description>
+            <Duration>176</Duration>
+            <picturePath>assets\4bf9b9ea-aff2-4436-91d4-82f622ab7524.jpg</picturePath>
+            <actors>
+                <actor id="1772">
+                    <firstname>Robert</firstname>
+                    <lastname>Pattinson</lastname>
+                </actor>
+                <actor id="1773">
+                    <firstname> Zoë</firstname>
+                    <lastname>Kravitz</lastname>
+                </actor>
+                <actor id="1774">
+                    <firstname> Paul</firstname>
+                    <lastname>Dano</lastname>
+                </actor>
+                <actor id="1775">
+                    <firstname> Jeffrey</firstname>
+                    <lastname>Wright</lastname>
+                </actor>
+                <actor id="1776">
+                    <firstname> Peter</firstname>
+                    <lastname>Sarsgaard</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="468">
+                    <FirstName>Matt</FirstName>
+                    <LastName>Reeves</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="750">
+                    <Name>akcija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1648">
+            <title>The Batman IMAX</title>
+            <originalTitle>The Batman IMAX</originalTitle>
+            <Description>Nakon godina lutanja ulicama Gothama, i sa tek nekoliko pouzdanih saveznika - usamljeni osvetnik postaje jedino utjelovljenje pravde među svojim sugrađanima.
+Kada Gothamovu elitu napadne sadistički ubojica, niz zagonetnih tragova vodi najvećeg istražitelja podzemlja u najmračniju avanturu do sada. 
+Početak prikazivanja: 3.3.2022</Description>
+            <Duration>176</Duration>
+            <picturePath>assets\1c2bd79a-5221-4b42-85a6-4bf9f96cac36.jpg</picturePath>
+            <actors>
+                <actor id="1777">
+                    <firstname>Robert</firstname>
+                    <lastname>Pattinson</lastname>
+                </actor>
+                <actor id="1778">
+                    <firstname> Zoë</firstname>
+                    <lastname>Kravitz</lastname>
+                </actor>
+                <actor id="1779">
+                    <firstname> Paul</firstname>
+                    <lastname>Dano</lastname>
+                </actor>
+                <actor id="1780">
+                    <firstname> Jeffrey</firstname>
+                    <lastname>Wright</lastname>
+                </actor>
+                <actor id="1781">
+                    <firstname> Peter</firstname>
+                    <lastname>Sarsgaard</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="469">
+                    <FirstName>Matt</FirstName>
+                    <LastName>Reeves</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="751">
+                    <Name>akcija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1649">
+            <title>Crvena panda - sink</title>
+            <originalTitle>Turning Red</originalTitle>
+            <Description>Novi animirani film u središtu radnje ima tinejdžericu Mei Lee koja se pretvara u ogromnu crvenu pandu kada je pod stresom ili kada je jako uzbuđena (što je gotovo stalno). I kao da promjene u njezinim interesima, odnosima i tijelu nisu dovoljne, njezina pretjerano zaštitnički nastrojena, ako ne i pomalo nadmoćna majka Ming, nikad nije daleko od svoje kćeri – zapravo dosta nezgodna stvar za svakog tinejdžera. 
+Početak prikazivanja: 10.3.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\745a069b-27fc-4b36-8930-4bbe3e38d400.jpg</picturePath>
+            <actors/>
+            <directors>
+                <director id="470">
+                    <FirstName>Domee</FirstName>
+                    <LastName>Shi</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="752">
+                    <Name>animirani</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1650">
+            <title>Crvena panda 3D - sink</title>
+            <originalTitle>Turning Red 3D</originalTitle>
+            <Description>Novi animirani film u središtu radnje ima tinejdžericu Mei Lee koja se pretvara u ogromnu crvenu pandu kada je pod stresom ili kada je jako uzbuđena (što je gotovo stalno). I kao da promjene u njezinim interesima, odnosima i tijelu nisu dovoljne, njezina pretjerano zaštitnički nastrojena, ako ne i pomalo nadmoćna majka Ming, nikad nije daleko od svoje kćeri – zapravo dosta nezgodna stvar za svakog tinejdžera. 
+Početak prikazivanja: 10.3.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\5a38c2b7-cd9d-4942-bae7-51e944c568f4.jpg</picturePath>
+            <actors/>
+            <directors>
+                <director id="471">
+                    <FirstName>Domee</FirstName>
+                    <LastName>Shi</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="753">
+                    <Name>animirani</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1651">
+            <title>Pocrvenela panda - sinh</title>
+            <originalTitle>Turning Red</originalTitle>
+            <Description>Mej Li je samouverena trinaestogodišnjakinja koja je rastrzana između toga da bude poslušna ćerka i svoje ni malo prijatne adolescencije koja sa sobom nosi neprilagođenost. Kao da promene u njenim interesovanjima, vezama i telu nisu dovoljne, već kada god se previše uzbudi, što je za tinejdžera praktično – UVEK, ona se pretvori u ogromnu crvenu pandu!
+Početak prikazivanja: 10.3.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\10ada293-34ec-4a6e-adca-07528789a7ee.jpg</picturePath>
+            <actors/>
+            <directors>
+                <director id="472">
+                    <FirstName>Domee</FirstName>
+                    <LastName>Shi</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="754">
+                    <Name>animirani</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1652">
+            <title>Pocrvenela panda 3D - sinh</title>
+            <originalTitle>Turning Red 3D</originalTitle>
+            <Description>Mej Li je samouverena trinaestogodišnjakinja koja je rastrzana između toga da bude poslušna ćerka i svoje ni malo prijatne adolescencije koja sa sobom nosi neprilagođenost. Kao da promene u njenim interesovanjima, vezama i telu nisu dovoljne, već kada god se previše uzbudi, što je za tinejdžera praktično – UVEK, ona se pretvori u ogromnu crvenu pandu!
+Početak prikazivanja: 10.3.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\9a587f22-f478-4fdc-859f-4bb354d32f46.jpg</picturePath>
+            <actors/>
+            <directors>
+                <director id="473">
+                    <FirstName>Domee</FirstName>
+                    <LastName>Shi</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="755">
+                    <Name>animirani</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1653">
+            <title>Rigoleto</title>
+            <originalTitle>Rigoletto</originalTitle>
+            <Description>U svetu dekadencije i korupcije, Vardijevo remek-delo suprostavlja moć i neizvesnost razornim posledicama. U nemilosrdnom svetu luksuzne dekadencije, korupcije i društvenog propadanja, direktor Kraljevske opere Oliver Mirs postavlja operu. Verdijev uzbudljiv Rigoleto suprostavlja moć neizvesnosti i lepote naspram ružnoće, a dirigovao je ser Antonio Papano. Ova posebna jubilarna porjekcija Verdijevog RIgoleta slavi 171 godinu od premijere 1851. godine.Početak prikazivanja: 10.3.2022</Description>
+            <Duration>180</Duration>
+            <picturePath>assets\0e1ecbe2-b21e-4ad6-8b3e-c757d9ad9178.jpg</picturePath>
+            <actors/>
+            <directors/>
+            <genres>
+                <genre id="756">
+                    <Name>opera</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1654">
+            <title>Rigoletto</title>
+            <originalTitle>Rigoletto</originalTitle>
+            <Description>U svijetu dekadencije i korupcije, Verdijevo remek djelo suprotstavlja moć i nevinost s devastirajućim posljedicama.
+
+U nemilosrdnom svijetu luksuzne dekadencije, korupcije i društvenog propadanja, ravnatelj Kraljevske opere Oliver Mears postavlja operu. Mears donosi Verdijevo remek-djelo u moderni svijet. Verdijev uzbudljiv Rigoletto suprotstavlja moć nevinosti i ljepote naspram ružnoće, a dirigirao je Sir Antonio Pappano. Ovom posebnom jubilarnom projekcijom Verdijeva Rigoletta slavi se 171 godina od premijere 1851.
+Početak prikazivanja: 10.3.2022</Description>
+            <Duration>180</Duration>
+            <picturePath>assets\2eedc8df-b6bb-4b8f-8c72-35f8333f8de2.jpg</picturePath>
+            <actors/>
+            <directors/>
+            <genres>
+                <genre id="757">
+                    <Name>opera</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1655">
+            <title>Operacija Fortuna: Prevara Veka</title>
+            <originalTitle>Operation Fortune: Ruse de guerre</originalTitle>
+            <Description>Od reditelja Gaj Ričija, poznatog po hitovima Ukradi i beži, Gospoda i Dani gneva, dolazi nova sofisticirana akciona komedija sa Džejsonom Stetamom u ulozi super špijuna.
+
+Super špijun Orson mora da pronađe i zaustavi prodaju nove ubitačne tehnologije koju prodaje milijarderski krijumčar oružja Greg Simonds. Nevoljno, udružen sa ekipom najboljih operativaca na svetu, Orson i njegova ekipa regrutuju najveću holivudsku filmsku zvezdu Denija Frančeska, da im pomogne u njihovoj misiji spašavanja sveta.
+
+Početak prikazivanja: 17.3.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\1a47a8a2-bda0-45e9-8870-1b415a04c2f2.jpg</picturePath>
+            <actors>
+                <actor id="1782">
+                    <firstname>Jason</firstname>
+                    <lastname>Statham</lastname>
+                </actor>
+                <actor id="1783">
+                    <firstname> Aubrey</firstname>
+                    <lastname>Plaza</lastname>
+                </actor>
+                <actor id="1784">
+                    <firstname> Bugzy</firstname>
+                    <lastname>Malone</lastname>
+                </actor>
+                <actor id="1785">
+                    <firstname> Josh</firstname>
+                    <lastname>Hartnett</lastname>
+                </actor>
+                <actor id="1786">
+                    <firstname> Cary</firstname>
+                    <lastname>Elwes</lastname>
+                </actor>
+                <actor id="1787">
+                    <firstname> Hugh</firstname>
+                    <lastname>Grant</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="474">
+                    <FirstName>Guy</FirstName>
+                    <LastName>Ritchie</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="758">
+                    <Name>akcija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1656">
+            <title>Operacija Fortune: Prevara stoljeća</title>
+            <originalTitle>Operation Fortune: Ruse de guerre</originalTitle>
+            <Description>Super špijun Orson mora pronaći i zaustaviti prodaju nove ubojite tehnologije koju prodaje milijarderski krijumčar oružja Greg Simmonds. Nevoljko udružen s ekipom najboljih operativaca na svijetu, Fortune i njegova ekipa regrutiraju najveću hollywoodsku filmsku zvijezdu Dannyja Francesca, da im pomogne u njihovoj misiji spašavanja svijeta.
+
+Početak prikazivanja: 17.3.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\0927c1d5-757d-4783-9591-315fe6c576de.jpg</picturePath>
+            <actors>
+                <actor id="1788">
+                    <firstname>Jason</firstname>
+                    <lastname>Statham</lastname>
+                </actor>
+                <actor id="1789">
+                    <firstname> Aubrey</firstname>
+                    <lastname>Plaza</lastname>
+                </actor>
+                <actor id="1790">
+                    <firstname> Hugh</firstname>
+                    <lastname>Grant</lastname>
+                </actor>
+                <actor id="1791">
+                    <firstname> Josh</firstname>
+                    <lastname>Hartnett</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="475">
+                    <FirstName>Guy</FirstName>
+                    <LastName>Ritchie</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="759">
+                    <Name>akcija</Name>
+                </genre>
+                <genre id="760">
+                    <Name> komedija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1657">
+            <title>Belfast</title>
+            <originalTitle>Belfast</originalTitle>
+            <Description>Kenet Brana, umetnik koji je više puta nominovan za Oskara, napisao je i režirao film BELFAST, potresnu priču o ljubavi, smehu i gubitku tokom odrastanja jednog dečaka, obojenu muzikom i društvenim nemirima kasnih 1960-ih.
+Početak prikazivanja: 24.3.2022</Description>
+            <Duration>98</Duration>
+            <picturePath>assets\92cb8447-e90d-4b8b-ae39-ade8ba97fc57.jpg</picturePath>
+            <actors>
+                <actor id="1792">
+                    <firstname>Caitríona</firstname>
+                    <lastname>Balfe</lastname>
+                </actor>
+                <actor id="1793">
+                    <firstname> Ciarán</firstname>
+                    <lastname>Hinds</lastname>
+                </actor>
+                <actor id="1794">
+                    <firstname> Jamie</firstname>
+                    <lastname>Dornan</lastname>
+                </actor>
+                <actor id="1795">
+                    <firstname> Jude</firstname>
+                    <lastname>Hill</lastname>
+                </actor>
+                <actor id="1796">
+                    <firstname> Judi</firstname>
+                    <lastname>Dench</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="476">
+                    <FirstName>Kenneth</FirstName>
+                    <LastName>Branagh</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="761">
+                    <Name>drama</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1658">
+            <title>Hitna pomoć</title>
+            <originalTitle>Ambulance</originalTitle>
+            <Description>Tokom jednog dana na ulicama Los Anđelesa, tri života će se zauvek promeniti.
+ 
+U ovom trileru prepunom vratolomija, režisera i producenta Majkla Beja, odlikovani veteran Vil Šarp (dobitnik Emija Jaija Abdul-Matin II, Kendimen, Matriks: Uskrsnuća), očajan u pokušaju da nađe novac za pokrivanje bolničkih računa svoje supruge, traži pomoć od osobe za koju zna da to ne bi trebalo da radi – u pitanju je njegov usvojeni brat Deni (nominovan za Oskara Džejk Džilenhol, Zodijak, Spajdermen – Daleko od kuće). Harizmatični kriminalac Deni mu umesto pomoći nudi sledeće: da učestvuje u najvećoj pljački banke u istoriji Los Anđelesa za 32 miliona dolara. Pošto je život njegove žene u pitanju, Vil ne može da kaže ne.
+ 
+Ali kada njihov beg spektakularno pođe po zlu, očajna braća otimaju vozilo hitne pomoći sa ranjenim policajcem kojem život visi o koncu i iskusnom radnicom hitne pomoći Kem Tompson (Eiz</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\1bb75086-b16e-44b0-98ed-4b54cbac5c85.jpg</picturePath>
+            <actors>
+                <actor id="1797">
+                    <firstname>Eiza</firstname>
+                    <lastname>González</lastname>
+                </actor>
+                <actor id="1798">
+                    <firstname> Jake</firstname>
+                    <lastname>Gyllenhaal</lastname>
+                </actor>
+                <actor id="1799">
+                    <firstname> Yahya Abdul-Mateen</firstname>
+                    <lastname>II</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="477">
+                    <FirstName>Michael</FirstName>
+                    <LastName>Bay</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="762">
+                    <Name>akcija</Name>
+                </genre>
+                <genre id="763">
+                    <Name> triler</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1659">
+            <title>Izgubljeni grad</title>
+            <originalTitle>The Lost City</originalTitle>
+            <Description>Briljantna, ali povučena autorica Loretta Sage svoju je karijeru provela pišući o egzotičnim mjestima u ljubavno-pustolovnim romanima sa zgodnim modelom Alanom (koji se nalazi na koricama knjige). Tijekom turneje na kojoj s njim promovira novu knjigu, Lorettu otme ekscentrični milijarder koji se nada da će ga ona odvesti do blaga drevnog izgubljenog grada. Želeći dokazati da može biti heroj i u stvarnom životu, Alan kreće u akciju spašavanja. Ovaj nevjerojatni par se ubrzo nađe u epskoj avanturi u divljini džungle gdje će morati surađivati kako bi preživjeli i pronašli drevno blago prije nego se zauvijek izgubi.
+Početak prikazivanja: 24.3.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\3cf9a1d3-d1b6-4343-9011-b27d592378c9.jpg</picturePath>
+            <actors>
+                <actor id="1800">
+                    <firstname>Sandra</firstname>
+                    <lastname>Bullock</lastname>
+                </actor>
+                <actor id="1801">
+                    <firstname> Channing</firstname>
+                    <lastname>Tatum</lastname>
+                </actor>
+                <actor id="1802">
+                    <firstname> Daniel</firstname>
+                    <lastname>Radcliffe</lastname>
+                </actor>
+                <actor id="1803">
+                    <firstname> Brad</firstname>
+                    <lastname>Pitt</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="478">
+                    <FirstName>Aaron</FirstName>
+                    <LastName>Nee</LastName>
+                </director>
+                <director id="479">
+                    <FirstName> Adam</FirstName>
+                    <LastName>Nee</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="764">
+                    <Name>akcija</Name>
+                </genre>
+                <genre id="765">
+                    <Name> komedija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1660">
+            <title>Izgubljeni grad</title>
+            <originalTitle>The Lost City</originalTitle>
+            <Description>Briljantna, ali povučena autorka Loreta Sejdž (Sandra Bulok) provela je svoju karijeru pišući o egzotičnim mestima u svojim popularnim ljubavno-avanturističkim romanima sa zgodnim modelom sa naslovne strane Alanom (Čening Tejtum), koji je svoj život posvetio otelotvorenju lika heroja „Deš. ” Dok je na turneji na kojoj promoviše svoju novu knjigu sa Alanom, Loretu kidnapuje ekscentrični milijarder (Danijel Radklif) koji se nada da će ga ona odvesti do blaga drevnog izgubljenog grada iz njene najnovije knjige. Želeći da dokaže da može da bude heroj i u stvarnom životu, a ne samo na stranicama njenih knjiga, Alan kreće da je spase. Ubačen u epsku avanturu u džungli, ovaj nesvakidašnji par će morati da sarađuje kako bi preživeo i pronašao drevno blago pre nego što zauvek bude izgubljeno.
+Početak prikazivanja: 24.3.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\6fdf3c55-ded0-4453-af4f-6b44c6467a1b.jpg</picturePath>
+            <actors>
+                <actor id="1804">
+                    <firstname>Sandra</firstname>
+                    <lastname>Bullock</lastname>
+                </actor>
+                <actor id="1805">
+                    <firstname> Channing</firstname>
+                    <lastname>Tatum</lastname>
+                </actor>
+                <actor id="1806">
+                    <firstname> Daniel</firstname>
+                    <lastname>Radcliffe</lastname>
+                </actor>
+                <actor id="1807">
+                    <firstname> Brad</firstname>
+                    <lastname>Pitt</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="480">
+                    <FirstName>Aaron</FirstName>
+                    <LastName>Nee</LastName>
+                </director>
+                <director id="481">
+                    <FirstName> Adam</FirstName>
+                    <LastName>Nee</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="766">
+                    <Name>akcija</Name>
+                </genre>
+                <genre id="767">
+                    <Name> komedija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1661">
+            <title>Morbius</title>
+            <originalTitle>Morbius</originalTitle>
+            <Description>Jedan od Marvelovih najintrigantnijih, ali u isto vrijeme i najkompleksnijih likova konačno oživljava na velikom platnu uz Jareda Leta, dobitnika prestižne nagrade Oscar, koji će se preobratiti u zagonetnog antijunaka Michaela Morbiusa. Uslijed rijetke krvne bolesti, a odlučan spasiti druge koji boluju od sličnog problema, doktor Morbius pokušava s opasnim eksperimentom. Premda se isprva sve čini strahovito uspješnim, on sam pretvara se u sve mračniju figuru. Hoće li dobro nadvladati zlo ili će Morbius na kraju ipak podlegnuti novim misterioznim porivima?
+Početak prikazivanja: 31.3.2022</Description>
+            <Duration>108</Duration>
+            <picturePath>assets\65006e52-ee04-4d85-91ae-b79857d7b3cd.jpg</picturePath>
+            <actors>
+                <actor id="1808">
+                    <firstname>Jared</firstname>
+                    <lastname>Leto</lastname>
+                </actor>
+                <actor id="1809">
+                    <firstname> Michael</firstname>
+                    <lastname>Keaton</lastname>
+                </actor>
+                <actor id="1810">
+                    <firstname> Adria</firstname>
+                    <lastname>Arjona</lastname>
+                </actor>
+                <actor id="1811">
+                    <firstname> Jared</firstname>
+                    <lastname>Harris</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="482">
+                    <FirstName>Daniel</FirstName>
+                    <LastName>Espinosa</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="768">
+                    <Name>akcija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1662">
+            <title>Morbius</title>
+            <originalTitle>Morbius</originalTitle>
+            <Description>Jedan od Marvelovih najintrigantnijih, ali u isto vreme i najkompleksnijh likova konačno oživljava na velikom platnu uz Džereda Letoa, dobitnika prestižne nagrade Oskar, koji će se preobratiti u zagonetnog antijunaka Majkla Morbiusa. Usled retke krvne bolesti, a odlučan da spasi druge koji boluju od sličnog problema, doktor Morbius pokušava veoma opasan eksperiment. Premda se isprva sve čini strahovito uspešnim, on sam se pretvara u sve mračniju figuru. Hoće li dobro nadvladati zlo ili će Morbius na kraju ipak da podlegne novim misterioznim porivima?
+Početak prikazivanja: 31.3.2022</Description>
+            <Duration>108</Duration>
+            <picturePath>assets\d6c8c638-4206-46a6-bda7-e99512e39f0e.jpg</picturePath>
+            <actors>
+                <actor id="1812">
+                    <firstname>Jared</firstname>
+                    <lastname>Leto</lastname>
+                </actor>
+                <actor id="1813">
+                    <firstname> Michael</firstname>
+                    <lastname>Keaton</lastname>
+                </actor>
+                <actor id="1814">
+                    <firstname> Adria</firstname>
+                    <lastname>Arjona</lastname>
+                </actor>
+                <actor id="1815">
+                    <firstname> Jared</firstname>
+                    <lastname>Harris</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="483">
+                    <FirstName>Daniel</FirstName>
+                    <LastName>Espinosa</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="769">
+                    <Name>akcija</Name>
+                </genre>
+                <genre id="770">
+                    <Name> avantura</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1663">
+            <title>Morbius 4DX</title>
+            <originalTitle>Morbius 4DX</originalTitle>
+            <Description>Jedan od Marvelovih najintrigantnijih, ali u isto vreme i najkompleksnijh likova konačno oživljava na velikom platnu uz Džereda Letoa, dobitnika prestižne nagrade Oskar, koji će se preobratiti u zagonetnog antijunaka Majkla Morbiusa. Usled retke krvne bolesti, a odlučan da spasi druge koji boluju od sličnog problema, doktor Morbius pokušava veoma opasan eksperiment. Premda se isprva sve čini strahovito uspešnim, on sam se pretvara u sve mračniju figuru. Hoće li dobro nadvladati zlo ili će Morbius na kraju ipak da podlegne novim misterioznim porivima?
+Početak prikazivanja: 31.3.2022</Description>
+            <Duration>108</Duration>
+            <picturePath>assets\ce841a5f-480f-4167-b3ca-2eaf5d1ec0cc.jpg</picturePath>
+            <actors>
+                <actor id="1816">
+                    <firstname>Jared</firstname>
+                    <lastname>Leto</lastname>
+                </actor>
+                <actor id="1817">
+                    <firstname> Michael</firstname>
+                    <lastname>Keaton</lastname>
+                </actor>
+                <actor id="1818">
+                    <firstname> Adria</firstname>
+                    <lastname>Arjona</lastname>
+                </actor>
+                <actor id="1819">
+                    <firstname> Jared</firstname>
+                    <lastname>Harris</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="484">
+                    <FirstName>Daniel</FirstName>
+                    <LastName>Espinosa</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="771">
+                    <Name>akcija</Name>
+                </genre>
+                <genre id="772">
+                    <Name> avantura</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1664">
+            <title>Morbius 4DX</title>
+            <originalTitle>Morbius 4DX</originalTitle>
+            <Description>Jedan od Marvelovih najintrigantnijih, ali u isto vrijeme i najkompleksnijih likova konačno oživljava na velikom platnu uz Jareda Leta, dobitnika prestižne nagrade Oscar, koji će se preobratiti u zagonetnog antijunaka Michaela Morbiusa. Uslijed rijetke krvne bolesti, a odlučan spasiti druge koji boluju od sličnog problema, doktor Morbius pokušava s opasnim eksperimentom. Premda se isprva sve čini strahovito uspješnim, on sam pretvara se u sve mračniju figuru. Hoće li dobro nadvladati zlo ili će Morbius na kraju ipak podlegnuti novim misterioznim porivima?
+Početak prikazivanja: 31.3.2022</Description>
+            <Duration>108</Duration>
+            <picturePath>assets\1e672ff6-67bb-4fd3-93c7-ff4a5ae11ac5.jpg</picturePath>
+            <actors>
+                <actor id="1820">
+                    <firstname>Jared</firstname>
+                    <lastname>Leto</lastname>
+                </actor>
+                <actor id="1821">
+                    <firstname> Michael</firstname>
+                    <lastname>Keaton</lastname>
+                </actor>
+                <actor id="1822">
+                    <firstname> Adria</firstname>
+                    <lastname>Arjona</lastname>
+                </actor>
+                <actor id="1823">
+                    <firstname> Jared</firstname>
+                    <lastname>Harris</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="485">
+                    <FirstName>Daniel</FirstName>
+                    <LastName>Espinosa</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="773">
+                    <Name>akcija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1665">
+            <title>Morbius IMAX</title>
+            <originalTitle>Morbius IMAX</originalTitle>
+            <Description>Jedan od Marvelovih najintrigantnijih, ali u isto vrijeme i najkompleksnijih likova konačno oživljava na velikom platnu uz Jareda Leta, dobitnika prestižne nagrade Oscar, koji će se preobratiti u zagonetnog antijunaka Michaela Morbiusa. Uslijed rijetke krvne bolesti, a odlučan spasiti druge koji boluju od sličnog problema, doktor Morbius pokušava s opasnim eksperimentom. Premda se isprva sve čini strahovito uspješnim, on sam pretvara se u sve mračniju figuru. Hoće li dobro nadvladati zlo ili će Morbius na kraju ipak podlegnuti novim misterioznim porivima?
+Početak prikazivanja: 31.3.2022</Description>
+            <Duration>108</Duration>
+            <picturePath>assets\c2b2db7a-7e00-4e1f-8651-77193eccfff4.jpg</picturePath>
+            <actors>
+                <actor id="1824">
+                    <firstname>Jared</firstname>
+                    <lastname>Leto</lastname>
+                </actor>
+                <actor id="1825">
+                    <firstname> Michael</firstname>
+                    <lastname>Keaton</lastname>
+                </actor>
+                <actor id="1826">
+                    <firstname> Adria</firstname>
+                    <lastname>Arjona</lastname>
+                </actor>
+                <actor id="1827">
+                    <firstname> Jared</firstname>
+                    <lastname>Harris</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="486">
+                    <FirstName>Daniel</FirstName>
+                    <LastName>Espinosa</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="774">
+                    <Name>akcija</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1666">
+            <title>Sonic: Super jež 2  - sink</title>
+            <originalTitle>Sonic the Hedgehog 2</originalTitle>
+            <Description>Nakon što se smjestio u Green Hills, Sonic je odlučan pokazati svima da ima sve kvalitete pravog junaka. Njegov test počinje u trenutku kada se vrati Dr. Robotnik, ovoga puta s novim partnerom - Knucklesom, u potrazi za smaragdom koji ima moć stvoriti i uništiti civilizacije. Sonic će se udružiti s Tailsom pa će njih dvojica krenuti u avanturu tijekom koje moraju pronaći smaragd prije nego što padne u krive ruke.
+Početak prikazivanja: 31.3.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\78d499e3-55f3-45e6-8c94-d555a942dfa4.jpg</picturePath>
+            <actors/>
+            <directors>
+                <director id="487">
+                    <FirstName>Jeff</FirstName>
+                    <LastName>Fowler</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="775">
+                    <Name>avantura</Name>
+                </genre>
+                <genre id="776">
+                    <Name> obiteljski</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1667">
+            <title>Sonic: Super jež 2  - titl</title>
+            <originalTitle>Sonic the Hedgehog 2</originalTitle>
+            <Description>Nakon što se smjestio u Green Hills, Sonic je odlučan pokazati svima da ima sve kvalitete pravog junaka. Njegov test počinje u trenutku kada se vrati Dr. Robotnik, ovoga puta s novim partnerom - Knucklesom, u potrazi za smaragdom koji ima moć stvoriti i uništiti civilizacije. Sonic će se udružiti s Tailsom pa će njih dvojica krenuti u avanturu tijekom koje moraju pronaći smaragd prije nego što padne u krive ruke.
+Početak prikazivanja: 31.3.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\965b3d6f-eb68-45c4-8117-5f441f397726.jpg</picturePath>
+            <actors>
+                <actor id="1828">
+                    <firstname>Jim</firstname>
+                    <lastname>Carrey</lastname>
+                </actor>
+                <actor id="1829">
+                    <firstname> James</firstname>
+                    <lastname>Marsden</lastname>
+                </actor>
+                <actor id="1830">
+                    <firstname> Ben</firstname>
+                    <lastname>Schwartz</lastname>
+                </actor>
+                <actor id="1831">
+                    <firstname> Tika</firstname>
+                    <lastname>Sumpter</lastname>
+                </actor>
+                <actor id="1832">
+                    <firstname> Idris</firstname>
+                    <lastname>Elba</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="488">
+                    <FirstName>Jeff</FirstName>
+                    <LastName>Fowler</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="777">
+                    <Name>avantura</Name>
+                </genre>
+                <genre id="778">
+                    <Name> obiteljski</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1668">
+            <title>Sonikov film 2 - sinh</title>
+            <originalTitle>Sonic the Hedgehog 2</originalTitle>
+            <Description>Omiljeni plavi jež na svetu se vraća u avanturi sledećeg nivoa u SONIKOVOM FILMU 2. Nakon što se nastanio u Grin Hilsu, Sonik je željan da dokaže da ima ono što je potrebno da bude pravi heroj. On je na testu kada se dr Robotnik vraća, ovog puta sa novim partnerom, Naklsom, u potrazi za smaragdom koji ima moć da uništi civilizacije. Sonik se udružuje sa svojim pomoćnikom Tejlsom, i zajedno kreću na putovanje planetom kako bi pronašli smaragd pre nego što padne u pogrešne ruke.
+ 
+Početak prikazivanja: 31.3.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\d97c1ae9-80f1-4da0-8719-2939ddc0aae8.jpg</picturePath>
+            <actors>
+                <actor id="1833">
+                    <firstname>Aleksandar</firstname>
+                    <lastname>Gligorić</lastname>
+                </actor>
+                <actor id="1834">
+                    <firstname> Anja</firstname>
+                    <lastname>Orelj</lastname>
+                </actor>
+                <actor id="1835">
+                    <firstname> Dubravko</firstname>
+                    <lastname>Jovanović</lastname>
+                </actor>
+                <actor id="1836">
+                    <firstname> Mateja</firstname>
+                    <lastname>Vukašinović</lastname>
+                </actor>
+                <actor id="1837">
+                    <firstname> Milan</firstname>
+                    <lastname>Antonić</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="489">
+                    <FirstName>Jeff</FirstName>
+                    <LastName>Fowler</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="779">
+                    <Name>akcija</Name>
+                </genre>
+                <genre id="780">
+                    <Name> avantura</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1669">
+            <title>Sonikov film 2 - titl</title>
+            <originalTitle>Sonic the Hedgehog 2</originalTitle>
+            <Description>Omiljeni plavi jež na svetu se vraća u avanturi sledećeg nivoa u SONIKOVOM FILMU 2. Nakon što se nastanio u Grin Hilsu, Sonik je željan da dokaže da ima ono što je potrebno da bude pravi heroj. On je na testu kada se dr Robotnik vraća, ovog puta sa novim partnerom, Naklsom, u potrazi za smaragdom koji ima moć da uništi civilizacije. Sonik se udružuje sa svojim pomoćnikom Tejlsom, i zajedno kreću na putovanje planetom kako bi pronašli smaragd pre nego što padne u pogrešne ruke.
+ 
+Početak prikazivanja: 31.3.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\885514bd-9e58-44b0-bd6e-c66e01c200e9.jpg</picturePath>
+            <actors>
+                <actor id="1838">
+                    <firstname>Jim</firstname>
+                    <lastname>Carrey</lastname>
+                </actor>
+                <actor id="1839">
+                    <firstname> James</firstname>
+                    <lastname>Marsden</lastname>
+                </actor>
+                <actor id="1840">
+                    <firstname> Ben</firstname>
+                    <lastname>Schwartz</lastname>
+                </actor>
+                <actor id="1841">
+                    <firstname> Tika</firstname>
+                    <lastname>Sumpter</lastname>
+                </actor>
+                <actor id="1842">
+                    <firstname> Idris</firstname>
+                    <lastname>Elba</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="490">
+                    <FirstName>Jeff</FirstName>
+                    <LastName>Fowler</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="781">
+                    <Name>akcija</Name>
+                </genre>
+                <genre id="782">
+                    <Name> avantura</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1670">
+            <title>Severnjak</title>
+            <originalTitle>The Northman</originalTitle>
+            <Description>Od proslavljenog reditelja Roberta Egersa (Veštica, Svetionik) stiže SEVERNJAK sa Aleksanderom Skarsgardom, Anjom Tejlor-Džoj, Nikol Kidman, Itanom Hokom, Viljemom Dafoom i Bjork u glavnim ulogama. SEVERNJAK je epski triler o osveti koji istražuje koliko daleko će vikinški princ otići tražeći pravdu za svog ubijenog oca.
+Početak prikazivanja: 7.4.2022</Description>
+            <Duration>140</Duration>
+            <picturePath>assets\e32f0905-1ac6-4507-966a-d802621aa397.jpg</picturePath>
+            <actors>
+                <actor id="1843">
+                    <firstname>Alexander</firstname>
+                    <lastname>Skarsgard</lastname>
+                </actor>
+                <actor id="1844">
+                    <firstname> Anya</firstname>
+                    <lastname>Taylor-Joy</lastname>
+                </actor>
+                <actor id="1845">
+                    <firstname></firstname>
+                    <lastname>Björk</lastname>
+                </actor>
+                <actor id="1846">
+                    <firstname> Claes</firstname>
+                    <lastname>Bang</lastname>
+                </actor>
+                <actor id="1847">
+                    <firstname> Ethan</firstname>
+                    <lastname>Hawke</lastname>
+                </actor>
+                <actor id="1848">
+                    <firstname> Nicole</firstname>
+                    <lastname>Kidman</lastname>
+                </actor>
+                <actor id="1849">
+                    <firstname> Willem</firstname>
+                    <lastname>Dafoe</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="491">
+                    <FirstName>Robert</FirstName>
+                    <LastName>Eggers</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="783">
+                    <Name>epski triler</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1671">
+            <title>La Traviata</title>
+            <originalTitle>La Traviata</originalTitle>
+            <Description>U glamuroznom i površnom društvu kurtizana sve se žrtvuje za ljubav.
+
+Pariz 19. stoljeća mjesto je kontrasta; glamur i površnost, ljubav i požuda, život i smrt. Kurtizana Violetta pjeva neke od Verdijevih najcjenjenijih arija, uključujući radosnu Sempre libera u svojim dirljivim i strastvenim susretima s Alfredom i Germontom. Produkcija Richarda Eyrea za Kraljevsku operu nedavno je proslavila 25 godina na pozornici ROH-a, a ove godine vraća se s hvaljenom opernom zvijezdom Pretty Yende u ulozi Violette.
+Početak prikazivanja: 13.4.2022</Description>
+            <Duration>220</Duration>
+            <picturePath>assets\b7d0663e-8d5b-4c54-817f-db94c7393774.jpg</picturePath>
+            <actors/>
+            <directors/>
+            <genres>
+                <genre id="784">
+                    <Name>opera</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1672">
+            <title>Travijata</title>
+            <originalTitle>La Traviata</originalTitle>
+            <Description>U glamuroznom površnom društvu kurtizana sve se žrtvuje za ljubav. Pariz iz 19. veka je mesto kontrasta; glamur i površnost, ljubav i požuda, život i smrt. Kurtizana Violeta peva neke od Verdijevih najpoznatijih arija, uključujući radosnog Semper libera u njenim dirljivim i strastvenim susretima sa Alfredom i Žermonom. Produkcija Ričarda Ejra za Kraljevsku operu nedavno je proslavila 25 godina na sceni ROH-a, a ove godine se vraća sa hvaljenom operskom zvezdom Preti Iende u ulozi Violete.Početak prikazivanja: 13.4.2022</Description>
+            <Duration>220</Duration>
+            <picturePath>assets\d270e2a0-c514-41cb-ac78-a64b5b8710c3.jpg</picturePath>
+            <actors/>
+            <directors/>
+            <genres>
+                <genre id="785">
+                    <Name>opera</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1673">
+            <title>Čudesne zvijeri: Dumbledoreove tajne</title>
+            <originalTitle>Fantastic Beasts: The Secrets of Dumbledore</originalTitle>
+            <Description>Profesor Albus Dumbledore shvaća da veliki mračni čarobnjak Gellert Grindelwald želi preuzeti kontrolu nad čarobnjačkim svijetom. Kako ga ne može sam zaustaviti, pomaže mu Newt Scamander, koji predvodi neustrašivu ekipu čarobnjaka uz pomoć jednog “bezjaka”. Na nevjerojatnoj misiji susrest će se stare i nove čudesne zvijeri od kojih je dio na Grindelwaldovoj strani. Dumbledore međutim zbog velikog rizika i opasnosti neće dugo ostati po strani.
+Početak prikazivanja: 14.4.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\0c23a507-4fee-41b7-b380-e995641f1a59.jpg</picturePath>
+            <actors>
+                <actor id="1850">
+                    <firstname>Eddie</firstname>
+                    <lastname>Redmayne</lastname>
+                </actor>
+                <actor id="1851">
+                    <firstname> Jude</firstname>
+                    <lastname>Law</lastname>
+                </actor>
+                <actor id="1852">
+                    <firstname> Ezra</firstname>
+                    <lastname>Miller</lastname>
+                </actor>
+                <actor id="1853">
+                    <firstname> Dan</firstname>
+                    <lastname>Fogler</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="492">
+                    <FirstName>David</FirstName>
+                    <LastName>Yates</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="786">
+                    <Name>akcija</Name>
+                </genre>
+                <genre id="787">
+                    <Name> avantura</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1674">
+            <title>Čudesne zvijeri: Dumbledoreove tajne 3D</title>
+            <originalTitle>Fantastic Beasts: The Secrets of Dumbledore 3D</originalTitle>
+            <Description>Profesor Albus Dumbledore shvaća da veliki mračni čarobnjak Gellert Grindelwald želi preuzeti kontrolu nad čarobnjačkim svijetom. Kako ga ne može sam zaustaviti, pomaže mu Newt Scamander, koji predvodi neustrašivu ekipu čarobnjaka uz pomoć jednog “bezjaka”. Na nevjerojatnoj misiji susrest će se stare i nove čudesne zvijeri od kojih je dio na Grindelwaldovoj strani. Dumbledore međutim zbog velikog rizika i opasnosti neće dugo ostati po strani.
+Početak prikazivanja: 14.4.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\5fcb13f6-bb93-45d7-a1ca-47cab4bad2d8.jpg</picturePath>
+            <actors>
+                <actor id="1854">
+                    <firstname>Eddie</firstname>
+                    <lastname>Redmayne</lastname>
+                </actor>
+                <actor id="1855">
+                    <firstname> Jude</firstname>
+                    <lastname>Law</lastname>
+                </actor>
+                <actor id="1856">
+                    <firstname> Ezra</firstname>
+                    <lastname>Miller</lastname>
+                </actor>
+                <actor id="1857">
+                    <firstname> Dan</firstname>
+                    <lastname>Fogler</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="493">
+                    <FirstName>David</FirstName>
+                    <LastName>Yates</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="788">
+                    <Name>akcija</Name>
+                </genre>
+                <genre id="789">
+                    <Name> avantura</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1675">
+            <title>Čudesne zvijeri: Dumbledoreove tajne 3D 4DX</title>
+            <originalTitle>Fantastic Beasts: The Secrets of Dumbledore 3D 4DX</originalTitle>
+            <Description>Profesor Albus Dumbledore shvaća da veliki mračni čarobnjak Gellert Grindelwald želi preuzeti kontrolu nad čarobnjačkim svijetom. Kako ga ne može sam zaustaviti, pomaže mu Newt Scamander, koji predvodi neustrašivu ekipu čarobnjaka uz pomoć jednog “bezjaka”. Na nevjerojatnoj misiji susrest će se stare i nove čudesne zvijeri od kojih je dio na Grindelwaldovoj strani. Dumbledore međutim zbog velikog rizika i opasnosti neće dugo ostati po strani.
+Početak prikazivanja: 14.4.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\ffbc8411-5770-47a2-bf13-584e4df0e337.jpg</picturePath>
+            <actors>
+                <actor id="1858">
+                    <firstname>Eddie</firstname>
+                    <lastname>Redmayne</lastname>
+                </actor>
+                <actor id="1859">
+                    <firstname> Jude</firstname>
+                    <lastname>Law</lastname>
+                </actor>
+                <actor id="1860">
+                    <firstname> Ezra</firstname>
+                    <lastname>Miller</lastname>
+                </actor>
+                <actor id="1861">
+                    <firstname> Dan</firstname>
+                    <lastname>Fogler</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="494">
+                    <FirstName>David</FirstName>
+                    <LastName>Yates</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="790">
+                    <Name>akcija</Name>
+                </genre>
+                <genre id="791">
+                    <Name> avantura</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1676">
+            <title>Čudesne zvijeri: Dumbledoreove tajne 3D IMAX</title>
+            <originalTitle>Fantastic Beasts: The Secrets of Dumbledore 3D IMAX</originalTitle>
+            <Description>Profesor Albus Dumbledore shvaća da veliki mračni čarobnjak Gellert Grindelwald želi preuzeti kontrolu nad čarobnjačkim svijetom. Kako ga ne može sam zaustaviti, pomaže mu Newt Scamander, koji predvodi neustrašivu ekipu čarobnjaka uz pomoć jednog “bezjaka”. Na nevjerojatnoj misiji susrest će se stare i nove čudesne zvijeri od kojih je dio na Grindelwaldovoj strani. Dumbledore međutim zbog velikog rizika i opasnosti neće dugo ostati po strani.
+Početak prikazivanja: 14.4.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\4c2f21e1-21f7-401c-a49e-0eb8f9bbac72.jpg</picturePath>
+            <actors>
+                <actor id="1862">
+                    <firstname>Eddie</firstname>
+                    <lastname>Redmayne</lastname>
+                </actor>
+                <actor id="1863">
+                    <firstname> Jude</firstname>
+                    <lastname>Law</lastname>
+                </actor>
+                <actor id="1864">
+                    <firstname> Ezra</firstname>
+                    <lastname>Miller</lastname>
+                </actor>
+                <actor id="1865">
+                    <firstname> Dan</firstname>
+                    <lastname>Fogler</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="495">
+                    <FirstName>David</FirstName>
+                    <LastName>Yates</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="792">
+                    <Name>akcija</Name>
+                </genre>
+                <genre id="793">
+                    <Name> avantura</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1677">
+            <title>Fantastične zveri: Tajne Dambldora</title>
+            <originalTitle>Fantastic Beasts: The Secrets of Dumbledore</originalTitle>
+            <Description>Slavna autoka Hari Poter serijala, Dž.K. Rouling i studio Warner Bros. pripremili su novu poslasticu za sve ljubitelje sveta čarobnjaka. Vreme je za povratak u magiju!
+ 
+Profesor Albus Dumbldor shvata da veliki mračni čarobnjak Gelert Grindelvald želi da preuzme kontrolu nad čarobnjačkim svetom. Kako ne može sam da ga zaustavi, pomaže mu Njut Skamander , koji predvodi neustrašivu ekipu čarobnjaka uz pomoć jednog “normalca”. U neverovatnoj misiji susreću se stare i nove čudesne zveri od kojih je deo na Grindelvaldovoj strani. Dumbldor, međutim zbog velikog rizika i opasnosti, neće dugo ostati po strani.
+Početak prikazivanja: 14.4.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\cf99b276-0717-4650-91f2-d0b1ed78adca.jpg</picturePath>
+            <actors>
+                <actor id="1866">
+                    <firstname>Eddie</firstname>
+                    <lastname>Redmayne</lastname>
+                </actor>
+                <actor id="1867">
+                    <firstname> Jude</firstname>
+                    <lastname>Law</lastname>
+                </actor>
+                <actor id="1868">
+                    <firstname> Ezra</firstname>
+                    <lastname>Miller</lastname>
+                </actor>
+                <actor id="1869">
+                    <firstname> Dan</firstname>
+                    <lastname>Fogler</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="496">
+                    <FirstName>David</FirstName>
+                    <LastName>Yates</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="794">
+                    <Name>akcija</Name>
+                </genre>
+                <genre id="795">
+                    <Name> avantura</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1678">
+            <title>Fantastične zveri: Tajne Dambldora 3D</title>
+            <originalTitle>Fantastic Beasts: The Secrets of Dumbledore 3D</originalTitle>
+            <Description>Slavna autoka Hari Poter serijala, Dž.K. Rouling i studio Warner Bros. pripremili su novu poslasticu za sve ljubitelje sveta čarobnjaka. Vreme je za povratak u magiju!
+ 
+Profesor Albus Dumbldor shvata da veliki mračni čarobnjak Gelert Grindelvald želi da preuzme kontrolu nad čarobnjačkim svetom. Kako ne može sam da ga zaustavi, pomaže mu Njut Skamander , koji predvodi neustrašivu ekipu čarobnjaka uz pomoć jednog “normalca”. U neverovatnoj misiji susreću se stare i nove čudesne zveri od kojih je deo na Grindelvaldovoj strani. Dumbldor, međutim zbog velikog rizika i opasnosti, neće dugo ostati po strani.
+Početak prikazivanja: 14.4.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\dbbe9258-330d-482f-b36e-f295d01ba2fd.jpg</picturePath>
+            <actors>
+                <actor id="1870">
+                    <firstname>Eddie</firstname>
+                    <lastname>Redmayne</lastname>
+                </actor>
+                <actor id="1871">
+                    <firstname> Jude</firstname>
+                    <lastname>Law</lastname>
+                </actor>
+                <actor id="1872">
+                    <firstname> Ezra</firstname>
+                    <lastname>Miller</lastname>
+                </actor>
+                <actor id="1873">
+                    <firstname> Dan</firstname>
+                    <lastname>Fogler</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="497">
+                    <FirstName>David</FirstName>
+                    <LastName>Yates</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="796">
+                    <Name>akcija</Name>
+                </genre>
+                <genre id="797">
+                    <Name> avantura</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1679">
+            <title>Fantastične zveri: Tajne Dambldora 3D 4DX</title>
+            <originalTitle>Fantastic Beasts: The Secrets of Dumbledore 3D 4DX</originalTitle>
+            <Description>Slavna autoka Hari Poter serijala, Dž.K. Rouling i studio Warner Bros. pripremili su novu poslasticu za sve ljubitelje sveta čarobnjaka. Vreme je za povratak u magiju!
+ 
+Profesor Albus Dumbldor shvata da veliki mračni čarobnjak Gelert Grindelvald želi da preuzme kontrolu nad čarobnjačkim svetom. Kako ne može sam da ga zaustavi, pomaže mu Njut Skamander , koji predvodi neustrašivu ekipu čarobnjaka uz pomoć jednog “normalca”. U neverovatnoj misiji susreću se stare i nove čudesne zveri od kojih je deo na Grindelvaldovoj strani. Dumbldor, međutim zbog velikog rizika i opasnosti, neće dugo ostati po strani.
+Početak prikazivanja: 14.4.2022</Description>
+            <Duration>0</Duration>
+            <picturePath>assets\31ff95ff-9374-41f1-95f4-f842785587fc.jpg</picturePath>
+            <actors>
+                <actor id="1874">
+                    <firstname>Eddie</firstname>
+                    <lastname>Redmayne</lastname>
+                </actor>
+                <actor id="1875">
+                    <firstname> Jude</firstname>
+                    <lastname>Law</lastname>
+                </actor>
+                <actor id="1876">
+                    <firstname> Ezra</firstname>
+                    <lastname>Miller</lastname>
+                </actor>
+                <actor id="1877">
+                    <firstname> Dan</firstname>
+                    <lastname>Fogler</lastname>
+                </actor>
+            </actors>
+            <directors>
+                <director id="498">
+                    <FirstName>David</FirstName>
+                    <LastName>Yates</LastName>
+                </director>
+            </directors>
+            <genres>
+                <genre id="798">
+                    <Name>akcija</Name>
+                </genre>
+                <genre id="799">
+                    <Name> avantura</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1680">
+            <title>Labudovo jezero</title>
+            <originalTitle>Swan Lake</originalTitle>
+            <Description>Ova verzija klasične priče Kraljevskog baleta uzbudljivo kombinuje spektakl, misteriju i strast te predstavlja borbu između dobra i zla i pokušaj ljubavi da prevaziđe sve probleme. Magiju jezera, šuma i palata oživljava blistavi dizajn Džona Makfarlejna i uzvišenu partituru Čajkovskog. Raskošna produkcija Labudovog jezera vraća se na scenu Kraljevske opere nakon što je njeno oživljavanje 2020. prekinuto zatvaranjem pozorišta zbog pandemije. Ovaj klasik na repertoaru svedoči o stalnoj ljubavi pokojnog kereografa Lijama Skarleta prema klasicizmu i urođenoj muzikalnosti, koji blistaju u svakoj sekundi ove produkcije.Početak prikazivanja: 19.5.2022</Description>
+            <Duration>200</Duration>
+            <picturePath>assets\3db0883b-0c10-4fb3-8017-2fbb00464067.jpg</picturePath>
+            <actors/>
+            <directors/>
+            <genres>
+                <genre id="800">
+                    <Name>balet</Name>
+                </genre>
+            </genres>
+        </movie>
+        <movie id="1681">
+            <title>Labuđe jezero</title>
+            <originalTitle>Swan Lake</originalTitle>
+            <Description>Ova verzija klasične ljubavne priče Kraljevskog baleta uzbudljivo spaja spektakl, misterij i strast. 
+   
+Ova klasična bajka predstavlja bitku između dobra i zla te pokušaj ljubavi da pobijedi sve probleme. Čarolija jezera, šuma i palača oživljena je blistavim dizajnom Johna Macfarlanea i uzvišenom partiturom Čajkovskog. Raskošna produkcija Labuđeg jezera vraća se na pozornicu Kraljevske opere nakon što je njezino oživljavanje 2020. prekinuto zatvaranjem kazališta zbog pandemije. Ovaj klasik na repertoaru svjedoči o postojanoj ljubavi pokojnog koreografa Liama Scarletta prema klasicizmu i urođenoj muzikalnosti, koji blistaju u svakoj sekundi ove produkcije.
+Početak prikazivanja: 19.5.2022</Description>
+            <Duration>200</Duration>
+            <picturePath>assets\a0b3beee-a580-485e-8f7b-e37a14ac76d5.jpg</picturePath>
+            <actors/>
+            <directors/>
+            <genres>
+                <genre id="801">
+                    <Name>balet</Name>
+                </genre>
+            </genres>
+        </movie>
+    </movies>
+</moviearchive>

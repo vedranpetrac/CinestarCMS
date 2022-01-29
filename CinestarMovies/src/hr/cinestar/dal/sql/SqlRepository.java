@@ -9,8 +9,16 @@ import hr.cinestar.model.Actor;
 import hr.cinestar.model.Director;
 import hr.cinestar.model.Genre;
 import hr.cinestar.model.Movie;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Types;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import javax.sql.DataSource;
 
 /**
  *
@@ -18,124 +26,607 @@ import java.util.Optional;
  */
 public class SqlRepository implements Repository {
 
+    private static final String CREATE_MOVIE = "{ CALL createMovie (?,?,?,?,?,?) }";
+    private static final String UPDATE_MOVIE = "{ CALL updateMovie (?,?,?,?,?,?,?,?) }";
+    private static final String DELETE_MOVIE = "{ CALL deleteMovie (?) }";
+    private static final String SELECT_MOVIE = "{ CALL selectMovie (?) }";
+    private static final String SELECT_MOVIES = "{ CALL selectMovies }";
+
+    private static final String CREATE_ACTOR = "{ CALL createActor (?,?,?) }";
+    private static final String UPDATE_ACTOR = "{ CALL updateActor (?,?,?) }";
+    private static final String DELETE_ACTOR = "{ CALL deleteActor (?) }";
+    private static final String SELECT_ACTOR = "{ CALL selectActor (?) }";
+    private static final String SELECT_ACTORS = "{ CALL selectActors }";
+
+    private static final String CREATE_DIRECTOR = "{ CALL createDirector (?,?,?) }";
+    private static final String UPDATE_DIRECTOR = "{ CALL updateDirector (?,?,?) }";
+    private static final String DELETE_DIRECTOR = "{ CALL deleteDirector (?) }";
+    private static final String SELECT_DIRECTOR = "{ CALL selectDirector (?) }";
+    private static final String SELECT_DIRECTORS = "{ CALL selectDirectors }";
+
+    private static final String ID_GENRE = "IDGenre";
+    private static final String NAME_GENRE = "Name";
+    private static final String CREATE_GENRE = "{ CALL createGenre (?,?) }";
+    private static final String UPDATE_GENRE = "{ CALL updateGenre (?,?) }";
+    private static final String DELETE_GENRE = "{ CALL deleteGenre (?) }";
+    private static final String SELECT_GENRE = "{ CALL selectGenre (?) }";
+    private static final String SELECT_GENRES = "{ CALL selectGenres }";
+
     @Override
     public Optional<Movie> selectMovie(int id) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(SELECT_MOVIE)) {
+
+            stmt.setInt(1, id);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return Optional.of(new Movie(
+                            rs.getInt("IDMovie"),
+                            rs.getString("Title"),
+                            rs.getString("OriginalTitle"),
+                            rs.getString("Description"),
+                            rs.getInt("Duration"),
+                            rs.getString("PicturePath")));
+                }
+            }
+        }
+        return Optional.empty();
     }
 
     @Override
     public List<Movie> selectMovies() throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Movie> movies = new ArrayList<>();
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(SELECT_MOVIES)) {
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    movies.add(new Movie(
+                            rs.getInt("IDMovie"),
+                            rs.getString("Title"),
+                            rs.getString("OriginalTitle"),
+                            rs.getString("Description"),
+                            rs.getInt("Duration"),
+                            rs.getString("PicturePath")));
+                }
+            }
+        }
+        return movies;
     }
 
     @Override
-    public int createMovie(Movie movie) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int createMovie(Movie movie) throws Exception {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(CREATE_MOVIE)) {
+            stmt.setString(1, movie.getTitle());
+            stmt.setString(2, movie.getOrigTitle());
+            stmt.setString(3, movie.getDescription());
+            stmt.setInt(4, movie.getDuration());
+            stmt.setString(5, movie.getPicturePath());
+            stmt.registerOutParameter(7, Types.INTEGER);
+
+            stmt.executeUpdate();
+
+            return stmt.getInt(8);
+        }
     }
 
     @Override
-    public void createMovies(List<Movie> movies) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void createMovies(List<Movie> movies) throws SQLException {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(CREATE_MOVIE)) {
+            for (Movie movie : movies) {
+                stmt.setString(1, movie.getTitle());
+                stmt.setString(2, movie.getOrigTitle());
+                stmt.setString(3, movie.getDescription());
+                stmt.setInt(4, movie.getDuration());
+                stmt.setString(5, movie.getPicturePath());
+                stmt.registerOutParameter(6, Types.INTEGER);
+
+                stmt.executeUpdate();
+                
+                movie.setId(stmt.getInt(6));
+            }
+
+        }
     }
 
     @Override
-    public void updateMovie(int id, Movie data) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void updateMovie(int id, Movie movie) throws SQLException {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(UPDATE_MOVIE)) {
+            stmt.setString(1, movie.getTitle());
+            stmt.setString(2, movie.getOrigTitle());
+            stmt.setString(3, movie.getDescription());
+            stmt.setInt(4, movie.getDuration());
+            stmt.setString(5, movie.getPicturePath());
+
+            stmt.setInt(6, id);
+
+            stmt.executeUpdate();
+
+        }
     }
 
     @Override
-    public void deleteMovie(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void deleteMovie(int id) throws SQLException {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(DELETE_MOVIE)) {
+
+            stmt.setInt(7, id);
+
+            stmt.executeUpdate();
+
+        }
     }
 
     @Override
     public Optional<Director> selectDirector(int id) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(SELECT_DIRECTOR)) {
+
+            stmt.setInt(1, id);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return Optional.of(new Director(
+                            rs.getInt("IDDirector"),
+                            rs.getString("FirstName"),
+                            rs.getString("LastName")));
+
+                }
+            }
+
+        }
+
+        return Optional.empty();
     }
 
     @Override
     public List<Director> selectDirectors() throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Director> directors = new ArrayList<>();
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(SELECT_DIRECTORS)) {
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    directors.add(new Director(
+                            rs.getInt("IDDirector"),
+                            rs.getString("FirstName"),
+                            rs.getString("LastName")));
+
+                }
+            }
+
+        }
+
+        return directors;
     }
 
     @Override
-    public int createDirector(Director movie) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int createDirector(Director director) throws SQLException {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(CREATE_ACTOR)) {
+            stmt.setString(1, director.getFirstName());
+            stmt.setString(2, director.getLastName());
+            stmt.registerOutParameter(3, Types.INTEGER);
+            stmt.executeUpdate();
+            return stmt.getInt(3);
+        }
     }
 
     @Override
-    public void createDirectors(List<Director> directors) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void createDirectors(List<Director> directors) throws SQLException {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(CREATE_DIRECTOR)) {
+            for (Director director : directors) {
+                stmt.setString(1, director.getFirstName());
+                stmt.setString(2, director.getLastName());
+                stmt.registerOutParameter(3, Types.INTEGER);
+
+                stmt.executeUpdate();
+                
+                director.setId(stmt.getInt(3));
+            }
+
+        }
     }
 
     @Override
-    public void updateDirector(int id, Movie data) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void updateDirector(int id, Director director) throws SQLException {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(UPDATE_DIRECTOR)) {
+            stmt.setString(1, director.getFirstName());
+            stmt.setString(2, director.getLastName());
+
+            stmt.setInt(3, id);
+
+            stmt.executeUpdate();
+
+        }
     }
 
     @Override
-    public void deleteDirector(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void deleteDirector(int id) throws SQLException {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(DELETE_DIRECTOR)) {
+
+            stmt.setInt(6, id);
+
+            stmt.executeUpdate();
+
+        }
     }
 
     @Override
     public Optional<Actor> selectActor(int id) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(SELECT_ACTOR)) {
+
+            stmt.setInt(1, id);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return Optional.of(new Actor(
+                            rs.getInt("IDActor"),
+                            rs.getString("FirstName"),
+                            rs.getString("LastName")));
+                }
+            }
+        }
+        return Optional.empty();
     }
 
     @Override
     public List<Actor> selectActors() throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Actor> actors = new ArrayList<>();
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(SELECT_ACTORS)) {
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    actors.add(new Actor(
+                            rs.getInt("IDActor"),
+                            rs.getString("FirstName"),
+                            rs.getString("LastName")));
+
+                }
+            }
+        }
+        return actors;
     }
 
     @Override
-    public int createActor(Actor actor) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int createActor(Actor actor) throws SQLException {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(CREATE_ACTOR)) {
+            stmt.setString(1, actor.getFirstName());
+            stmt.setString(2, actor.getLastName());
+            stmt.registerOutParameter(3, Types.INTEGER);
+            stmt.executeUpdate();
+            return stmt.getInt(3);
+        }
     }
 
     @Override
-    public void createActors(List<Actor> actors) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void createActors(List<Actor> actors) throws SQLException {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(CREATE_ACTOR)) {
+            for (Actor actor : actors) {
+                stmt.setString(1, actor.getFirstName());
+                stmt.setString(2, actor.getLastName());
+                stmt.registerOutParameter("Id", Types.INTEGER);
+                stmt.executeUpdate();
+                
+                actor.setId(stmt.getInt("Id"));
+            }
+
+        }
     }
 
     @Override
-    public void updateActor(int id, Actor data) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void updateActor(int id, Actor actor) throws SQLException {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(UPDATE_ACTOR)) {
+            stmt.setString(1, actor.getFirstName());
+            stmt.setString(2, actor.getLastName());
+
+            stmt.setInt(3, id);
+
+            stmt.executeUpdate();
+
+        }
     }
 
     @Override
-    public void deleteActor(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void deleteActor(int id) throws SQLException {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(DELETE_ACTOR)) {
+
+            stmt.setInt(6, id);
+
+            stmt.executeUpdate();
+
+        }
     }
 
     @Override
     public Optional<Genre> selectGenre(int id) throws Exception {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(SELECT_GENRE)) {
+
+            stmt.setInt(1, id);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return Optional.of(new Genre(
+                            rs.getInt(ID_GENRE),
+                            rs.getString(NAME_GENRE)));
+                }
+            }
+
+        }
+
+        return Optional.empty();
+    }
+
+    @Override
+    public List<Genre> selectGenres() throws SQLException {
+        List<Genre> genres = new ArrayList<>();
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(SELECT_GENRES)) {
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    genres.add(new Genre(
+                            rs.getInt("IDGenre"),
+                            rs.getString("Name")));
+
+                }
+            }
+        }
+        return genres;
+    }
+
+    @Override
+    public int createGenre(Genre genre) throws SQLException {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(CREATE_GENRE)) {
+            stmt.setString(1, genre.getName());
+            stmt.registerOutParameter(2, Types.INTEGER);
+            stmt.executeUpdate();
+            return stmt.getInt(2);
+        }
+
+    }
+
+    @Override
+    public void createGenres(List<Genre> genres) throws SQLException {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(CREATE_GENRE)) {
+            for (Genre genre : genres) {
+                stmt.setString(1, genre.getName());
+
+                stmt.registerOutParameter(2, Types.INTEGER);
+
+                stmt.executeUpdate();
+                
+                genre.setId(stmt.getInt(2));
+            }
+
+        }
+    }
+
+    @Override
+    public void updateGenre(int id, Genre genre) throws SQLException {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(UPDATE_GENRE)) {
+            stmt.setString(1, genre.getName());
+            stmt.setInt(2, id);
+
+            stmt.executeUpdate();
+
+        }
+    }
+
+    @Override
+    public void deleteGenre(int id) throws SQLException {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall(DELETE_GENRE)) {
+
+            stmt.setInt(6, id);
+
+            stmt.executeUpdate();
+
+        }
+    }
+
+    @Override
+    public List<Director> selectMovieDirectors(Movie movie) throws Exception {
+        List<Director> directors = new ArrayList<>();
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall("{ CALL SelectMovieDirectors (?)}")) {
+
+            stmt.setInt(1, movie.getId());
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    directors.add(new Director(
+                            rs.getInt("IDDirector"),
+                            rs.getString("FirstName"),
+                            rs.getString("LastName")));
+
+                }
+            }
+
+        }
+
+        return directors;
+    }
+
+    @Override
+    public int createMovieDirectorConn(Director director, Movie movie) throws Exception {
+         DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall("{ CALL CreateMovieDirector (?,?,?)} ")) {
+            stmt.setInt(1, movie.getId());
+            stmt.setInt(2, director.getId());
+            stmt.registerOutParameter(3, Types.INTEGER);
+            stmt.executeUpdate();
+            return stmt.getInt(3);
+        }
+    }
+
+    @Override
+    public void deleteMovieDirectorConn(int id) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Genre> selectGenres() throws Exception {
+    public List<Actor> selectActorsMovie(Movie movie) throws Exception {
+        List<Actor> actors = new ArrayList<>();
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall("{ CALL SelectMovieActors (?)}")) {
+            stmt.setInt(1, movie.getId());
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    actors.add(new Actor(
+                            rs.getInt("IDActor"),
+                            rs.getString("FirstName"),
+                            rs.getString("LastName")));
+
+                }
+            }
+        }
+        return actors;
+    }
+
+    @Override
+    public int createMovieActorConn(Actor actor, Movie movie) throws Exception {
+         DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall("{ CALL CreateMovieActor (?,?,?)} ")) {
+            stmt.setInt(1, movie.getId());
+            stmt.setInt(2, actor.getId());
+            stmt.registerOutParameter(3, Types.INTEGER);
+            stmt.executeUpdate();
+            return stmt.getInt(3);
+        }
+    }
+
+    @Override
+    public void deleteMovieActorConn(int id) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public int createGenre(Genre genre) {
+    public List<Genre> selectMovieGenres(Movie movie) throws Exception {
+        List<Genre> genres = new ArrayList<>();
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall("{ CALL SelectMovieGenres (?)}")) {
+            stmt.setInt(1, movie.getId());
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    genres.add(new Genre(
+                            rs.getInt("IDGenre"),
+                            rs.getString("Name")));
+
+                }
+            }
+        }
+        return genres;
+    }
+
+    @Override
+    public int createMovieGenreConn(Genre genre, Movie movie) throws Exception {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall("{ CALL CreateMovieGenre (?,?,?) }")) {
+            stmt.setInt(1, movie.getId());
+            stmt.setInt(2, genre.getId());
+            stmt.registerOutParameter(3, Types.INTEGER);
+            stmt.executeUpdate();
+            return stmt.getInt(3);
+        }
+    }
+
+    @Override
+    public void deleteMovieGenreConn(int id) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void createGenres(List<Genre> genres) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int checkAccountData(String username, String pass) throws Exception {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall("{ CALL checkAccountAuth (?,?,?) }")) {
+            stmt.setString(1, username);
+            stmt.setString(2, pass);
+            stmt.registerOutParameter(3, Types.INTEGER);
+            stmt.executeUpdate();
+            return stmt.getInt(3);
+        }
     }
 
-    @Override
-    public void updateGenre(int id, Genre data) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void deleteGenre(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

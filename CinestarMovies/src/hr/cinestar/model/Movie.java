@@ -7,55 +7,62 @@ package hr.cinestar.model;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author vedran
  */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {"title", "origTitle", "description","duration", "picturePath", "actors", "directors", "genres"})
 public class Movie {
 
-    public static DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
-
+    @XmlAttribute
     private int id;
+    @XmlElement(name = "title")
     private String title;
+    @XmlElement(name = "originalTitle")
     private String origTitle;
-    private String link;
+    @XmlElement(name = "Description")
     private String description;
+    @XmlElement(name = "Duration")
+    private int duration;
+    @XmlElement(name = "picturePath")
     private String picturePath;
-    private LocalDateTime publishedDate;
-    private LocalDateTime liveDate;
-    private String Duration;
+    @XmlElementWrapper
+    @XmlElement(name = "actor")
     private List<Actor> actors;
+    @XmlElementWrapper
+    @XmlElement(name = "director")
     private List<Director> directors;
+    @XmlElementWrapper
+    @XmlElement(name = "genre")
     private List<Genre> genres;
 
-    public Movie(int id, String title, String origTitle, String link, String description, String picturePath, LocalDateTime publishedDate, LocalDateTime liveDate, String duration, List<Actor> actors, List<Director> directors, List<Genre> genres) {
+    public Movie(int id, String title, String origTitle, String description, int duration, String picturePath, List<Actor> actors, List<Director> directors, List<Genre> genres) {
         this.id = id;
         this.title = title;
         this.origTitle = origTitle;
-        this.link = link;
         this.description = description;
+        this.duration = duration;
         this.picturePath = picturePath;
-        this.publishedDate = publishedDate;
-        this.liveDate = liveDate;
-        this.Duration = duration;
         this.actors = actors;
         this.directors = directors;
         this.genres = genres;
     }
 
-    public Movie(String title, String link, String description, String picturePath, LocalDateTime publishedDate, LocalDateTime liveDate, String duration, List<Actor> actors, List<Director> directors, List<Genre> genres) {
+    public Movie(int id, String title, String origTitle, String description, int duration, String picturePath) {
+        this.id = id;
         this.title = title;
         this.origTitle = origTitle;
-        this.link = link;
         this.description = description;
+        this.duration = duration;
         this.picturePath = picturePath;
-        this.publishedDate = publishedDate;
-        this.liveDate = liveDate;
-        this.Duration = duration;
-        this.actors = actors;
-        this.directors = directors;
-        this.genres = genres;
     }
 
     public Movie() {
@@ -74,14 +81,6 @@ public class Movie {
         this.title = title;
     }
 
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -96,22 +95,6 @@ public class Movie {
 
     public void setPicturePath(String picturePath) {
         this.picturePath = picturePath;
-    }
-
-    public LocalDateTime getPublishedDate() {
-        return publishedDate;
-    }
-
-    public void setPublishedDate(LocalDateTime publishedDate) {
-        this.publishedDate = publishedDate;
-    }
-
-    public LocalDateTime getLiveDate() {
-        return liveDate;
-    }
-
-    public void setLiveDate(LocalDateTime liveDate) {
-        this.liveDate = liveDate;
     }
 
     public List<Actor> getActors() {
@@ -138,13 +121,6 @@ public class Movie {
         this.genres = genres;
     }
 
-    @Override
-    public String toString() {
-
-        return id + " - " + title;
-
-    }
-
     public String getOrigTitle() {
         return origTitle;
     }
@@ -153,12 +129,23 @@ public class Movie {
         this.origTitle = origTitle;
     }
 
-    public String getDuration() {
-        return Duration;
+    public int getDuration() {
+        return duration;
     }
 
-    public void setDuration(String Duration) {
-        this.Duration = Duration;
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    @Override
+    public String toString() {
+
+        return id + " - " + title;
+
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
 }

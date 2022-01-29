@@ -4,17 +4,33 @@
  */
 package hr.cinestar;
 
+import hr.cinestar.dal.Repository;
+import hr.cinestar.dal.RepositoryFactory;
+import hr.cinestar.model.Movie;
+import hr.cinestar.model.MovieTableModel;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ListSelectionModel;
+
 /**
  *
  * @author Vedran
  */
 public class EditMoviesPanel extends javax.swing.JPanel {
+    
+    private static final String DIR = "assets";
+
+    private Repository repository;
+    private MovieTableModel moviesTableModel;
+
+    private Movie selectedArticle;
 
     /**
-     * Creates new form EditMovies
+     * Creates new form EditMoviesPanel
      */
     public EditMoviesPanel() {
         initComponents();
+        
     }
 
     /**
@@ -26,19 +42,357 @@ public class EditMoviesPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane2 = new javax.swing.JScrollPane();
+        taDescription = new javax.swing.JTextArea();
+        tfPicturePath = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbMovies = new javax.swing.JTable();
+        btnChoosePicture = new javax.swing.JButton();
+        lbIcon = new javax.swing.JLabel();
+        btnAdd = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        btnUpdate = new javax.swing.JButton();
+        tfTitle = new javax.swing.JTextField();
+        btnDelete = new javax.swing.JButton();
+        tfOriginalTitle = new javax.swing.JTextField();
+        lbTitleError = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        lblOriginalTitleError = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        lbDescError = new javax.swing.JLabel();
+        lbIconError = new javax.swing.JLabel();
+        lbDurationError = new javax.swing.JLabel();
+        tfDuration = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                formComponentShown(evt);
+            }
+        });
+
+        taDescription.setColumns(20);
+        taDescription.setLineWrap(true);
+        taDescription.setRows(5);
+        jScrollPane2.setViewportView(taDescription);
+
+        tfPicturePath.setEditable(false);
+        tfPicturePath.setBackground(new java.awt.Color(204, 204, 204));
+        tfPicturePath.setName(""); // NOI18N
+
+        tbMovies.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tbMovies.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbMoviesMouseClicked(evt);
+            }
+        });
+        tbMovies.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tbMoviesKeyReleased(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tbMovies);
+
+        btnChoosePicture.setText("Choose image");
+        btnChoosePicture.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChoosePictureActionPerformed(evt);
+            }
+        });
+
+        lbIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/no_image.png"))); // NOI18N
+        lbIcon.setPreferredSize(new java.awt.Dimension(480, 300));
+
+        btnAdd.setText("Add");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Title");
+
+        btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
+
+        btnDelete.setBackground(java.awt.Color.red);
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
+        btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
+
+        lbTitleError.setForeground(java.awt.Color.red);
+
+        jLabel3.setText("Original Title");
+
+        lblOriginalTitleError.setForeground(java.awt.Color.red);
+
+        jLabel4.setText("Description");
+
+        lbDescError.setForeground(java.awt.Color.red);
+        lbDescError.setToolTipText("");
+
+        lbIconError.setForeground(java.awt.Color.red);
+
+        lbDurationError.setForeground(java.awt.Color.red);
+
+        jLabel5.setText("Duration");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tfDuration, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfTitle, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfOriginalTitle, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnDelete, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbDurationError, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblOriginalTitleError, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbDescError, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbTitleError, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(13, 13, 13)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(tfPicturePath)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnChoosePicture))
+                    .addComponent(lbIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(lbIconError, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
+            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbIconError, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnChoosePicture)
+                            .addComponent(tfPicturePath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbTitleError, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3)
+                        .addGap(4, 4, 4)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfOriginalTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblOriginalTitleError, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbDescError, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5)
+                        .addGap(4, 4, 4)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfDuration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbDurationError, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnUpdate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
+        init();
+    }//GEN-LAST:event_formComponentShown
+
+    private void tbMoviesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbMoviesMouseClicked
+        showArticle();
+    }//GEN-LAST:event_tbMoviesMouseClicked
+
+    private void tbMoviesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbMoviesKeyReleased
+        showArticle();
+    }//GEN-LAST:event_tbMoviesKeyReleased
+
+    private void btnChoosePictureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChoosePictureActionPerformed
+        File file = FileUtils.uploadFile("Images", "jpg", "jpeg", "png");
+        if (file == null) {
+            return;
+        }
+        tfPicturePath.setText(file.getAbsolutePath());
+        setIcon(lbIcon, file);
+    }//GEN-LAST:event_btnChoosePictureActionPerformed
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+
+        if (formValid()) {
+            try {
+                String localPicturePath = uploadPicture();
+                Article article = new Article(
+                    tfTitle.getText().trim(),
+                    tfOriginalTitle.getText().trim(),
+                    taDescription.getText().trim(),
+                    localPicturePath,
+                    LocalDateTime.parse(tfPublishedDate.getText().trim(), Article.DATE_FORMATTER)
+                );
+                repository.createArticle(article);
+                articlesTableModel.setArticles(repository.selectArticles());
+
+                clearForm();
+            } catch (Exception ex) {
+                Logger.getLogger(Zadatak01.class.getName()).log(Level.SEVERE, null, ex);
+                MessageUtils.showErrorMessage("Error", "Unable to create article!");
+            }
+        }
+    }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        if (selectedArticle == null) {
+            MessageUtils.showInformationMessage("Wrong operation", "Please choose article to update");
+            return;
+        }
+        if (formValid()) {
+            try {
+                if (tfPicturePath.getText().trim().equals(selectedArticle.getPicturePath())) {
+                    if (selectedArticle.getPicturePath() != null) {
+                        Files.deleteIfExists(Paths.get(selectedArticle.getPicturePath()));
+                    }
+                    String localPicturePath = uploadPicture();
+                    selectedArticle.setPicturePath(localPicturePath);
+                }
+
+                selectedArticle.setTitle(tfTitle.getText().trim());
+                selectedArticle.setLink(tfOriginalTitle.getText().trim());
+                selectedArticle.setDescription(taDescription.getText().trim());
+                selectedArticle.setPublishedDate(LocalDateTime.parse(tfPublishedDate.getText().trim(), Article.DATE_FORMATTER));
+
+                repository.updateArticle(selectedArticle.getId(), selectedArticle);
+                articlesTableModel.setArticles(repository.selectArticles());
+
+                clearForm();
+            } catch (Exception ex) {
+                Logger.getLogger(EditArticlesPanel.class.getName()).log(Level.SEVERE, null, ex);
+                MessageUtils.showErrorMessage("Error", "Unable to update article!");
+            }
+        }
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+
+        if (selectedArticle == null) {
+            MessageUtils.showInformationMessage("Wrong operation", "Please choose article to delete");
+            return;
+        }
+        if (MessageUtils.showConfirmDialog(
+            "Delete article",
+            "Do you really want to delete article?") == JOptionPane.YES_OPTION) {
+        try {
+            if (selectedArticle.getPicturePath() != null) {
+                Files.deleteIfExists(Paths.get(selectedArticle.getPicturePath()));
+            }
+            repository.deleteArticle(selectedArticle.getId());
+            articlesTableModel.setArticles(repository.selectArticles());
+
+            clearForm();
+        } catch (Exception ex) {
+            Logger.getLogger(EditArticlesPanel.class.getName()).log(Level.SEVERE, null, ex);
+            MessageUtils.showErrorMessage("Error", "Unable to delete article!");
+        }
+        }
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnChoosePicture;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnUpdate;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lbDescError;
+    private javax.swing.JLabel lbDurationError;
+    private javax.swing.JLabel lbIcon;
+    private javax.swing.JLabel lbIconError;
+    private javax.swing.JLabel lbTitleError;
+    private javax.swing.JLabel lblOriginalTitleError;
+    private javax.swing.JTextArea taDescription;
+    private javax.swing.JTable tbMovies;
+    private javax.swing.JTextField tfDuration;
+    private javax.swing.JTextField tfOriginalTitle;
+    private javax.swing.JTextField tfPicturePath;
+    private javax.swing.JTextField tfTitle;
     // End of variables declaration//GEN-END:variables
+
+    private void init(){
+        try {
+            initRepository();
+            initTable();
+        } catch (Exception ex) {
+            Logger.getLogger(EditMoviesPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void initRepository() throws Exception {
+        repository = RepositoryFactory.getRepository();
+    }
+    
+    private void initTable() throws Exception {
+        tbMovies.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        tbMovies.setAutoCreateRowSorter(true);
+        tbMovies.setRowHeight(25);
+        moviesTableModel = new MovieTableModel(repository.selectMovies());
+        tbMovies.setModel(moviesTableModel);
+    }
+
 }

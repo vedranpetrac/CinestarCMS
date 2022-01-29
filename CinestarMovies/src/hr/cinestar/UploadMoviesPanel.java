@@ -4,17 +4,36 @@
  */
 package hr.cinestar;
 
+import hr.cinestar.dal.Repository;
+import hr.cinestar.dal.RepositoryFactory;
+import hr.cinestar.model.Actor;
+import hr.cinestar.model.Director;
+import hr.cinestar.model.Genre;
+import hr.cinestar.model.Movie;
+import hr.cinestar.parsers.rss.MoviesParsers;
+import java.io.IOException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
+import javax.xml.stream.XMLStreamException;
+
 /**
  *
  * @author Vedran
  */
 public class UploadMoviesPanel extends javax.swing.JPanel {
 
+    
+    private DefaultListModel<Movie> moviesModel;
+    private Repository repository;
+
     /**
      * Creates new form UploadMoviesPanel
      */
     public UploadMoviesPanel() {
         initComponents();
+        init();
     }
 
     /**
@@ -26,21 +45,105 @@ public class UploadMoviesPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setPreferredSize(new java.awt.Dimension(1100, 600));
+        jScrollPane1 = new javax.swing.JScrollPane();
+        lsMovies = new javax.swing.JList<>();
+        btnUpload = new javax.swing.JButton();
+
+        setPreferredSize(new java.awt.Dimension(1200, 600));
+
+        jScrollPane1.setViewportView(lsMovies);
+
+        btnUpload.setText("Upload Movies");
+        btnUpload.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUploadActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(21, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1079, Short.MAX_VALUE)
+                    .addComponent(btnUpload, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(btnUpload, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
         );
+
+        btnUpload.getAccessibleContext().setAccessibleName("Upload Movies");
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnUploadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUploadActionPerformed
+
+        try {
+            List<Movie> movies = MoviesParsers.parse();
+            repository.createMovies(movies);
+            for (Movie movie : movies) {
+                
+                if (movie.getActors() != null) {
+                    repository.createActors(movie.getActors());
+                    for (Actor actor : movie.getActors()) {
+                        repository.createMovieActorConn(actor, movie);
+                    }
+                }
+
+                if (movie.getDirectors() != null) {
+                    repository.createDirectors(movie.getDirectors());
+                    for (Director director : movie.getDirectors()) {
+                        repository.createMovieDirectorConn(director, movie);
+                    }
+                }
+
+                if (movie.getGenres() != null) {
+                    repository.createGenres(movie.getGenres());
+                    for (Genre genre : movie.getGenres()) {
+                        repository.createMovieGenreConn(genre, movie);
+                    }
+                }
+
+            }
+            loadModel();
+        } catch (Exception ex) {
+            Logger.getLogger(UploadMoviesPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+    }//GEN-LAST:event_btnUploadActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnUpload;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JList<Movie> lsMovies;
     // End of variables declaration//GEN-END:variables
+
+    private void init() {
+        try {
+            repository = RepositoryFactory.getRepository();
+            moviesModel = new DefaultListModel<>();
+            loadModel();
+        } catch (Exception ex) {
+            Logger.getLogger(UploadMoviesPanel.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private void loadModel() throws Exception {
+        List<Movie> movies = repository.selectMovies();
+        moviesModel.clear();
+        movies.forEach(moviesModel::addElement);
+        lsMovies.setModel(moviesModel);
+    }
+
 }

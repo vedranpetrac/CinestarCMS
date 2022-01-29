@@ -102,7 +102,7 @@ public class MoviesParsers {
 
         List<Movie> movies = new ArrayList<>();
 
-        HttpURLConnection con = UrlConnectionFactory.getHttpUrlConnection(RSS_URL);
+        HttpURLConnection con = UrlConnectionFactory.getHttpUrlConnection(RSS_URL,1000,"GET");
 
         try (InputStream is = con.getInputStream()) {
 
@@ -135,14 +135,16 @@ public class MoviesParsers {
                                         movie.setTitle(data);
                                     }
                                     break;
+                                    /*
                                 case PUB_DATE:
                                     if (movie != null && !data.isEmpty()) {
                                         LocalDateTime publishedDate = LocalDateTime.parse(data, DateTimeFormatter.RFC_1123_DATE_TIME);
                                         movie.setPublishedDate(publishedDate);
                                     }
-                                    break;
+                                    break;*/
                                 case DESCRIPTION:
                                     if (movie != null && !data.isEmpty()) {
+                                        data = data.replaceAll("(?s)<.*?>", "");
                                         movie.setDescription(data);
                                     }
                                     break;
@@ -197,7 +199,7 @@ public class MoviesParsers {
                                     break;
                                 case DURATION:
                                     if (movie != null && !data.isEmpty()) {
-                                        movie.setDuration(data);
+                                        movie.setDuration(Integer.parseInt(data));
                                     }
                                     break;
                                 case GENRE:
@@ -217,10 +219,10 @@ public class MoviesParsers {
                                     }
                                     break;
                                 case COVER:
-                                    /*
+                                    
                                     if (movie != null && !data.isEmpty() && movie.getPicturePath() == null) {                                       
                                             handlePicture(movie, data);
-                                    }*/
+                                    }
                                     break;
                                 case START_DATE:
                                     /*

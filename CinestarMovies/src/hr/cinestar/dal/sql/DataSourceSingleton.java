@@ -6,6 +6,7 @@ package hr.cinestar.dal.sql;
  */
 
 
+import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import javax.sql.DataSource;
 
 /**
@@ -13,11 +14,11 @@ import javax.sql.DataSource;
  * @author dbele
  */
 public final class DataSourceSingleton {
-    /*
+    
     private static final String SERVER_NAME = "localhost";
-    private static final String DATABASE_NAME = "Vjezbe0708";
+    private static final String DATABASE_NAME = "CinestarCMS";
     private static final String USER = "sa"; 
-    private static final String PASSWORD = "SQL"; 
+    private static final String PASSWORD = "sql"; 
 
     private DataSourceSingleton() {}
 
@@ -36,5 +37,5 @@ public final class DataSourceSingleton {
         dataSource.setUser(USER);
         dataSource.setPassword(PASSWORD);
         return dataSource;
-    }   */ 
+    }    
 }

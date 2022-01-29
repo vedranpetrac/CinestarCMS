@@ -1,6 +1,7 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package hr.algebra.factory;
 
@@ -11,19 +12,13 @@ import javax.xml.stream.XMLStreamException;
 
 /**
  *
- * @author vedran
+ * @author dnlbe
  */
 public class ParserFactory {
-
-    
-    private ParserFactory() {
+ 
+     public static XMLEventReader createStaxParser(InputStream stream) throws XMLStreamException {
+         XMLInputFactory factory = XMLInputFactory.newInstance();
+         XMLEventReader eventReader = factory.createXMLEventReader(stream);
+         return eventReader;
     }
-    
-    public static XMLEventReader createStaxParser(InputStream is) throws XMLStreamException {
-        XMLInputFactory factory = XMLInputFactory.newFactory();
-        XMLEventReader reader = factory.createXMLEventReader(is);
-        return reader;
-    }
-
-       
 }

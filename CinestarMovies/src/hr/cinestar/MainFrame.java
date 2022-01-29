@@ -9,11 +9,14 @@ package hr.cinestar;
  * @author Vedran
  */
 public class MainFrame extends javax.swing.JFrame {
+    
+    public int korisnik = 5;
 
     /**
      * Creates new form MainFrame
      */
     public MainFrame() {
+        
         initComponents();
         configurePanels();
     }
@@ -91,6 +94,7 @@ public class MainFrame extends javax.swing.JFrame {
         tpContent.add(EDIT_ACTORS, new EditActorsPanel());
         tpContent.add(EDIT_DIRECTORS, new EditDirectorsPanel());
         tpContent.add(EDIT_GENRES, new EditGenresPanel());
+        tpContent.add(EDIT_RELATIONSHIP, new EditRelationshipPanel());
     }
 
     private static final String UPLOAD_MOVIES = "Upload movies";
@@ -98,4 +102,5 @@ public class MainFrame extends javax.swing.JFrame {
     private static final String EDIT_ACTORS = "Edit actors";
     private static final String EDIT_DIRECTORS = "Edit directors";
     private static final String EDIT_GENRES = "Edit genres";
+    private static final String EDIT_RELATIONSHIP = "Edit Relationship";
 }
