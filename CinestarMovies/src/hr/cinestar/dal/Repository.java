@@ -16,6 +16,12 @@ import java.util.Optional;
  * @author Vedran
  */
 public interface Repository {
+    
+    /**
+     * ******* GENERAL ********
+     */
+    
+    void clearDatabase() throws Exception;
 
     /**
      * ******* ACCOUNT ********
@@ -37,6 +43,8 @@ public interface Repository {
     void updateMovie(int id, Movie data) throws Exception;
 
     void deleteMovie(int id) throws Exception;
+    
+    void deleteAllMovieCon(int movieId) throws Exception;
 
     /**
      * ******* DIRECTOR ********
@@ -93,7 +101,9 @@ public interface Repository {
 
     //void createMovieDirectors(List<Director> directors, Movie movie) throws Exception;
 
-    void deleteMovieDirectorConn(int id) throws Exception;
+    void deleteMovieDirectorConn(int movieId, int directorId) throws Exception;
+    
+    void deleteAllDrectorCon(int directorId) throws Exception;
 
     /**
      * ******* ACTOR -> MOVIE ********
@@ -104,7 +114,8 @@ public interface Repository {
 
     //void createMovieActors(List<Actor> actors, Movie movie) throws Exception;
 
-    void deleteMovieActorConn(int id) throws Exception;
+    void deleteMovieActorConn(int movieId, int actorId) throws Exception;
+    void deleteAllActorCon(int actorId) throws Exception;
 
     /**
      * ******* GENRE -> MOVIE ********
@@ -115,5 +126,6 @@ public interface Repository {
 
     //void createMovieGenres(List<Genre> genres, Movie movie) throws Exception;
 
-    void deleteMovieGenreConn(int id) throws Exception;
+    void deleteMovieGenreConn(int movieId, int genreId) throws Exception;
+    void deleteAllGenreCon(int genreId) throws Exception;
 }

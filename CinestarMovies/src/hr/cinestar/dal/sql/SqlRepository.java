@@ -27,7 +27,7 @@ import javax.sql.DataSource;
 public class SqlRepository implements Repository {
 
     private static final String CREATE_MOVIE = "{ CALL createMovie (?,?,?,?,?,?) }";
-    private static final String UPDATE_MOVIE = "{ CALL updateMovie (?,?,?,?,?,?,?,?) }";
+    private static final String UPDATE_MOVIE = "{ CALL updateMovie (?,?,?,?,?,?) }";
     private static final String DELETE_MOVIE = "{ CALL deleteMovie (?) }";
     private static final String SELECT_MOVIE = "{ CALL selectMovie (?) }";
     private static final String SELECT_MOVIES = "{ CALL selectMovies }";
@@ -55,6 +55,7 @@ public class SqlRepository implements Repository {
     @Override
     public Optional<Movie> selectMovie(int id) throws Exception {
         DataSource dataSource = DataSourceSingleton.getInstance();
+
         try (
                 Connection con = dataSource.getConnection();
                 CallableStatement stmt = con.prepareCall(SELECT_MOVIE)) {
@@ -110,11 +111,11 @@ public class SqlRepository implements Repository {
             stmt.setString(3, movie.getDescription());
             stmt.setInt(4, movie.getDuration());
             stmt.setString(5, movie.getPicturePath());
-            stmt.registerOutParameter(7, Types.INTEGER);
+            stmt.registerOutParameter(6, Types.INTEGER);
 
             stmt.executeUpdate();
 
-            return stmt.getInt(8);
+            return stmt.getInt(6);
         }
     }
 
@@ -133,7 +134,7 @@ public class SqlRepository implements Repository {
                 stmt.registerOutParameter(6, Types.INTEGER);
 
                 stmt.executeUpdate();
-                
+
                 movie.setId(stmt.getInt(6));
             }
 
@@ -146,13 +147,12 @@ public class SqlRepository implements Repository {
         try (
                 Connection con = dataSource.getConnection();
                 CallableStatement stmt = con.prepareCall(UPDATE_MOVIE)) {
-            stmt.setString(1, movie.getTitle());
-            stmt.setString(2, movie.getOrigTitle());
-            stmt.setString(3, movie.getDescription());
-            stmt.setInt(4, movie.getDuration());
-            stmt.setString(5, movie.getPicturePath());
-
-            stmt.setInt(6, id);
+            stmt.setInt(1, id);
+            stmt.setString(2, movie.getTitle());
+            stmt.setString(3, movie.getOrigTitle());
+            stmt.setString(4, movie.getDescription());
+            stmt.setInt(5, movie.getDuration());
+            stmt.setString(6, movie.getPicturePath());
 
             stmt.executeUpdate();
 
@@ -166,7 +166,7 @@ public class SqlRepository implements Repository {
                 Connection con = dataSource.getConnection();
                 CallableStatement stmt = con.prepareCall(DELETE_MOVIE)) {
 
-            stmt.setInt(7, id);
+            stmt.setInt(1, id);
 
             stmt.executeUpdate();
 
@@ -225,7 +225,7 @@ public class SqlRepository implements Repository {
         DataSource dataSource = DataSourceSingleton.getInstance();
         try (
                 Connection con = dataSource.getConnection();
-                CallableStatement stmt = con.prepareCall(CREATE_ACTOR)) {
+                CallableStatement stmt = con.prepareCall(CREATE_DIRECTOR)) {
             stmt.setString(1, director.getFirstName());
             stmt.setString(2, director.getLastName());
             stmt.registerOutParameter(3, Types.INTEGER);
@@ -246,7 +246,7 @@ public class SqlRepository implements Repository {
                 stmt.registerOutParameter(3, Types.INTEGER);
 
                 stmt.executeUpdate();
-                
+
                 director.setId(stmt.getInt(3));
             }
 
@@ -259,10 +259,9 @@ public class SqlRepository implements Repository {
         try (
                 Connection con = dataSource.getConnection();
                 CallableStatement stmt = con.prepareCall(UPDATE_DIRECTOR)) {
-            stmt.setString(1, director.getFirstName());
-            stmt.setString(2, director.getLastName());
-
-            stmt.setInt(3, id);
+            stmt.setInt(1, id);
+            stmt.setString(2, director.getFirstName());
+            stmt.setString(3, director.getLastName());
 
             stmt.executeUpdate();
 
@@ -276,7 +275,7 @@ public class SqlRepository implements Repository {
                 Connection con = dataSource.getConnection();
                 CallableStatement stmt = con.prepareCall(DELETE_DIRECTOR)) {
 
-            stmt.setInt(6, id);
+            stmt.setInt(1, id);
 
             stmt.executeUpdate();
 
@@ -350,7 +349,7 @@ public class SqlRepository implements Repository {
                 stmt.setString(2, actor.getLastName());
                 stmt.registerOutParameter("Id", Types.INTEGER);
                 stmt.executeUpdate();
-                
+
                 actor.setId(stmt.getInt("Id"));
             }
 
@@ -363,10 +362,9 @@ public class SqlRepository implements Repository {
         try (
                 Connection con = dataSource.getConnection();
                 CallableStatement stmt = con.prepareCall(UPDATE_ACTOR)) {
-            stmt.setString(1, actor.getFirstName());
-            stmt.setString(2, actor.getLastName());
-
-            stmt.setInt(3, id);
+            stmt.setInt(1, id);
+            stmt.setString(2, actor.getFirstName());
+            stmt.setString(3, actor.getLastName());
 
             stmt.executeUpdate();
 
@@ -380,7 +378,7 @@ public class SqlRepository implements Repository {
                 Connection con = dataSource.getConnection();
                 CallableStatement stmt = con.prepareCall(DELETE_ACTOR)) {
 
-            stmt.setInt(6, id);
+            stmt.setInt(1, id);
 
             stmt.executeUpdate();
 
@@ -455,7 +453,7 @@ public class SqlRepository implements Repository {
                 stmt.registerOutParameter(2, Types.INTEGER);
 
                 stmt.executeUpdate();
-                
+
                 genre.setId(stmt.getInt(2));
             }
 
@@ -468,8 +466,8 @@ public class SqlRepository implements Repository {
         try (
                 Connection con = dataSource.getConnection();
                 CallableStatement stmt = con.prepareCall(UPDATE_GENRE)) {
-            stmt.setString(1, genre.getName());
-            stmt.setInt(2, id);
+            stmt.setInt(1, id);
+            stmt.setString(2, genre.getName());
 
             stmt.executeUpdate();
 
@@ -483,7 +481,7 @@ public class SqlRepository implements Repository {
                 Connection con = dataSource.getConnection();
                 CallableStatement stmt = con.prepareCall(DELETE_GENRE)) {
 
-            stmt.setInt(6, id);
+            stmt.setInt(1, id);
 
             stmt.executeUpdate();
 
@@ -517,7 +515,7 @@ public class SqlRepository implements Repository {
 
     @Override
     public int createMovieDirectorConn(Director director, Movie movie) throws Exception {
-         DataSource dataSource = DataSourceSingleton.getInstance();
+        DataSource dataSource = DataSourceSingleton.getInstance();
         try (
                 Connection con = dataSource.getConnection();
                 CallableStatement stmt = con.prepareCall("{ CALL CreateMovieDirector (?,?,?)} ")) {
@@ -530,8 +528,16 @@ public class SqlRepository implements Repository {
     }
 
     @Override
-    public void deleteMovieDirectorConn(int id) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void deleteMovieDirectorConn(int movieId, int directorId) throws Exception {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall("{ CALL deleteMovieDirector (?,?) }")) {
+            stmt.setInt(1, movieId);
+            stmt.setInt(2, directorId);
+
+            stmt.executeUpdate();
+        }
     }
 
     @Override
@@ -558,7 +564,7 @@ public class SqlRepository implements Repository {
 
     @Override
     public int createMovieActorConn(Actor actor, Movie movie) throws Exception {
-         DataSource dataSource = DataSourceSingleton.getInstance();
+        DataSource dataSource = DataSourceSingleton.getInstance();
         try (
                 Connection con = dataSource.getConnection();
                 CallableStatement stmt = con.prepareCall("{ CALL CreateMovieActor (?,?,?)} ")) {
@@ -571,8 +577,16 @@ public class SqlRepository implements Repository {
     }
 
     @Override
-    public void deleteMovieActorConn(int id) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void deleteMovieActorConn(int movieId, int actorId) throws Exception {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall("{ CALL deleteMovieActor (?,?) }")) {
+            stmt.setInt(1, movieId);
+            stmt.setInt(2, actorId);
+
+            stmt.executeUpdate();
+        }
     }
 
     @Override
@@ -611,8 +625,16 @@ public class SqlRepository implements Repository {
     }
 
     @Override
-    public void deleteMovieGenreConn(int id) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void deleteMovieGenreConn(int movieId, int genreId) throws Exception {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall("{ CALL deleteMovieGenre (?,?) }")) {
+            stmt.setInt(1, movieId);
+            stmt.setInt(2, genreId);
+
+            stmt.executeUpdate();
+        }
     }
 
     @Override
@@ -626,6 +648,73 @@ public class SqlRepository implements Repository {
             stmt.registerOutParameter(3, Types.INTEGER);
             stmt.executeUpdate();
             return stmt.getInt(3);
+        }
+    }
+
+    @Override
+    public void clearDatabase() throws Exception {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall("{ CALL cleanDatabase }")) {
+            stmt.executeUpdate();
+
+        }
+    }
+
+    @Override
+    public void deleteAllMovieCon(int movieId) throws Exception {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall("{ CALL deleteMovieCon (?) }")) {
+
+            stmt.setInt(1, movieId);
+
+            stmt.executeUpdate();
+
+        }
+    }
+
+    @Override
+    public void deleteAllDrectorCon(int directorId) throws Exception {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall("{ CALL deleteAllDiractorsCon (?) }")) {
+
+            stmt.setInt(1, directorId);
+
+            stmt.executeUpdate();
+
+        }
+    }
+
+    @Override
+    public void deleteAllActorCon(int actorId) throws Exception {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall("{ CALL deleteAllActorsConn (?) }")) {
+
+            stmt.setInt(1, actorId);
+
+            stmt.executeUpdate();
+
+        }
+    }
+
+    @Override
+    public void deleteAllGenreCon(int genreId) throws Exception {
+        DataSource dataSource = DataSourceSingleton.getInstance();
+        try (
+                Connection con = dataSource.getConnection();
+                CallableStatement stmt = con.prepareCall("{ CALL deleteAllGenresCon (?) }")) {
+
+            stmt.setInt(1, genreId);
+
+            stmt.executeUpdate();
+
         }
     }
 

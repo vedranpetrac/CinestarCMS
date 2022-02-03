@@ -46,6 +46,10 @@ public class Genre implements Comparable<Genre>{
     public void setId(int id) {
         this.id = id;
     }
+    
+    public String toString() {
+        return getName();
+    }
 
     @Override
     public int compareTo(Genre o) {

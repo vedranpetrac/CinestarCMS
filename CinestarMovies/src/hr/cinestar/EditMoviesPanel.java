@@ -8,29 +8,47 @@ import hr.cinestar.dal.Repository;
 import hr.cinestar.dal.RepositoryFactory;
 import hr.cinestar.model.Movie;
 import hr.cinestar.model.MovieTableModel;
+import hr.algebra.utils.FileUtils;
+import hr.algebra.utils.IconUtils;
+import hr.algebra.utils.MessageUtils;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
+import javax.swing.text.JTextComponent;
 
 /**
  *
  * @author Vedran
  */
 public class EditMoviesPanel extends javax.swing.JPanel {
-    
+
+    private List<JTextComponent> validationFields;
+    private List<JLabel> errorLabels;
+
     private static final String DIR = "assets";
 
     private Repository repository;
     private MovieTableModel moviesTableModel;
 
-    private Movie selectedArticle;
+    private Movie selectedMovie;
 
     /**
      * Creates new form EditMoviesPanel
      */
     public EditMoviesPanel() {
         initComponents();
-        
+
     }
 
     /**
@@ -216,15 +234,15 @@ public class EditMoviesPanel extends javax.swing.JPanel {
                             .addComponent(btnChoosePicture)
                             .addComponent(tfPicturePath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbTitleError, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbTitleError, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3)
                         .addGap(4, 4, 4)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfOriginalTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblOriginalTitleError, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblOriginalTitleError, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfOriginalTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -245,7 +263,7 @@ public class EditMoviesPanel extends javax.swing.JPanel {
                         .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -254,11 +272,11 @@ public class EditMoviesPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_formComponentShown
 
     private void tbMoviesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbMoviesMouseClicked
-        showArticle();
+        showMovie();
     }//GEN-LAST:event_tbMoviesMouseClicked
 
     private void tbMoviesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbMoviesKeyReleased
-        showArticle();
+        showMovie();
     }//GEN-LAST:event_tbMoviesKeyReleased
 
     private void btnChoosePictureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChoosePictureActionPerformed
@@ -275,76 +293,77 @@ public class EditMoviesPanel extends javax.swing.JPanel {
         if (formValid()) {
             try {
                 String localPicturePath = uploadPicture();
-                Article article = new Article(
-                    tfTitle.getText().trim(),
-                    tfOriginalTitle.getText().trim(),
-                    taDescription.getText().trim(),
-                    localPicturePath,
-                    LocalDateTime.parse(tfPublishedDate.getText().trim(), Article.DATE_FORMATTER)
+                int duration = Integer.parseInt(tfDuration.getText().trim());
+                Movie movie = new Movie(
+                        tfTitle.getText().trim(),
+                        tfOriginalTitle.getText().trim(),
+                        taDescription.getText().trim(),
+                        duration,
+                        localPicturePath
                 );
-                repository.createArticle(article);
-                articlesTableModel.setArticles(repository.selectArticles());
+                repository.createMovie(movie);
+                moviesTableModel.setMovies(repository.selectMovies());
 
                 clearForm();
             } catch (Exception ex) {
-                Logger.getLogger(Zadatak01.class.getName()).log(Level.SEVERE, null, ex);
-                MessageUtils.showErrorMessage("Error", "Unable to create article!");
+                Logger.getLogger(EditMoviesPanel.class.getName()).log(Level.SEVERE, null, ex);
+                MessageUtils.showErrorMessage("Error", "Unable to create movie!");
             }
         }
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-        if (selectedArticle == null) {
-            MessageUtils.showInformationMessage("Wrong operation", "Please choose article to update");
+        if (selectedMovie == null) {
+            MessageUtils.showInformationMessage("Wrong operation", "Please choose movie to update");
             return;
         }
         if (formValid()) {
             try {
-                if (tfPicturePath.getText().trim().equals(selectedArticle.getPicturePath())) {
-                    if (selectedArticle.getPicturePath() != null) {
-                        Files.deleteIfExists(Paths.get(selectedArticle.getPicturePath()));
+                if (tfPicturePath.getText().trim().equals(selectedMovie.getPicturePath())) {
+                    if (selectedMovie.getPicturePath() != null) {
+                        //Files.deleteIfExists(Paths.get(selectedMovie.getPicturePath()));
                     }
-                    String localPicturePath = uploadPicture();
-                    selectedArticle.setPicturePath(localPicturePath);
+
+                } else {
+                    selectedMovie.setPicturePath(uploadPicture());
                 }
 
-                selectedArticle.setTitle(tfTitle.getText().trim());
-                selectedArticle.setLink(tfOriginalTitle.getText().trim());
-                selectedArticle.setDescription(taDescription.getText().trim());
-                selectedArticle.setPublishedDate(LocalDateTime.parse(tfPublishedDate.getText().trim(), Article.DATE_FORMATTER));
+                selectedMovie.setTitle(tfTitle.getText().trim());
+                selectedMovie.setOrigTitle(tfOriginalTitle.getText().trim());
+                selectedMovie.setDescription(taDescription.getText().trim());
+                selectedMovie.setDuration(Integer.parseInt(tfDuration.getText().trim()));
 
-                repository.updateArticle(selectedArticle.getId(), selectedArticle);
-                articlesTableModel.setArticles(repository.selectArticles());
+                repository.updateMovie(selectedMovie.getId(), selectedMovie);
+                moviesTableModel.setMovies(repository.selectMovies());
 
                 clearForm();
             } catch (Exception ex) {
-                Logger.getLogger(EditArticlesPanel.class.getName()).log(Level.SEVERE, null, ex);
-                MessageUtils.showErrorMessage("Error", "Unable to update article!");
+                Logger.getLogger(EditMoviesPanel.class.getName()).log(Level.SEVERE, null, ex);
+                MessageUtils.showErrorMessage("Error", "Unable to update movie!");
             }
         }
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
 
-        if (selectedArticle == null) {
-            MessageUtils.showInformationMessage("Wrong operation", "Please choose article to delete");
+        if (selectedMovie == null) {
+            MessageUtils.showInformationMessage("Wrong operation", "Please choose movie to delete");
             return;
         }
         if (MessageUtils.showConfirmDialog(
-            "Delete article",
-            "Do you really want to delete article?") == JOptionPane.YES_OPTION) {
-        try {
-            if (selectedArticle.getPicturePath() != null) {
-                Files.deleteIfExists(Paths.get(selectedArticle.getPicturePath()));
-            }
-            repository.deleteArticle(selectedArticle.getId());
-            articlesTableModel.setArticles(repository.selectArticles());
+                "Delete movie",
+                "Do you really want to delete movie?") == JOptionPane.YES_OPTION) {
+            try {
 
-            clearForm();
-        } catch (Exception ex) {
-            Logger.getLogger(EditArticlesPanel.class.getName()).log(Level.SEVERE, null, ex);
-            MessageUtils.showErrorMessage("Error", "Unable to delete article!");
-        }
+                repository.deleteAllMovieCon(selectedMovie.getId());
+                repository.deleteMovie(selectedMovie.getId());
+                moviesTableModel.setMovies(repository.selectMovies());
+
+                clearForm();
+            } catch (Exception ex) {
+                Logger.getLogger(EditMoviesPanel.class.getName()).log(Level.SEVERE, null, ex);
+                MessageUtils.showErrorMessage("Error", "Unable to delete movie!");
+            }
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
@@ -374,25 +393,115 @@ public class EditMoviesPanel extends javax.swing.JPanel {
     private javax.swing.JTextField tfTitle;
     // End of variables declaration//GEN-END:variables
 
-    private void init(){
+    public void showMovie() {
+        clearForm();
+        int selectedRow = tbMovies.getSelectedRow();
+        int rowIndex = tbMovies.convertRowIndexToModel(selectedRow);
+        int selectedMovieId = (int) moviesTableModel.getValueAt(rowIndex, 0);
+
         try {
+            Optional<Movie> optArticle = repository.selectMovie(selectedMovieId);
+            if (optArticle.isPresent()) {
+                selectedMovie = optArticle.get();
+                fillForm(selectedMovie);
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(EditMoviesPanel.class.getName()).log(Level.SEVERE, null, ex);
+            MessageUtils.showErrorMessage("Error", "Unable to show article!");
+        }
+    }
+
+    private void init() {
+        try {
+            initValidation();
             initRepository();
             initTable();
         } catch (Exception ex) {
             Logger.getLogger(EditMoviesPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
+    private void initValidation() {
+        validationFields = Arrays.asList(tfTitle, tfOriginalTitle, taDescription, tfDuration, tfPicturePath);
+        errorLabels = Arrays.asList(lbTitleError, lblOriginalTitleError, lbDescError, lbDurationError, lbIconError);
+    }
+
     private void initRepository() throws Exception {
         repository = RepositoryFactory.getRepository();
     }
-    
+
     private void initTable() throws Exception {
         tbMovies.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         tbMovies.setAutoCreateRowSorter(true);
         tbMovies.setRowHeight(25);
         moviesTableModel = new MovieTableModel(repository.selectMovies());
         tbMovies.setModel(moviesTableModel);
+    }
+
+    private void fillForm(Movie movie) {
+        if (movie.getPicturePath() != null && Files.exists(Paths.get(movie.getPicturePath()))) {
+            tfPicturePath.setText(movie.getPicturePath());
+            setIcon(lbIcon, new File(movie.getPicturePath()));
+        }
+        tfTitle.setText(movie.getTitle());
+        tfOriginalTitle.setText(movie.getOrigTitle());
+        taDescription.setText(movie.getDescription());
+        tfDuration.setText(String.valueOf(movie.getDuration()));
+    }
+
+    private void setIcon(JLabel label, File file) {
+        try {
+            label.setIcon(IconUtils.createIcon(file.getAbsolutePath(), label.getWidth(), label.getHeight()));
+        } catch (IOException ex) {
+            Logger.getLogger(EditActorsPanel.class.getName()).log(Level.SEVERE, null, ex);
+            MessageUtils.showErrorMessage("Error", "Unable to set icon!");
+        }
+    }
+
+    private void clearForm() {
+        validationFields.forEach(e -> e.setText(""));
+        errorLabels.forEach(e -> e.setText(""));
+
+        lbIcon.setIcon(new ImageIcon(getClass().getResource("/assets/no_image.png")));
+
+        selectedMovie = null;
+    }
+
+    private boolean formValid() {
+        boolean ok = true;
+
+        for (int i = 0; i < validationFields.size(); i++) {
+            ok &= !validationFields.get(i).getText().trim().isEmpty();
+            errorLabels.get(i).setText(validationFields.get(i).getText().trim().isEmpty() ? "X" : "");
+        }
+
+        if (!isNumeric(tfDuration.getText())) {
+            lbDurationError.setText("X");
+            return false;
+        }
+        
+        return ok;
+    }
+
+    private String uploadPicture() throws IOException {
+        String picturePath = tfPicturePath.getText().trim();
+        String ext = picturePath.substring(picturePath.lastIndexOf("."));
+        String pictureName = UUID.randomUUID() + ext;
+        String localPicturePath = DIR + File.separator + pictureName;
+        FileUtils.copy(picturePath, localPicturePath);
+        return localPicturePath;
+    }
+
+    public static boolean isNumeric(String strNum) {
+        if (strNum == null) {
+            return false;
+        }
+        try {
+            double d = Integer.parseInt(strNum);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
     }
 
 }

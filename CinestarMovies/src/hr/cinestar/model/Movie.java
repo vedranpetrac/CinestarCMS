@@ -65,6 +65,16 @@ public class Movie {
         this.picturePath = picturePath;
     }
 
+    public Movie(String title, String origTitle, String description, int duration, String picturePath) {
+        this.title = title;
+        this.origTitle = origTitle;
+        this.description = description;
+        this.duration = duration;
+        this.picturePath = picturePath;
+    }
+    
+    
+
     public Movie() {
 
     }

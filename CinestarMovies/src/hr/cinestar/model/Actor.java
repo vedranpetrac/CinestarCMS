@@ -18,19 +18,19 @@ public class Actor implements Comparable<Actor>{
     @XmlAttribute 
     private int id;
     @XmlElement(name = "firstname")
-    private String FirstName;
+    private String firstName;
     @XmlElement(name = "lastname")
-    private String LastName;
+    private String lastName;
 
     public Actor(int id, String FirstName, String LastName) {
         this.id = id;
-        this.FirstName = FirstName;
-        this.LastName = LastName;
+        this.firstName = FirstName;
+        this.lastName = LastName;
     }
 
     public Actor(String FirstName, String LastName) {
-        this.FirstName = FirstName;
-        this.LastName = LastName;
+        this.firstName = FirstName;
+        this.lastName = LastName;
     }
     
     
@@ -44,23 +44,28 @@ public class Actor implements Comparable<Actor>{
     }
 
     public String getFirstName() {
-        return FirstName;
+        return firstName;
     }
 
     public void setFirstName(String FirstName) {
-        this.FirstName = FirstName;
+        this.firstName = FirstName;
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public void setLastName(String LastName) {
-        this.LastName = LastName;
+        this.lastName = LastName;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+    
+    @Override
+    public String toString() {
+        return firstName + " " + lastName;
     }
 
     @Override

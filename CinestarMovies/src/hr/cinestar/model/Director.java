@@ -60,6 +60,11 @@ public class Director implements Comparable<Director>{
     }
 
     @Override
+    public String toString() {
+        return getFirstName() + " " + getLastName();
+    }
+    
+    @Override
     public int compareTo(Director o) {
         return Integer.toString(id).compareTo(Integer.toString(o.id));
     }

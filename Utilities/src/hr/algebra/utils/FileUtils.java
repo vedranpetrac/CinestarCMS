@@ -13,6 +13,7 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Optional;
@@ -32,7 +33,7 @@ public class FileUtils {
     private static final String TEXT_DOCUMENTS = "Text documents (*.txt)";
     private static final String TXT = "txt";
 
-    public static Optional<File> uploadFile(String description, String... extensions) {
+    public static File uploadFile(String description, String... extensions) {
         JFileChooser chooser = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
         chooser.setFileFilter(new FileNameExtensionFilter(description, extensions));
         chooser.setDialogTitle(UPLOAD);
@@ -41,10 +42,11 @@ public class FileUtils {
         if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
             File selectedFile = chooser.getSelectedFile();
             String extension = selectedFile.getName().substring(selectedFile.getName().lastIndexOf(".") + 1);
-            return Arrays.asList(extensions).contains(extension.toLowerCase()) ? Optional.of(selectedFile) : Optional.empty();
+            return Arrays.asList(extensions).contains(extension.toLowerCase()) ? selectedFile : null;
         }
-        return Optional.empty();
+        return null;
     }
+
 
     public static void copyFromUrl(String source, String destination) throws MalformedURLException, IOException {
         createDirHierarchy(destination);
@@ -56,8 +58,10 @@ public class FileUtils {
 
     public static void copy(String source, String destination) throws FileNotFoundException, IOException {
         createDirHierarchy(destination);
-        Files.copy(Paths.get(source), Paths.get(destination));
+        get = Paths.get(source);
+        Files.copy(get, Paths.get(destination));
     }
+    private static Path get;
 
     private static void createDirHierarchy(String destination) throws IOException {
         String dir = destination.substring(0, destination.lastIndexOf(File.separator));
@@ -108,6 +112,17 @@ public class FileUtils {
             return Optional.of(new String(Files.readAllBytes(chooser.getSelectedFile().toPath())));
         }
         return Optional.empty();
+    }
+    
+    public static void clearDir(String path) {
+        File folder = new File(path);
+        File[] files = folder.listFiles();
+        if (files != null) { 
+            for (File f : files) {
+
+                f.delete();
+            }
+        }
     }
 
 }

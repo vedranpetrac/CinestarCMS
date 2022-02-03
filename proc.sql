@@ -45,7 +45,7 @@ CREATE PROCEDURE [dbo].[createDirector]
 	@Id INT OUTPUT
 AS 
 BEGIN 
-	INSERT INTO Director VALUES(@FirstName, @LastName)
+	INSERT INTO Director(FirstName, LastName) VALUES(@FirstName, @LastName)
 	SET @Id = SCOPE_IDENTITY()
 END
 GO
@@ -213,7 +213,7 @@ BEGIN
 	FROM 
 			Movie_Actor
 	WHERE 
-		IDMovie_Actor = @IdMovieActor
+		IDMovieActor = @IdMovieActor
 END
 GO
 /****** Object:  StoredProcedure [dbo].[deleteMovieDirector]    Script Date: 1/29/2022 1:21:31 AM ******/
@@ -229,7 +229,7 @@ BEGIN
 	FROM 
 			Movie_Director
 	WHERE 
-		IDMovie_Director = @IdMovieDirector
+		IDMovieDirector = @IdMovieDirector
 END
 GO
 /****** Object:  StoredProcedure [dbo].[deleteMovieGenre]    Script Date: 1/29/2022 1:21:31 AM ******/
@@ -247,7 +247,7 @@ BEGIN
 	FROM 
 			Movie_Genre
 	WHERE 
-		IDMovie_Genre = @IdMovieGenre
+		IDMovieGenre = @IdMovieGenre
 END
 GO
 /****** Object:  StoredProcedure [dbo].[selectActor]    Script Date: 1/29/2022 1:21:31 AM ******/
@@ -507,7 +507,7 @@ BEGIN
 		MovieID = @IdMovie,
 		ActorID = @IdActor
 		WHERE 
-		IDMovie_Actor = @IdMovieActor
+		IDMovieActor = @IdMovieActor
 END
 GO
 /****** Object:  StoredProcedure [dbo].[updateMovieDirector]    Script Date: 1/29/2022 1:21:31 AM ******/
@@ -526,7 +526,7 @@ BEGIN
 		MovieID = @IdMovie,
 		DirectorID = @IdDirector
 		WHERE 
-		IDMovie_Director = @IdMovieDirector
+		IDMovieDirector = @IdMovieDirector
 END
 GO
 /****** Object:  StoredProcedure [dbo].[updateMovieGenre]    Script Date: 1/29/2022 1:21:31 AM ******/
@@ -545,6 +545,6 @@ BEGIN
 		MovieID = @IdMovie,
 		GenreID = @IdGenre
 		WHERE 
-		IDMovie_Genre = @IdMovieGenre
+		IDMovieGenre = @IdMovieGenre
 END
 GO

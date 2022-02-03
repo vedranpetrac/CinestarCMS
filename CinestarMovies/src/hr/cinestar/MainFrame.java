@@ -4,13 +4,18 @@
  */
 package hr.cinestar;
 
+import hr.algebra.utils.MessageUtils;
+import java.awt.Dialog;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+
 /**
  *
  * @author Vedran
  */
 public class MainFrame extends javax.swing.JFrame {
     
-    public int korisnik = 5;
+   
 
     /**
      * Creates new form MainFrame
@@ -19,6 +24,8 @@ public class MainFrame extends javax.swing.JFrame {
         
         initComponents();
         configurePanels();
+        
+       
     }
 
     /**
@@ -31,23 +38,43 @@ public class MainFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         tpContent = new javax.swing.JTabbedPane();
+        MainMenuBar = new javax.swing.JMenuBar();
+        aboutMenuItem = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1100, 600));
+
+        aboutMenuItem.setText("About");
+        aboutMenuItem.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                aboutMenuItemMenuSelected(evt);
+            }
+        });
+        MainMenuBar.add(aboutMenuItem);
+
+        setJMenuBar(MainMenuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tpContent, javax.swing.GroupLayout.DEFAULT_SIZE, 1120, Short.MAX_VALUE)
+            .addComponent(tpContent, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tpContent, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+            .addComponent(tpContent, javax.swing.GroupLayout.DEFAULT_SIZE, 707, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void aboutMenuItemMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_aboutMenuItemMenuSelected
+        MessageUtils.showInformationMessage("About", "Java I\nVedran Petrač\nVerzija 1.0");
+        
+    }//GEN-LAST:event_aboutMenuItemMenuSelected
 
     /**
      * @param args the command line arguments
@@ -85,6 +112,8 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuBar MainMenuBar;
+    private javax.swing.JMenu aboutMenuItem;
     private javax.swing.JTabbedPane tpContent;
     // End of variables declaration//GEN-END:variables
 
@@ -96,6 +125,8 @@ public class MainFrame extends javax.swing.JFrame {
         tpContent.add(EDIT_GENRES, new EditGenresPanel());
         tpContent.add(EDIT_RELATIONSHIP, new EditRelationshipPanel());
     }
+    
+   
 
     private static final String UPLOAD_MOVIES = "Upload movies";
     private static final String EDIT_MOVIES = "Edit movies";

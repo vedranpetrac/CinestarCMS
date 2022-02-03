@@ -41,7 +41,7 @@ public class MoviesParsers {
     private static final String ATTRIBUTE_URL = "url";
     private static final String EXT = ".jpg";
     private static final String DIR = "assets";
-    private static final String europeanDatePattern = "dd.MM.yyyy";
+   
 
     private static void handlePicture(Movie movie, String url) {
 
@@ -66,15 +66,14 @@ public class MoviesParsers {
     private enum TagType {
         ITEM("item"),
         TITLE("title"),
-        PUB_DATE("pubDate"),
         DESCRIPTION("description"),
         ORIG_NAME("orignaziv"),
         DIRECTORS("redatelj"),
         ACTORS("glumci"),
         DURATION("trajanje"),
         GENRE("zanr"),
-        COVER("plakat"),
-        START_DATE("pocetak");
+        COVER("plakat");
+
 
         private final String name;
 
@@ -132,16 +131,9 @@ public class MoviesParsers {
                                     break;
                                 case TITLE:
                                     if (movie != null && !data.isEmpty()) {
-                                        movie.setTitle(data);
+                                        movie.setTitle(data.trim());
                                     }
                                     break;
-                                    /*
-                                case PUB_DATE:
-                                    if (movie != null && !data.isEmpty()) {
-                                        LocalDateTime publishedDate = LocalDateTime.parse(data, DateTimeFormatter.RFC_1123_DATE_TIME);
-                                        movie.setPublishedDate(publishedDate);
-                                    }
-                                    break;*/
                                 case DESCRIPTION:
                                     if (movie != null && !data.isEmpty()) {
                                         data = data.replaceAll("(?s)<.*?>", "");
@@ -150,7 +142,7 @@ public class MoviesParsers {
                                     break;
                                 case ORIG_NAME:
                                     if (movie != null && !data.isEmpty()) {
-                                        movie.setOrigTitle(data);
+                                        movie.setOrigTitle(data.trim());
                                     }
                                     break;
                                 case DIRECTORS:
@@ -164,8 +156,8 @@ public class MoviesParsers {
                                             Director director = new Director();
                                             
                                             if (data.split("\\w+").length > 1) {
-                                                director.setFirstName(name.substring(0, name.lastIndexOf(" ")));
-                                                director.setLastName(name.substring(name.lastIndexOf(" ") + 1));
+                                                director.setFirstName(name.substring(0, name.lastIndexOf(" ")).trim());
+                                                director.setLastName(name.substring(name.lastIndexOf(" ") + 1).trim());
                                             } else {
                                                 director.setFirstName(name);
                                             }
@@ -186,8 +178,8 @@ public class MoviesParsers {
                                             Actor actor = new Actor();
                                             
                                             if (data.split("\\w+").length > 1) {
-                                                actor.setFirstName(name.substring(0, name.lastIndexOf(" ")));
-                                                actor.setLastName(name.substring(name.lastIndexOf(" ") + 1));
+                                                actor.setFirstName(name.substring(0, name.lastIndexOf(" ")).trim());
+                                                actor.setLastName(name.substring(name.lastIndexOf(" ") + 1).trim());
                                             } else {
                                                 actor.setFirstName(name);
                                             }
@@ -211,7 +203,7 @@ public class MoviesParsers {
                                         for (String name : rawNames) {
 
                                             Genre genre = new Genre();
-                                            genre.setName(name);
+                                            genre.setName(name.trim());
                                             genres.add(genre);
                                         }
                                         
@@ -224,14 +216,7 @@ public class MoviesParsers {
                                             handlePicture(movie, data);
                                     }
                                     break;
-                                case START_DATE:
-                                    /*
-                                    if (movie != null && !data.isEmpty()) {
-                                        LocalDateTime publishedDate = LocalDateTime.parse(data, DateTimeFormatter.ofPattern(europeanDatePattern));
-                                        
-                                        movie.setPublishedDate(publishedDate);
-                                    }*/
-                                    break;
+                                
                             }
 
                         }

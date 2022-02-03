@@ -4,12 +4,14 @@
  */
 package hr.cinestar;
 
+import hr.algebra.utils.FileUtils;
 import hr.cinestar.dal.Repository;
 import hr.cinestar.dal.RepositoryFactory;
 import hr.cinestar.model.Actor;
 import hr.cinestar.model.Director;
 import hr.cinestar.model.Genre;
 import hr.cinestar.model.Movie;
+import hr.cinestar.model.User;
 import hr.cinestar.parsers.rss.MoviesParsers;
 import java.io.IOException;
 import java.util.List;
@@ -24,7 +26,7 @@ import javax.xml.stream.XMLStreamException;
  */
 public class UploadMoviesPanel extends javax.swing.JPanel {
 
-    
+    private static final String DIR = "assets";
     private DefaultListModel<Movie> moviesModel;
     private Repository repository;
 
@@ -34,6 +36,18 @@ public class UploadMoviesPanel extends javax.swing.JPanel {
     public UploadMoviesPanel() {
         initComponents();
         init();
+        checkUserLevel();
+    }
+
+    private void checkUserLevel() {
+        if (User.getLevel() != 2) {
+            bntClear.setEnabled(false);
+            btnUpload.setEnabled(false);
+        } else {
+            bntClear.setEnabled(true);
+            btnUpload.setEnabled(true);
+        }
+
     }
 
     /**
@@ -48,6 +62,7 @@ public class UploadMoviesPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         lsMovies = new javax.swing.JList<>();
         btnUpload = new javax.swing.JButton();
+        bntClear = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1200, 600));
 
@@ -60,28 +75,40 @@ public class UploadMoviesPanel extends javax.swing.JPanel {
             }
         });
 
+        bntClear.setBackground(new java.awt.Color(255, 0, 4));
+        bntClear.setForeground(new java.awt.Color(255, 255, 255));
+        bntClear.setText("Clear Database");
+        bntClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntClearActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1079, Short.MAX_VALUE)
-                    .addComponent(btnUpload, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(bntClear, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnUpload, javax.swing.GroupLayout.PREFERRED_SIZE, 745, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnUpload, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnUpload, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bntClear, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
-
-        btnUpload.getAccessibleContext().setAccessibleName("Upload Movies");
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUploadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUploadActionPerformed
@@ -90,7 +117,7 @@ public class UploadMoviesPanel extends javax.swing.JPanel {
             List<Movie> movies = MoviesParsers.parse();
             repository.createMovies(movies);
             for (Movie movie : movies) {
-                
+
                 if (movie.getActors() != null) {
                     repository.createActors(movie.getActors());
                     for (Actor actor : movie.getActors()) {
@@ -121,8 +148,19 @@ public class UploadMoviesPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_btnUploadActionPerformed
 
+    private void bntClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntClearActionPerformed
+        try {
+            repository.clearDatabase();
+            moviesModel.clear();
+            FileUtils.clearDir(DIR);
+        } catch (Exception ex) {
+            Logger.getLogger(UploadMoviesPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_bntClearActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bntClear;
     private javax.swing.JButton btnUpload;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList<Movie> lsMovies;

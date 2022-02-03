@@ -10,6 +10,7 @@ import hr.cinestar.dal.Repository;
 import hr.cinestar.dal.RepositoryFactory;
 import hr.cinestar.model.Actor;
 import hr.cinestar.model.ActorAddable;
+import hr.cinestar.model.ActorTransferable;
 import hr.cinestar.model.Director;
 import hr.cinestar.model.DirectorAddable;
 import hr.cinestar.model.Genre;
@@ -17,13 +18,32 @@ import hr.cinestar.model.GenreAddable;
 import hr.cinestar.model.Movie;
 import hr.cinestar.model.MovieArchive;
 import hr.cinestar.model.MovieTableModel;
+import hr.algebra.utils.JAXBUtils;
+import hr.algebra.utils.MessageUtils;
+import hr.cinestar.model.DirectorTransferable;
+import hr.cinestar.model.GenreTransferable;
+import java.awt.datatransfer.Transferable;
+import java.awt.datatransfer.UnsupportedFlavorException;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
+import javax.swing.DropMode;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
+import javax.swing.TransferHandler;
+import static javax.swing.TransferHandler.COPY;
 import javax.xml.bind.JAXBException;
 
 /**
@@ -37,20 +57,26 @@ public class EditRelationshipPanel extends javax.swing.JPanel implements ActorAd
     private MovieTableModel moviesTableModel;
     private List<Movie> allMovies;
 
-    private final Set<Actor> allActors = new TreeSet<>();
-    private final Set<Actor> actors = new TreeSet<>();
-    private final DefaultListModel<Actor> allActorsDefaultListModel = new DefaultListModel<>();
-    private final DefaultListModel<Actor> actorsDefaultListModel = new DefaultListModel<>();
-    
-    private final Set<Director> allDirectors = new TreeSet<>();
-    private final Set<Actor> directors = new TreeSet<>();
-    private final DefaultListModel<Director> allDirectorsDefaultListModel = new DefaultListModel<>();
-    private final DefaultListModel<Actor> directorsDefaultListModel = new DefaultListModel<>();
-    
-    private final Set<Genre> allGenres = new TreeSet<>();
-    private final Set<Genre> genres = new TreeSet<>();
-    private final DefaultListModel<Genre> allGenresDefaultListModel = new DefaultListModel<>();
-    private final DefaultListModel<Genre> genresDefaultListModel = new DefaultListModel<>();
+    private Movie selectedMovie;
+
+    private Set<Actor> allActors = new TreeSet<>();
+    private Set<Actor> actors = new TreeSet<>();
+    private final DefaultListModel<Actor> allActorsModel = new DefaultListModel<>();
+    private final DefaultListModel<Actor> actorsModel = new DefaultListModel<>();
+
+    private Set<Director> allDirectors = new TreeSet<>();
+    private Set<Director> directors = new TreeSet<>();
+    private final DefaultListModel<Director> allDirectorsModel = new DefaultListModel<>();
+    private final DefaultListModel<Director> directorsModel = new DefaultListModel<>();
+
+    private Set<Genre> allGenres = new TreeSet<>();
+    private Set<Genre> genres = new TreeSet<>();
+    private final DefaultListModel<Genre> allGenresModel = new DefaultListModel<>();
+    private final DefaultListModel<Genre> genresModel = new DefaultListModel<>();
+
+    Director selectedDirector;
+    Actor selectedActor;
+    Genre selectedGenre;
 
     /**
      * Creates new form EditRelationshipPaenl
@@ -71,17 +97,13 @@ public class EditRelationshipPanel extends javax.swing.JPanel implements ActorAd
         jScrollPane1 = new javax.swing.JScrollPane();
         tbMovies = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        lsMovieActors = new javax.swing.JList<>();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        lsAllDirectors = new javax.swing.JList<>();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jList3 = new javax.swing.JList<>();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jList4 = new javax.swing.JList<>();
+        lsMovieDirectors = new javax.swing.JList<>();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jList5 = new javax.swing.JList<>();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        jList6 = new javax.swing.JList<>();
+        lsAllActors = new javax.swing.JList<>();
         label1 = new java.awt.Label();
         label2 = new java.awt.Label();
         label3 = new java.awt.Label();
@@ -92,6 +114,10 @@ public class EditRelationshipPanel extends javax.swing.JPanel implements ActorAd
         label8 = new java.awt.Label();
         label9 = new java.awt.Label();
         btnSaveMovies = new javax.swing.JButton();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        lsMoveGenre = new javax.swing.JList<>();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        lsAllGenre = new javax.swing.JList<>();
 
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
@@ -110,61 +136,54 @@ public class EditRelationshipPanel extends javax.swing.JPanel implements ActorAd
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tbMovies.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbMoviesMouseClicked(evt);
+            }
+        });
+        tbMovies.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tbMoviesKeyReleased(evt);
+            }
+        });
         jScrollPane1.setViewportView(tbMovies);
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        lsMovieActors.setDragEnabled(true);
+        lsMovieActors.setDropMode(javax.swing.DropMode.ON);
+        lsMovieActors.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lsMovieActorsMouseClicked(evt);
+            }
         });
-        jList1.setDragEnabled(true);
-        jList1.setDropMode(javax.swing.DropMode.ON);
-        jScrollPane2.setViewportView(jList1);
+        lsMovieActors.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                lsMovieActorsKeyPressed(evt);
+            }
+        });
+        jScrollPane2.setViewportView(lsMovieActors);
 
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jList2.setDragEnabled(true);
-        jList2.setDropMode(javax.swing.DropMode.ON);
-        jScrollPane3.setViewportView(jList2);
+        lsAllDirectors.setDragEnabled(true);
+        lsAllDirectors.setDropMode(javax.swing.DropMode.ON);
+        jScrollPane3.setViewportView(lsAllDirectors);
 
-        jList3.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        lsMovieDirectors.setDragEnabled(true);
+        lsMovieDirectors.setDropMode(javax.swing.DropMode.ON);
+        lsMovieDirectors.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lsMovieDirectorsMouseClicked(evt);
+            }
         });
-        jList3.setDragEnabled(true);
-        jList3.setDropMode(javax.swing.DropMode.ON);
-        jScrollPane4.setViewportView(jList3);
+        lsMovieDirectors.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                lsMovieDirectorsKeyPressed(evt);
+            }
+        });
+        jScrollPane4.setViewportView(lsMovieDirectors);
 
-        jList4.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jList4.setDragEnabled(true);
-        jList4.setDropMode(javax.swing.DropMode.ON);
-        jScrollPane5.setViewportView(jList4);
-
-        jList5.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jList5.setDragEnabled(true);
-        jList5.setDropMode(javax.swing.DropMode.ON);
-        jScrollPane6.setViewportView(jList5);
-
-        jList6.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jList6.setDragEnabled(true);
-        jList6.setDropMode(javax.swing.DropMode.ON);
-        jScrollPane7.setViewportView(jList6);
+        lsAllActors.setToolTipText("");
+        lsAllActors.setDragEnabled(true);
+        lsAllActors.setDropMode(javax.swing.DropMode.ON);
+        jScrollPane6.setViewportView(lsAllActors);
 
         label1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         label1.setText("Genres");
@@ -204,6 +223,22 @@ public class EditRelationshipPanel extends javax.swing.JPanel implements ActorAd
             }
         });
 
+        lsMoveGenre.setDragEnabled(true);
+        lsMoveGenre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lsMoveGenreMouseClicked(evt);
+            }
+        });
+        lsMoveGenre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                lsMoveGenreKeyPressed(evt);
+            }
+        });
+        jScrollPane7.setViewportView(lsMoveGenre);
+
+        lsAllGenre.setDragEnabled(true);
+        jScrollPane8.setViewportView(lsAllGenre);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -216,12 +251,12 @@ public class EditRelationshipPanel extends javax.swing.JPanel implements ActorAd
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(120, 120, 120)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -229,6 +264,8 @@ public class EditRelationshipPanel extends javax.swing.JPanel implements ActorAd
                 .addGap(152, 152, 152)
                 .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(341, 341, 341)
                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(156, 156, 156))
             .addGroup(layout.createSequentialGroup()
@@ -236,24 +273,19 @@ public class EditRelationshipPanel extends javax.swing.JPanel implements ActorAd
                 .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(91, 91, 91)
                 .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(204, 204, 204)
+                .addGap(151, 151, 151)
                 .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(88, 88, 88)
+                .addGap(87, 87, 87)
                 .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
                 .addComponent(label9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(97, 97, 97)
                 .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47))
             .addGroup(layout.createSequentialGroup()
-                .addGap(529, 529, 529)
+                .addGap(483, 483, 483)
                 .addComponent(btnSaveMovies, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(611, Short.MAX_VALUE)
-                    .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(611, 611, 611)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -261,8 +293,9 @@ public class EditRelationshipPanel extends javax.swing.JPanel implements ActorAd
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                    .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(label5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -271,22 +304,18 @@ public class EditRelationshipPanel extends javax.swing.JPanel implements ActorAd
                     .addComponent(label9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(label8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(57, 57, 57)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                    .addComponent(jScrollPane7)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addComponent(btnSaveMovies, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(33, 33, 33)
-                    .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(602, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         label5.getAccessibleContext().setAccessibleName("Available Directors");
@@ -319,22 +348,92 @@ public class EditRelationshipPanel extends javax.swing.JPanel implements ActorAd
         init();
     }//GEN-LAST:event_formComponentShown
 
+    private void tbMoviesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbMoviesMouseClicked
+        loadRepoData();
+        loadAllActorsModel();
+        loadAllDirectorsModel();
+        loadAllGenresModel();
+        loadMovieActorsModel();
+        loadMovieDirectorsModel();
+        loadMovieGenresModel();
+
+
+    }//GEN-LAST:event_tbMoviesMouseClicked
+
+    private void tbMoviesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbMoviesKeyReleased
+        loadRepoData();
+        loadAllActorsModel();
+        loadAllDirectorsModel();
+        loadAllGenresModel();
+        loadMovieActorsModel();
+        loadMovieDirectorsModel();
+        loadMovieGenresModel();
+    }//GEN-LAST:event_tbMoviesKeyReleased
+
+    private void lsMovieDirectorsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lsMovieDirectorsMouseClicked
+
+
+    }//GEN-LAST:event_lsMovieDirectorsMouseClicked
+
+    private void lsMoveGenreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lsMoveGenreMouseClicked
+
+    }//GEN-LAST:event_lsMoveGenreMouseClicked
+
+    private void lsMovieActorsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lsMovieActorsMouseClicked
+
+
+    }//GEN-LAST:event_lsMovieActorsMouseClicked
+
+    private void lsMovieActorsKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lsMovieActorsKeyPressed
+        if (null != lsMovieActors.getSelectedValue() && evt.getKeyCode() == evt.VK_DELETE) {
+            selectedActor = lsMovieActors.getSelectedValue();
+            try {
+                repository.deleteMovieActorConn(selectedMovie.getId(), selectedActor.getId());
+                loadRepoData();
+                loadMovieActorsModel();
+            } catch (Exception ex) {
+                Logger.getLogger(EditRelationshipPanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_lsMovieActorsKeyPressed
+
+    private void lsMovieDirectorsKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lsMovieDirectorsKeyPressed
+        if (null != lsMovieDirectors.getSelectedValue() && evt.getKeyCode() == evt.VK_DELETE) {
+            selectedDirector = lsMovieDirectors.getSelectedValue();
+            try {
+                repository.deleteMovieDirectorConn(selectedMovie.getId(), selectedDirector.getId());
+                loadRepoData();
+                loadMovieDirectorsModel();
+            } catch (Exception ex) {
+                Logger.getLogger(EditRelationshipPanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_lsMovieDirectorsKeyPressed
+
+    private void lsMoveGenreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lsMoveGenreKeyPressed
+        if (null != lsMoveGenre.getSelectedValue() && evt.getKeyCode() == evt.VK_DELETE) {
+            selectedGenre = lsMoveGenre.getSelectedValue();
+
+            try {
+                repository.deleteMovieGenreConn(selectedMovie.getId(), selectedGenre.getId());
+                loadRepoData();
+                loadMovieGenresModel();
+            } catch (Exception ex) {
+                Logger.getLogger(EditRelationshipPanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_lsMoveGenreKeyPressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSaveMovies;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
-    private javax.swing.JList<String> jList3;
-    private javax.swing.JList<String> jList4;
-    private javax.swing.JList<String> jList5;
-    private javax.swing.JList<String> jList6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private java.awt.Label label1;
     private java.awt.Label label2;
     private java.awt.Label label3;
@@ -344,6 +443,12 @@ public class EditRelationshipPanel extends javax.swing.JPanel implements ActorAd
     private java.awt.Label label7;
     private java.awt.Label label8;
     private java.awt.Label label9;
+    private javax.swing.JList<Actor> lsAllActors;
+    private javax.swing.JList<Director> lsAllDirectors;
+    private javax.swing.JList<Genre> lsAllGenre;
+    private javax.swing.JList<Genre> lsMoveGenre;
+    private javax.swing.JList<Actor> lsMovieActors;
+    private javax.swing.JList<Director> lsMovieDirectors;
     private javax.swing.JTable tbMovies;
     // End of variables declaration//GEN-END:variables
 
@@ -351,6 +456,7 @@ public class EditRelationshipPanel extends javax.swing.JPanel implements ActorAd
         try {
             initRepository();
             initTable();
+            initDragNDrop();
         } catch (Exception ex) {
             Logger.getLogger(EditMoviesPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -368,10 +474,155 @@ public class EditRelationshipPanel extends javax.swing.JPanel implements ActorAd
         tbMovies.setModel(moviesTableModel);
     }
 
+    private void initDragNDrop() {
+        lsAllActors.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        lsAllActors.setDragEnabled(true);
+        lsAllActors.setTransferHandler(new ExportTransferHandlerActors());
+        lsMovieActors.setDropMode(DropMode.ON);
+        lsMovieActors.setTransferHandler(new ImportTransferHandlerActors());
+
+        lsAllDirectors.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        lsAllDirectors.setDragEnabled(true);
+        lsAllDirectors.setTransferHandler(new ExportTransferHandlerDirectors());
+        lsMovieDirectors.setDropMode(DropMode.ON);
+        lsMovieDirectors.setTransferHandler(new ImportTransferHandlerDirectors());
+
+        lsAllGenre.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        lsAllGenre.setDragEnabled(true);
+        lsAllGenre.setTransferHandler(new ExportTransferHandlerGenre());
+        lsMoveGenre.setDropMode(DropMode.ON);
+        lsMoveGenre.setTransferHandler(new ImportTransferHandlerGenre());
+    }
+
+    private class ExportTransferHandlerActors extends TransferHandler {
+
+        @Override
+        public int getSourceActions(JComponent c) {
+            return COPY;
+        }
+
+        @Override
+        public Transferable createTransferable(JComponent c) {
+            return new ActorTransferable(lsAllActors.getSelectedValue());
+        }
+    }
+
+    private class ImportTransferHandlerActors extends TransferHandler {
+
+        @Override
+        public boolean canImport(TransferSupport support) {
+            return support.isDataFlavorSupported(ActorTransferable.ACTOR_FLAVOR);
+        }
+
+        @Override
+        public boolean importData(TransferSupport support) {
+            Transferable transferable = support.getTransferable();
+            try {
+                Actor addActor = (Actor) transferable.getTransferData(ActorTransferable.ACTOR_FLAVOR);
+
+                if (actors.add(addActor)) {
+                    repository.createMovieActorConn(addActor, selectedMovie);
+                    loadMovieActorsModel();
+                    return true;
+                }
+            } catch (UnsupportedFlavorException | IOException ex) {
+                Logger.getLogger(EditRelationshipPanel.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (Exception ex) {
+                Logger.getLogger(EditRelationshipPanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            return false;
+        }
+    }
+
+    private class ExportTransferHandlerDirectors extends TransferHandler {
+
+        @Override
+        public int getSourceActions(JComponent c) {
+            return COPY;
+        }
+
+        @Override
+        public Transferable createTransferable(JComponent c) {
+            return new DirectorTransferable(lsAllDirectors.getSelectedValue());
+        }
+    }
+
+    private class ImportTransferHandlerDirectors extends TransferHandler {
+
+        @Override
+        public boolean canImport(TransferHandler.TransferSupport support) {
+            return support.isDataFlavorSupported(DirectorTransferable.DIRECTOR_FLAVOR);
+        }
+
+        @Override
+        public boolean importData(TransferHandler.TransferSupport support) {
+            Transferable transferable = support.getTransferable();
+            try {
+                Director addDirector = (Director) transferable.getTransferData(DirectorTransferable.DIRECTOR_FLAVOR);
+
+                if (directors.add(addDirector)) {
+                    repository.createMovieDirectorConn(addDirector, selectedMovie);
+                    loadMovieDirectorsModel();
+                    return true;
+                }
+            } catch (UnsupportedFlavorException | IOException ex) {
+                Logger.getLogger(EditRelationshipPanel.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (Exception ex) {
+                Logger.getLogger(EditRelationshipPanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            return false;
+        }
+    }
+
+    private class ExportTransferHandlerGenre extends TransferHandler {
+
+        @Override
+        public int getSourceActions(JComponent c) {
+            return COPY;
+        }
+
+        @Override
+        public Transferable createTransferable(JComponent c) {
+            return new GenreTransferable(lsAllGenre.getSelectedValue());
+        }
+    }
+
+    private class ImportTransferHandlerGenre extends TransferHandler {
+
+        @Override
+        public boolean canImport(TransferHandler.TransferSupport support) {
+            return support.isDataFlavorSupported(GenreTransferable.GENRE_FLAVOR);
+        }
+
+        @Override
+        public boolean importData(TransferHandler.TransferSupport support) {
+            Transferable transferable = support.getTransferable();
+            try {
+
+                Genre addGenre = (Genre) transferable.getTransferData(GenreTransferable.GENRE_FLAVOR);
+                if (genres.add(addGenre)) {
+                    repository.createMovieGenreConn(addGenre, selectedMovie);
+                    loadMovieGenresModel();
+                    return true;
+                }
+            } catch (UnsupportedFlavorException | IOException ex) {
+                Logger.getLogger(EditRelationshipPanel.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (Exception ex) {
+                Logger.getLogger(EditRelationshipPanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            return false;
+        }
+    }
+
     @Override
     public boolean addActor(Actor actor) {
         if (allActors.add(actor)) {
-            loadAllActorsModel();
+            try {
+
+                loadAllActorsModel();
+            } catch (Exception ex) {
+                Logger.getLogger(EditRelationshipPanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
             return true;
         }
         return false;
@@ -379,16 +630,95 @@ public class EditRelationshipPanel extends javax.swing.JPanel implements ActorAd
 
     @Override
     public boolean addDirector(Director director) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (allDirectors.add(director)) {
+            try {
+
+                loadAllDirectorsModel();
+            } catch (Exception ex) {
+                Logger.getLogger(EditRelationshipPanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            return true;
+        }
+        return false;
     }
 
     @Override
     public boolean addGenre(Genre genre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (allGenres.add(genre)) {
+            try {
+
+                loadAllGenresModel();
+            } catch (Exception ex) {
+                Logger.getLogger(EditRelationshipPanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            return true;
+        }
+        return false;
     }
 
     private void loadAllActorsModel() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        allActorsModel.clear();
+        allActors.forEach(allActorsModel::addElement);
+        lsAllActors.setModel(allActorsModel);
+
     }
 
+    private void loadAllDirectorsModel() {
+        allDirectorsModel.clear();
+        allDirectors.forEach(allDirectorsModel::addElement);
+        lsAllDirectors.setModel(allDirectorsModel);
+    }
+
+    private void loadAllGenresModel() {
+        allGenresModel.clear();
+        allGenres.forEach(allGenresModel::addElement);
+        lsAllGenre.setModel(allGenresModel);
+    }
+
+    private void loadMovieActorsModel() {
+        actorsModel.clear();
+        actors.forEach(actorsModel::addElement);
+        lsMovieActors.setModel(actorsModel);
+    }
+
+    private void loadMovieDirectorsModel() {
+        directorsModel.clear();
+        directors.forEach(directorsModel::addElement);
+        lsMovieDirectors.setModel(directorsModel);
+    }
+
+    private void loadMovieGenresModel() {
+        genresModel.clear();
+        genres.forEach(genresModel::addElement);
+        lsMoveGenre.setModel(genresModel);
+    }
+
+    private void loadRepoData() {
+        int selectedRow = tbMovies.getSelectedRow();
+        int rowIndex = tbMovies.convertRowIndexToModel(selectedRow);
+        int selectedMovieId = (int) moviesTableModel.getValueAt(rowIndex, 0);
+
+        try {
+            Optional<Movie> optMovie = repository.selectMovie(selectedMovieId);
+            if (optMovie.isPresent()) {
+                selectedMovie = optMovie.get();
+                selectedMovie.setActors(repository.selectActorsMovie(selectedMovie));
+                selectedMovie.setDirectors(repository.selectMovieDirectors(selectedMovie));
+                selectedMovie.setGenres(repository.selectMovieGenres(selectedMovie));
+
+            }
+            actors = new HashSet<>(selectedMovie.getActors());
+            allActors = new HashSet<>(repository.selectActors());
+
+            directors = new HashSet<>(selectedMovie.getDirectors());
+            allDirectors = new HashSet<>(repository.selectDirectors());
+
+            genres = new HashSet<>(selectedMovie.getGenres());
+            allGenres = new HashSet<>(repository.selectGenres());
+        } catch (Exception ex) {
+            Logger.getLogger(EditMoviesPanel.class.getName()).log(Level.SEVERE, null, ex);
+            MessageUtils.showErrorMessage("Error", "Unable to show movie!");
+        }
+
+    }
 }

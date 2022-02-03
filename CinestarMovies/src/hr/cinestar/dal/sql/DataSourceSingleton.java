@@ -16,9 +16,9 @@ import javax.sql.DataSource;
 public final class DataSourceSingleton {
     
     private static final String SERVER_NAME = "localhost";
-    private static final String DATABASE_NAME = "CinestarCMS";
+    private static final String DATABASE_NAME = "Cinestar";
     private static final String USER = "sa"; 
-    private static final String PASSWORD = "sql"; 
+    private static final String PASSWORD = "SQL"; 
 
     private DataSourceSingleton() {}
 
